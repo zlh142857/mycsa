@@ -5,8 +5,10 @@ package com.hx.service.impl;/*
  *@功能:
  */
 
+import com.hx.dao.ExamInfoRepository;
 import com.hx.dao.ExamRepository;
 import com.hx.model.exam.ExamChoose;
+import com.hx.model.exam.ExamInfo;
 import com.hx.service.ExamService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +24,8 @@ public class ExamServiceImpl implements ExamService {
     private Logger logger=LoggerFactory.getLogger( this.getClass() );
     @Autowired
     private ExamRepository examRepository;
+    @Autowired
+    private ExamInfoRepository examInfoRepository;
     @Override
     public Map<String, Object> examList() {
         try{
@@ -35,6 +39,41 @@ public class ExamServiceImpl implements ExamService {
             Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","获取考题失败");
             return map;
+        }
+    }
+
+    @Override
+    public String insertExamInfo(Integer userId, Integer score) {
+        try{
+            ExamInfo examInfo=new ExamInfo();
+            examInfo.setUserId( userId );
+            examInfo.setScore( score );
+            ExamInfo exam=examInfoRepository.save(examInfo);
+            String insertMsg="";
+            if(exam!=null){
+                insertMsg="录入成功";
+            }
+            return insertMsg;
+        }catch (Throwable throwable){
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
+            String insertMsg="录入失败,请重新保存";
+            return insertMsg;
+        }
+    }
+
+    @Override
+    public String insertExamChoose(ExamChoose examChoose) {
+        try{
+            ExamChoose exam=examRepository.save(examChoose);
+            String insertMsg="";
+            if(exam!=null){
+                insertMsg="录入成功";
+            }
+            return insertMsg;
+        }catch (Throwable throwable){
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
+            String insertMsg="录入失败,请重新录入";
+            return insertMsg;
         }
     }
 }

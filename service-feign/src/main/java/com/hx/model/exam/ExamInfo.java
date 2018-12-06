@@ -20,6 +20,6 @@ public class ExamInfo implements Serializable {
     @GeneratedValue(strategy=GenerationType.AUTO)//主键生成策略,默认情况下，JPA 自动选择一个最适合底层数据库的主键生成策略,MySQL 对应 auto increment
     private Integer id;//id;
     private Integer userId; //用户id
-    private Integer score;  //成绩
+    private Integer score;  //用户成绩成绩
     private Date createTime; //创建时间
 }

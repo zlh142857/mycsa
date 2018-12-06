@@ -34,7 +34,7 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
     public Map<String, Object> queryPersonnelList(Integer page,Integer size) {
         try{
             Map<String,Object> map=new HashMap<>(  );
-            Pageable pageable = PageRequest.of(page, size,Sort.Direction.ASC,"per_id");
+            Pageable pageable = PageRequest.of(page, size,Sort.Direction.DESC,"create_time");
             Page<PersonnelInfo> personnelInfoList=personnelInfoRepository.findAll(pageable);
             List<PersonnelInfo> lsit= personnelInfoList.getContent();
             for (PersonnelInfo personnelInfo : lsit) {

@@ -5,6 +5,7 @@ package com.hx.restController;/*
  *@功能:考试考核
  */
 
+import com.hx.model.exam.ExamChoose;
 import com.hx.service.ExamService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,27 @@ public class Exam {
     }
     public String examListError() {
         return "获取考题失败!";
+    }
+
+
+    @RequestMapping(value = "/insertExamInfo/{id}",method = RequestMethod.POST)
+    @ResponseBody
+    @HystrixCommand(fallbackMethod ="insertExamInfoError")
+    public String insertExamInfo(Integer userId,Integer score){
+        return examService.insertExamInfo(userId,score);
+    }
+    public String insertExamInfoError() {
+        return "录入考试成绩失败!";
+    }
+
+
+    @RequestMapping(value = "/insertExamChoose/{id}",method = RequestMethod.POST)
+    @ResponseBody
+    @HystrixCommand(fallbackMethod ="insertExamChooseError")
+    public String insertExamChoose(ExamChoose examChoose){
+        return examService.insertExamChoose(examChoose);
+    }
+    public String insertExamChooseError() {
+        return "录入考题失败!";
     }
 }

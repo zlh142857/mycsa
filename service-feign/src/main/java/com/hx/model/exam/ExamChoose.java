@@ -23,7 +23,7 @@ public class ExamChoose implements Serializable {
     private String answera; //a选项内容
     private String answerb;//a选项内容
     private String answerc;//a选项内容
-    private Integer answer; //正确答案
+    private String answer; //正确答案
     private Date createTime;
     private Date updateTime;
 

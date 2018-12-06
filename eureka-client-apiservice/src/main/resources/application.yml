@@ -1,0 +1,42 @@
+server:
+  tomcat:
+    max-connections: 0 # 默认值
+    max-threads: 0 # 默认值
+    uri-encoding: UTF-8
+    min-spare-threads: 30
+  port: 8864
+spring:
+  application:
+    name: eureka-client-apiservice
+  #datasource
+  datasource:
+    url : jdbc:mysql://localhost:3306/shiro?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username : root
+    password : root
+    driverClassName : com.mysql.jdbc.Driver
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+    initial-size: 10
+  jpa:
+    database : MYSQL
+    # Show or not log for each sql query
+    show-sql : true
+    # Hibernate ddl auto (create, create-drop, update)
+    hibernate:
+      ddl-auto : update
+      # Naming strategy
+      #[org.hibernate.cfg.ImprovedNamingStrategy | org.hibernate.cfg.DefaultNamingStrategy]
+      naming-strategy : org.hibernate.cfg.DefaultNamingStrategy
+  # stripped before adding them to the entity manager)
+  properties:
+    hibernate:
+      dialect : org.hibernate.dialect.MySQL5Dialect
+      exclude: WEB-INF/**
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8860/eureka/
+logging.config:
+  classpath: log4j2.xml
+logging.level.org.springframework: info

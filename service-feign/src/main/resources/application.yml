@@ -1,0 +1,69 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8860/eureka/
+server:
+  tomcat:
+    max-connections: 0 # 默认值
+    max-threads: 0 # 默认值
+  port: 8863
+spring:
+  application:
+    name: service-feign
+  resources:
+      static-locations: classpath:/templates
+  servlet:
+    multipart:
+      max-file-size: 1024Mb
+      max-request-size: 10240Mb
+  activiti:
+    database-schema-update: true
+    check-process-definitions: true
+    process-definition-location-prefix: classpath:/processes/
+    history-level: full
+  #datasource
+  datasource:
+    url : jdbc:mysql://localhost:3306/shiro?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username : root
+    password : root
+    driverClassName : com.mysql.jdbc.Driver
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+    initial-size: 10
+  jpa:
+    database : MYSQL
+  # Show or not log for each sql query
+    show-sql : true
+  # Hibernate ddl auto (create, create-drop, update)
+    hibernate:
+      ddl-auto : update
+  # Naming strategy
+  #[org.hibernate.cfg.ImprovedNamingStrategy | org.hibernate.cfg.DefaultNamingStrategy]
+      naming-strategy : org.hibernate.cfg.DefaultNamingStrategy
+  # stripped before adding them to the entity manager)
+  properties:
+    hibernate:
+      dialect : org.hibernate.dialect.MySQL5Dialect
+  #classpath目录下的WEB-INF文件夹内容修改不重启
+      exclude: WEB-INF/**
+  #redis:
+    #shiro:
+      #host: 127.0.0.1
+      #port: 6379
+      #timeout: 0
+      #password: 142857
+feign:
+  hystrix:
+    enabled: true
+    command:
+      default:
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 10000
+hystrix:
+  threadpool:
+    default:
+      coreSize: 500
+

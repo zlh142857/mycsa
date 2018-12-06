@@ -1,0 +1,25 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8860/eureka/
+server:
+  tomcat:
+    max-connections: 0 # 默认值
+    max-threads: 0 # 默认值
+  port: 8861
+spring:
+  application:
+    name: service-gateway
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: service-feign
+    api-b:
+      path: /api-b/**
+      serviceId: service-feign
+  host:
+    maxTotalConnections: 1000
+    maxPerRouteConnections: 1000
+  semaphore:
+    max-semaphores: 5000

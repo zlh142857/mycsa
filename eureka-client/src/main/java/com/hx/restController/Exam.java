@@ -27,7 +27,7 @@ public class Exam {
         return JSONObject.toJSONStringWithDateFormat( map,"yyyy-MM-dd HH:mm:ss" );
     }
 
-    @RequestMapping(value = "/insertExamInfo",method = RequestMethod.GET)
+    @RequestMapping(value = "/insertExamInfo",method = RequestMethod.POST)
     @ResponseBody
     public String insertExamInfo(Integer userId,Integer score){
         String insertMsg=examService.insertExamInfo(userId,score);
@@ -35,7 +35,7 @@ public class Exam {
     }
 
 
-    @RequestMapping(value = "/insertExamChoose",method = RequestMethod.GET)
+    @RequestMapping(value = "/insertExamChoose",method = RequestMethod.POST)
     @ResponseBody
     public String insertExamChoose(ExamChoose examChoose){
         String insertMsg=examService.insertExamChoose(examChoose);

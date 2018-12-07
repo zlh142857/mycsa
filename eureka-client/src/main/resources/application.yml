@@ -35,12 +35,6 @@ spring:
       dialect : org.hibernate.dialect.MySQL5Dialect
   #classpath目录下的WEB-INF文件夹内容修改不重启
       exclude: WEB-INF/**
-  #redis:
-    #shiro:
-     #host: 127.0.0.1
-      #port: 6379
-      #timeout: 0
-      #password: 142857
   servlet:
     multipart:
       max-file-size: 1024Mb

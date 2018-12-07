@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69b57276-89bc-4d23-aa76-51b7dbab3d4d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/shiro/src/main/java/com/hx/config/MyExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shiro/src/main/java/com/hx/config/MySessionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shiro/src/main/java/com/hx/config/MyShiroRealm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shiro/src/main/java/com/hx/config/ShiroConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shiro/src/main/java/com/hx/config/SystemLogoutFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shiro/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/UserInfoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/ToLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/ToLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/UserInfoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/UserInfoServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-feign/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/dao/UserInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/dao/UserInfoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/UserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/UserInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/impl/UserInfoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/impl/UserInfoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/impl/ToLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/impl/ToLoginServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
     <ignored path="$PROJECT_DIR$/eureka-client-schedule/target/" />
@@ -39,77 +23,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shiro/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="78" column="37" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyShiroRealm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shiro/src/main/java/com/hx/config/MyShiroRealm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserInfoService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/UserInfoService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserInfoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/impl/UserInfoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="20" column="37" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserInfoRepository.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/dao/UserInfoRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisetController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/RegisetController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -126,8 +40,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/UserInfoRepository.java" />
-        <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/EquipmentInfoAService.java" />
         <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/ExamService.java" />
         <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/PersonnelInfoService.java" />
         <option value="$PROJECT_DIR$/model/pom.xml" />
@@ -177,6 +89,8 @@
         <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/UserInfoService.java" />
         <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/impl/UserInfoImpl.java" />
         <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/dao/UserInfoRepository.java" />
+        <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/impl/ToLoginServiceImpl.java" />
+        <option value="$PROJECT_DIR$/shiro/src/main/resources/application.yml" />
       </list>
     </option>
   </component>
@@ -217,6 +131,69 @@
               <item name="mycsa" type="b2602c69:ProjectViewProjectNode" />
               <item name="mycsa" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="mycsa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycsa" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka-client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycsa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycsa" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycsa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycsa" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycsa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycsa" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycsa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycsa" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycsa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycsa" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hx" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycsa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycsa" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hx" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycsa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycsa" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -239,7 +216,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="Errors" />
@@ -249,6 +226,7 @@
       <recent name="com.hx.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaWorkspace\mycsa\shiro\src\main\resources" />
       <recent name="D:\IdeaWorkspace\mycsa\shiro\src\main\java\com\hx\config" />
       <recent name="D:\IdeaWorkspace\mycsa\model\src\main\java\com\hx" />
     </key>
@@ -351,7 +329,7 @@
       <option name="presentableId" value="Default" />
       <updated>1544081192679</updated>
       <workItem from="1544081199610" duration="6842000" />
-      <workItem from="1544144740757" duration="14586000" />
+      <workItem from="1544144740757" duration="15196000" />
     </task>
     <task id="LOCAL-00001" summary="提交人:张立恒 提交日期:2010/12/06">
       <created>1544087017577</created>
@@ -416,11 +394,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544170100538</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="提交人:张立恒 提交日期:2010/12/07">
+      <created>1544173069481</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1544173069481</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21428000" />
+    <option name="totallyTimeSpent" value="22038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -479,41 +464,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/EquipmentMaintainService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/ExamService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/FileSendService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/FirstInstallService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/LjobMenageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/LpostMenageService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -804,23 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/UserInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/impl/UserInfoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/UserInfoRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -846,6 +779,61 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/impl/ToLoginServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/impl/UserInfoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/UserInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/feignService/ToLoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="38" column="11" lean-forward="true" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shiro/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>

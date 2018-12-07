@@ -8,7 +8,6 @@ package com.hx.feignService.impl;/*
 import com.alibaba.fastjson.JSONObject;
 import com.hx.config.utils.AESUtils;
 import com.hx.feignService.ToLoginService;
-import com.hx.model.UserInfo;
 
 import org.springframework.stereotype.Service;
 

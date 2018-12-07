@@ -10,12 +10,10 @@
         <module name="eureka-client-apiservice" />
         <module name="eureka-client-schedule" />
         <module name="eureka-server" />
+        <module name="model" />
         <module name="service-feign" />
         <module name="service-gateway" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
-      <module name="service-zuul" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

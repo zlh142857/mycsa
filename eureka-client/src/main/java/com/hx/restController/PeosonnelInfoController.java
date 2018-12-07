@@ -6,7 +6,7 @@ package com.hx.restController;/*
  */
 
 import com.alibaba.fastjson.JSONObject;
-import com.hx.model.personnel.PersonnelInfo;
+import com.hx.personnel.PersonnelInfo;
 import com.hx.service.PersonnelInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

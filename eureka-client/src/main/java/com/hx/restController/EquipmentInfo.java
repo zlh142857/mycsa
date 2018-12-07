@@ -6,7 +6,7 @@ package com.hx.restController;/*
  */
 
 import com.alibaba.fastjson.JSONObject;
-import com.hx.model.facility.FacilityInformation;
+import com.hx.facility.FacilityInformation;
 import com.hx.service.EquipmentInfoAService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

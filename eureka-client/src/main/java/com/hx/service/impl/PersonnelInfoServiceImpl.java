@@ -8,7 +8,7 @@ package com.hx.service.impl;/*
 import com.hx.config.utils.DictCode;
 import com.hx.dao.CodeRepository;
 import com.hx.dao.PersonnelInfoRepository;
-import com.hx.model.personnel.PersonnelInfo;
+import com.hx.personnel.PersonnelInfo;
 import com.hx.service.PersonnelInfoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

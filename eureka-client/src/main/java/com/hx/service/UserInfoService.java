@@ -1,7 +1,8 @@
 package com.hx.service;/*
  */
 
-import com.hx.model.UserInfo;
+
+import com.hx.UserInfo;
 
 public interface UserInfoService {
     /**通过username查找用户信息;*/

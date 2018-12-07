@@ -5,7 +5,7 @@ package com.hx.restController;/*
  *@功能:考试考核
  */
 
-import com.hx.model.exam.ExamChoose;
+import com.hx.exam.ExamChoose;
 import com.hx.service.ExamService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;

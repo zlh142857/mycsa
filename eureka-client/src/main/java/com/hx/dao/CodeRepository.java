@@ -5,7 +5,7 @@ package com.hx.dao;/*
  *@功能:
  */
 
-import com.hx.model.SysDictData;
+import com.hx.SysDictData;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

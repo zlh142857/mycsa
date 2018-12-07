@@ -5,8 +5,8 @@ package com.hx.service.impl;/*
  *@功能:
  */
 
+import com.hx.UserInfo;
 import com.hx.dao.UserInfoRepository;
-import com.hx.model.UserInfo;
 import com.hx.service.UserInfoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

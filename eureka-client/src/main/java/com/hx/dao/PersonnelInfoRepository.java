@@ -5,7 +5,7 @@ package com.hx.dao;/*
  *@功能:
  */
 
-import com.hx.model.personnel.PersonnelInfo;
+import com.hx.personnel.PersonnelInfo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

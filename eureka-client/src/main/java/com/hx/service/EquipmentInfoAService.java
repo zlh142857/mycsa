@@ -1,7 +1,8 @@
 package com.hx.service;/*
  */
 
-import com.hx.model.facility.FacilityInformation;
+
+import com.hx.facility.FacilityInformation;
 
 import java.util.Map;
 

@@ -1,7 +1,7 @@
 package com.hx.dao;/*
  */
 
-import com.hx.model.exam.ExamChoose;
+import com.hx.exam.ExamChoose;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

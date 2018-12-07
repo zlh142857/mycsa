@@ -1,7 +1,7 @@
 package com.hx.service;/*
  */
 
-import com.hx.model.personnel.PersonnelInfo;
+import com.hx.personnel.PersonnelInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

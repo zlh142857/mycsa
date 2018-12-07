@@ -7,8 +7,8 @@ package com.hx.service.impl;/*
 
 import com.hx.dao.ExamInfoRepository;
 import com.hx.dao.ExamRepository;
-import com.hx.model.exam.ExamChoose;
-import com.hx.model.exam.ExamInfo;
+import com.hx.exam.ExamChoose;
+import com.hx.exam.ExamInfo;
 import com.hx.service.ExamService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

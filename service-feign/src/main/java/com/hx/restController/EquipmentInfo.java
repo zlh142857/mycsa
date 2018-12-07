@@ -5,7 +5,7 @@ package com.hx.restController;/*
  *@功能:设备信息库crud
  */
 
-import com.hx.model.facility.FacilityInformation;
+import com.hx.facility.FacilityInformation;
 import com.hx.service.EquipmentInfoAService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;

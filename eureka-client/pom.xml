@@ -134,6 +134,12 @@
             <artifactId>lombok</artifactId>
             <version>1.16.14</version>
         </dependency>
+        <dependency>
+            <groupId>com.hx</groupId>
+            <artifactId>model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

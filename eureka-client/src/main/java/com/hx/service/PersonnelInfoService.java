@@ -1,7 +1,8 @@
 package com.hx.service;/*
  */
 
-import com.hx.model.personnel.PersonnelInfo;
+
+import com.hx.personnel.PersonnelInfo;
 
 import java.util.Map;
 

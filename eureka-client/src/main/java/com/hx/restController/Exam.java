@@ -6,7 +6,7 @@ package com.hx.restController;/*
  */
 
 import com.alibaba.fastjson.JSONObject;
-import com.hx.model.exam.ExamChoose;
+import com.hx.exam.ExamChoose;
 import com.hx.service.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

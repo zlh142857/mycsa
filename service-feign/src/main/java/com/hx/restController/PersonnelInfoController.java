@@ -5,7 +5,7 @@ package com.hx.restController;/*
  *@功能:人员信息库crud
  */
 
-import com.hx.model.personnel.PersonnelInfo;
+import com.hx.personnel.PersonnelInfo;
 import com.hx.service.PersonnelInfoService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;

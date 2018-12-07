@@ -1,7 +1,8 @@
 package com.hx.service;/*
  */
 
-import com.hx.model.exam.ExamChoose;
+
+import com.hx.exam.ExamChoose;
 
 import java.util.Map;
 

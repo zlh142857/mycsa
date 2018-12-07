@@ -1,7 +1,7 @@
 package com.hx.dao;/*
  */
 
-import com.hx.model.facility.FacilityInformation;
+import com.hx.facility.FacilityInformation;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

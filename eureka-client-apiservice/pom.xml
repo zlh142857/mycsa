@@ -81,6 +81,15 @@
             <version>1.11.1</version>
         </dependency>
 
+
+        <!-- CXF webservice -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
+            <version>3.1.11</version>
+        </dependency>
+        <!-- CXF webservice -->
+
     </dependencies>
 
     <dependencyManagement>

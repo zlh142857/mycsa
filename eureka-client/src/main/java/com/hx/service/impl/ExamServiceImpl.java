@@ -52,6 +52,8 @@ public class ExamServiceImpl implements ExamService {
             String insertMsg="";
             if(exam!=null){
                 insertMsg="录入成功";
+            }else{
+                insertMsg="录入失败";
             }
             return insertMsg;
         }catch (Throwable throwable){
@@ -68,6 +70,8 @@ public class ExamServiceImpl implements ExamService {
             String insertMsg="";
             if(exam!=null){
                 insertMsg="录入成功";
+            }else{
+                insertMsg="录入失败";
             }
             return insertMsg;
         }catch (Throwable throwable){

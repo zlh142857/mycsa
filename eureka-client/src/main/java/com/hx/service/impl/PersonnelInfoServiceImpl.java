@@ -88,6 +88,8 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
             String insertMsg="";
             if(personnel!=null){
                 insertMsg="录入成功";
+            }else{
+                insertMsg="录入失败";
             }
             return insertMsg;
         }catch (Throwable throwable){

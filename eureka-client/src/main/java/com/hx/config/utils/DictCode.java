@@ -14,8 +14,6 @@ public class DictCode {
     public static final Integer IS_MI=3;
     //公文等级
     public static final Integer FILE_LEVEL=4;
-    //删除标识
-    public static final Integer DEL_FLAG=5;
     //是否已读
     public static final Integer IS_READ=6;
     //是否机要人员

@@ -1,7 +1,7 @@
 package com.hx.feignService;/*
  */
 
-import com.hx.model.UserInfo;
+import com.hx.UserInfo;
 
 public interface UserInfoService {
     UserInfo findByUsername(String username);

@@ -5,9 +5,9 @@ package com.hx.feignService.impl;/*
  *@功能:
  */
 
+import com.hx.UserInfo;
 import com.hx.dao.UserInfoRepository;
 import com.hx.feignService.UserInfoService;
-import com.hx.model.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,7 @@ package com.hx.dao;
 /*用户信息仓库
  */
 
-import com.hx.model.UserInfo;
+import com.hx.UserInfo;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.transaction.Transactional;

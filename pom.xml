@@ -28,6 +28,8 @@
       <module>eureka-server</module>
       <module>service-feign</module>
       <module>service-gateway</module>
+      <module>shiro</module>
+      <module>model</module>
   </modules>
 
 

@@ -13,6 +13,7 @@
         <module name="model" />
         <module name="service-feign" />
         <module name="service-gateway" />
+        <module name="shiro" />
       </profile>
     </annotationProcessing>
   </component>

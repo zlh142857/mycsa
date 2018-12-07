@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class LpostMenage {
     @Autowired
     private LpostMenageService lpostMenageService;
-    @RequestMapping(value = "/lpostList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/lpostList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
     public boolean lpostList(){

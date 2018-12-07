@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class TrainKnow {
     @Autowired
     private TrainKnowService trainKnowService;
-    @RequestMapping(value = "/trainKnowList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/trainKnowList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="trainKnowListError")
     public boolean trainKnowList(){

@@ -28,7 +28,7 @@ public class PersonnelInfoController {
      * @auther: 张立恒
      * @date: 2018/12/6 13:37
      */
-    @RequestMapping(value = "/personnelList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/personnelList",method = RequestMethod.GET)
     @HystrixCommand(fallbackMethod ="queryPersonnelListError")
     @ResponseBody
     public String queryPersonnelList(Integer page,Integer size){
@@ -39,7 +39,7 @@ public class PersonnelInfoController {
         return "出现异常!";
     }
 
-    @RequestMapping(value = "/insertPersonnel/{id}",method = RequestMethod.POST)
+    @RequestMapping(value = "/insertPersonnel",method = RequestMethod.POST)
     @HystrixCommand(fallbackMethod ="insertPersonnelError")
     @ResponseBody
     public String insertPersonnel(PersonnelInfo personnelInfo){

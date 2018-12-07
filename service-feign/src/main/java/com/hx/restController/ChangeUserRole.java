@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ChangeUserRole {
     @Autowired
     private ChangeUserRoleService changeUserRoleService;
-    @RequestMapping(value = "/changeRoleList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/changeRoleList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
     public boolean changeRoleList(){

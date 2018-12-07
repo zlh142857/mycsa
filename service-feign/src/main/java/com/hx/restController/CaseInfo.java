@@ -11,12 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 @RequestMapping(value = "/caseInfo")
 public class CaseInfo {
     @Autowired
     private CaseInfoService caseInfoService;
-    @RequestMapping(value = "/caseList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/caseList",method = RequestMethod.GET)
     @ResponseBody
     //@RequiresPermissions("caseInfo:view")
     @HystrixCommand(fallbackMethod ="hiError")

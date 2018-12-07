@@ -13,6 +13,6 @@ public interface NoticeService {
     String queryNoticeList();
     @RequestMapping(value = "/noticeController/insertNotice",method = RequestMethod.POST)
     String insertNotice(@RequestParam("notice") Notice notice);
-    @RequestMapping(value = "/noticeController/delNotice",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/noticeController/delNotice",method = RequestMethod.POST)
     String delNotice(Integer noticeId);
 }

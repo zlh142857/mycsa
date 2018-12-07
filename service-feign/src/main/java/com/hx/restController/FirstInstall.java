@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class FirstInstall {
     @Autowired
     private FirstInstallService firstInstallService;
-    @RequestMapping(value = "/installRegisterList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/installRegisterList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
     public boolean installRegisterList(){

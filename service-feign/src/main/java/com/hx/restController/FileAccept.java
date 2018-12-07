@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class FileAccept {
     @Autowired
     private FileAcceptService fileAcceptService;
-    @RequestMapping(value = "/fileAcceptList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/fileAcceptList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
     public boolean fileAcceptList(){

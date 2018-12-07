@@ -7,6 +7,7 @@ package com.hx.exam;/*
 
 import lombok.Data;
 
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity

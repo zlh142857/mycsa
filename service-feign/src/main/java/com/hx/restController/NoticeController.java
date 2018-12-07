@@ -42,7 +42,7 @@ public class NoticeController {
     }
 
 
-    @RequestMapping(value = "/delNotice",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delNotice",method = RequestMethod.POST)
     @HystrixCommand(fallbackMethod ="delNoticeError")
     @ResponseBody
     public String delNotice(Integer noticeId){

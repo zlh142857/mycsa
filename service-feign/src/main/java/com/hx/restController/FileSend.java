@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class FileSend {
     @Autowired
     private FileSendService fileSendService;
-    @RequestMapping(value = "/fileSendList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/fileSendList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
     public boolean fileSendList(){

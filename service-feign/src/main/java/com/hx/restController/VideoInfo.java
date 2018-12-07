@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class VideoInfo {
     @Autowired
     private VideoInfoService videoInfoService;
-    @RequestMapping(value = "/videoList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/videoList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
     public boolean videoList(){

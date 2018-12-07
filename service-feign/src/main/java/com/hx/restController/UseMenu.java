@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UseMenu {
     @Autowired
     private UseMenuService useMenuService;
-    @RequestMapping(value = "/useRegisterList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/useRegisterList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
     public boolean useRegisterList(){

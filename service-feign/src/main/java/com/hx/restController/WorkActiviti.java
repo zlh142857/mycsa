@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class WorkActiviti {
     @Autowired
     private WorkActivitiService workActivitiService;
-    @RequestMapping(value = "/workExamine/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/workExamine",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
     public boolean workExamine(){

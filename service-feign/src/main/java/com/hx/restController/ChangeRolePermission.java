@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ChangeRolePermission {
     @Autowired
     private ChangeRolePermissionService changeRolePermissionService;
-    @RequestMapping(value = "/changePermissionList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/changePermissionList",method = RequestMethod.GET)
     @ResponseBody
     //@RequiresPermissions("changeRolePermission:view")
     @HystrixCommand(fallbackMethod ="hiError")

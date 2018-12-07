@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class LjobMenage {
     @Autowired
     private LjobMenageService ljobMenageService;
-    @RequestMapping(value = "/ljobList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/ljobList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
     public boolean ljobList(){

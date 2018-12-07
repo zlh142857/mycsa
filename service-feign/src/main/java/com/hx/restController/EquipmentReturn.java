@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class EquipmentReturn {
     @Autowired
     private EquipmentReturnService equipmentReturnService;
-    @RequestMapping(value = "/equipmentReturnList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/equipmentReturnList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
     public boolean equipmentReturnList(){

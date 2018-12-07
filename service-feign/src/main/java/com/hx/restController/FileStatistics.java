@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class FileStatistics {
     @Autowired
     private FileStatisticsService fileStatisticsService;
-    @RequestMapping(value = "/fileStatisticsList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/fileStatisticsList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
     public boolean fileStatisticsList(){

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LrealmMenage {
     @Autowired
     private LrealmMenageService lrealmMenageService;
-    @RequestMapping(value = "/lrealmList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/lrealmList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
     public boolean lrealmList(){

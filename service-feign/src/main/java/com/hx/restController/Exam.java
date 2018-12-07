@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Exam {
     @Autowired
     private ExamService examService;
-    @RequestMapping(value = "/examList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/examList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="examListError")
     public String examList(){
@@ -30,7 +30,7 @@ public class Exam {
     }
 
 
-    @RequestMapping(value = "/insertExamInfo/{id}",method = RequestMethod.POST)
+    @RequestMapping(value = "/insertExamInfo",method = RequestMethod.POST)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="insertExamInfoError")
     public String insertExamInfo(Integer userId,Integer score){
@@ -41,7 +41,7 @@ public class Exam {
     }
 
 
-    @RequestMapping(value = "/insertExamChoose/{id}",method = RequestMethod.POST)
+    @RequestMapping(value = "/insertExamChoose",method = RequestMethod.POST)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="insertExamChooseError")
     public String insertExamChoose(ExamChoose examChoose){

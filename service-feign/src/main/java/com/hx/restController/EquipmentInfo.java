@@ -28,7 +28,7 @@ public class EquipmentInfo {
      * @auther: 张立恒
      * @date: 2018/12/6 14:13
      */
-    @RequestMapping(value = "/equipmentList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/equipmentList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="equipmentListError")
     public String queryEquipmentList(Integer page,Integer size){
@@ -46,7 +46,7 @@ public class EquipmentInfo {
      * @auther: 张立恒
      * @date: 2018/12/6 14:14
      */
-    @RequestMapping(value = "/insertEquipment/{id}",method = RequestMethod.POST)
+    @RequestMapping(value = "/insertEquipment",method = RequestMethod.POST)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="insertEquipmentError")
     public String insertEquipment(FacilityInformation facilityInformation){

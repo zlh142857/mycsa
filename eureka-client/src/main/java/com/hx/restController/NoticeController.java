@@ -32,7 +32,7 @@ public class NoticeController {
         return JSONObject.toJSONString( insertMsg);
     }
 
-    @DeleteMapping(value = "/delNotice")
+    @PostMapping(value = "/delNotice")
     @ResponseBody
     public String delNotice(Integer noticeId){
         String delMsg=noticeService.delNotice(noticeId);

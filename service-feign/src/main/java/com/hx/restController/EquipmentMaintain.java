@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EquipmentMaintain {
     @Autowired
     private EquipmentMaintainService equipmentMaintainService;
-    @RequestMapping(value = "/equipmentMaintainList/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/equipmentMaintainList",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
     public boolean equipmentMaintainList(){

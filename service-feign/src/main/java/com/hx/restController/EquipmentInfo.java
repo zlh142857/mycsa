@@ -35,7 +35,7 @@ public class EquipmentInfo {
         return equipmentInfoAService.queryEquipmentList(page,size);
     }
     public String equipmentListError(Integer page,Integer size) {
-        return "查询设备信息出现异常";
+        return "服务未响应";
     }
     /**
      *
@@ -53,6 +53,6 @@ public class EquipmentInfo {
         return equipmentInfoAService.insertEquipment(facilityInformation);
     }
     public String insertEquipmentError(FacilityInformation facilityInformation) {
-        return "查询设备信息出现异常";
+        return "服务未响应";
     }
 }

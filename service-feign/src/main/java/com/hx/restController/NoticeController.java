@@ -27,7 +27,7 @@ public class NoticeController {
         return noticeList;
     }
     public String queryNoticeListError() {
-        return "查询失败!";
+        return "服务未响应";
     }
 
     @RequestMapping(value = "/insertNotice",method = RequestMethod.POST)
@@ -38,7 +38,7 @@ public class NoticeController {
         return insertMsg;
     }
     public String insertNoticeError(Notice notice) {
-        return "未能成功发布公告!";
+        return "服务未响应";
     }
 
 
@@ -50,7 +50,7 @@ public class NoticeController {
         return delMsg;
     }
     public String delNoticeError(Integer noticeId) {
-        return "未能成功删除公告!";
+        return "服务未响应";
     }
 
 }

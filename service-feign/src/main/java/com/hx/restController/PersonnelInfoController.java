@@ -36,7 +36,7 @@ public class PersonnelInfoController {
         return personnelList;
     }
     public String queryPersonnelListError(Integer page,Integer size) {
-        return "出现异常!";
+        return "服务未响应";
     }
 
     @RequestMapping(value = "/insertPersonnel",method = RequestMethod.POST)
@@ -47,7 +47,7 @@ public class PersonnelInfoController {
         return insertMsg;
     }
     public String insertPersonnelError(PersonnelInfo personnelInfo) {
-        return "出现异常!";
+        return "服务未响应";
     }
 
 

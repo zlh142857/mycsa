@@ -26,7 +26,7 @@ public class Exam {
         return examService.examList();
     }
     public String examListError() {
-        return "获取考题失败!";
+        return "服务未响应";
     }
 
 
@@ -37,7 +37,7 @@ public class Exam {
         return examService.insertExamInfo(userId,score);
     }
     public String insertExamInfoError() {
-        return "录入考试成绩失败!";
+        return "服务未响应";
     }
 
 
@@ -48,6 +48,6 @@ public class Exam {
         return examService.insertExamChoose(examChoose);
     }
     public String insertExamChooseError() {
-        return "录入考题失败!";
+        return "服务未响应";
     }
 }

@@ -6,5 +6,5 @@ package com.hx.config.utils;/*
  */
 
 public class ProKey {
-    public static final String AskForLeave="bad";
+    public static final String CommonKey="bad";
 }

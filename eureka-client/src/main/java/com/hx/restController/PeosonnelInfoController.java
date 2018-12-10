@@ -25,7 +25,7 @@ public class PeosonnelInfoController {
         return JSONObject.toJSONStringWithDateFormat( personnelList,"yyyy-MM-dd HH:mm:ss" );
     }
 
-    @PostMapping(value = "/personnelList")
+    @PostMapping(value = "/insertPersonnel")
     @ResponseBody
     public String insertPersonnel(PersonnelInfo personnelInfo){
         String insertMsg=personnelInfoService.insertPersonnel(personnelInfo);

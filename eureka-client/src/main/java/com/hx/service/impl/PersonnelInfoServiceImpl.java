@@ -5,9 +5,13 @@ package com.hx.service.impl;/*
  *@功能:人员信息库
  */
 
+import com.hx.UserInfo;
+import com.hx.config.md5.Md5;
+import com.hx.config.md5.Salt;
 import com.hx.config.utils.DictCode;
 import com.hx.dao.CodeRepository;
 import com.hx.dao.PersonnelInfoRepository;
+import com.hx.dao.UserInfoRepository;
 import com.hx.personnel.PersonnelInfo;
 import com.hx.service.PersonnelInfoService;
 import org.slf4j.Logger;
@@ -30,6 +34,8 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
     private PersonnelInfoRepository personnelInfoRepository;
     @Autowired
     private CodeRepository codeRepository;
+    @Autowired
+    private UserInfoRepository userInfoRepository;
     @Override
     public Map<String, Object> queryPersonnelList(Integer page,Integer size) {
         try{
@@ -87,7 +93,22 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
             PersonnelInfo personnel=personnelInfoRepository.save(personnelInfo);
             String insertMsg="";
             if(personnel!=null){
-                insertMsg="录入成功";
+                Integer perId=personnel.getPerId();
+                Integer deptCode=personnel.getDeptCode();
+                String deptLeader=personnel.getDeptLeader();
+                String personnelName=personnel.getPerName();
+                UserInfo userInfo=new UserInfo();
+                userInfo.setPersonnelId( perId );
+                userInfo.setDeptCode( deptCode );
+                userInfo.setDeptLeader( deptLeader );
+                userInfo.setPersonnelName( personnelName );
+                userInfo.setPassword( "123456" );
+                UserInfo userInfo1=userInfoRepository.save( userInfo );
+                if(userInfo1 != null){
+                    insertMsg="录入成功";
+                }else{
+                    insertMsg="录入失败";
+                }
             }else{
                 insertMsg="录入失败";
             }

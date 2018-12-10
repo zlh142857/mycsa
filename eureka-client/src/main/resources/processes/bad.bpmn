@@ -18,7 +18,7 @@
     <sequenceFlow id="_12" name="back2" sourceRef="_5" targetRef="_3">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${message=='驳回'}]]></conditionExpression>
     </sequenceFlow>
-    <userTask activiti:exclusive="true" id="_6" name="机要委领导审批"/>
+    <userTask activiti:assignee="userID3" activiti:exclusive="true" id="_6" name="机要委领导审批"/>
     <sequenceFlow id="_10" name="go2" sourceRef="_5" targetRef="_6">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${message=='批准'}]]></conditionExpression>
     </sequenceFlow>
@@ -72,7 +72,7 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge bpmnElement="_13" id="BPMNEdge__13" sourceElement="_6" targetElement="_3">
-        <di:waypoint x="942.5" y="305.0"/>
+        <di:waypoint x="942.5" y="290.0"/>
         <di:waypoint x="590.0" y="415.0"/>
         <di:waypoint x="292.5" y="285.0"/>
         <bpmndi:BPMNLabel>
@@ -80,7 +80,7 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_12" id="BPMNEdge__12" sourceElement="_5" targetElement="_3">
-        <di:waypoint x="742.5" y="215.0"/>
+        <di:waypoint x="742.5" y="230.0"/>
         <di:waypoint x="525.0" y="160.0"/>
         <di:waypoint x="292.5" y="230.0"/>
         <bpmndi:BPMNLabel>
@@ -88,14 +88,14 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_15" id="BPMNEdge__15" sourceElement="_6" targetElement="_14">
-        <di:waypoint x="1000.0" y="262.5"/>
+        <di:waypoint x="985.0" y="262.5"/>
         <di:waypoint x="1105.0" y="256.0"/>
         <bpmndi:BPMNLabel>
           <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_16" id="BPMNEdge__16" sourceElement="_3" targetElement="_14">
-        <di:waypoint x="292.5" y="215.0"/>
+        <di:waypoint x="292.5" y="230.0"/>
         <di:waypoint x="710.0" y="60.0"/>
         <di:waypoint x="1121.0" y="240.0"/>
         <bpmndi:BPMNLabel>
@@ -103,28 +103,28 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_7" id="BPMNEdge__7" sourceElement="_2" targetElement="_3">
-        <di:waypoint x="92.0" y="256.0"/>
+        <di:waypoint x="77.0" y="256.0"/>
         <di:waypoint x="250.0" y="257.5"/>
         <bpmndi:BPMNLabel>
           <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_8" id="BPMNEdge__8" sourceElement="_3" targetElement="_4">
-        <di:waypoint x="350.0" y="257.5"/>
+        <di:waypoint x="335.0" y="257.5"/>
         <di:waypoint x="490.0" y="257.5"/>
         <bpmndi:BPMNLabel>
           <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_9" id="BPMNEdge__9" sourceElement="_4" targetElement="_5">
-        <di:waypoint x="590.0" y="257.5"/>
+        <di:waypoint x="575.0" y="257.5"/>
         <di:waypoint x="700.0" y="257.5"/>
         <bpmndi:BPMNLabel>
           <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_11" id="BPMNEdge__11" sourceElement="_4" targetElement="_3">
-        <di:waypoint x="532.5" y="300.0"/>
+        <di:waypoint x="532.5" y="285.0"/>
         <di:waypoint x="415.0" y="330.0"/>
         <di:waypoint x="292.5" y="285.0"/>
         <bpmndi:BPMNLabel>
@@ -132,7 +132,7 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_10" id="BPMNEdge__10" sourceElement="_5" targetElement="_6">
-        <di:waypoint x="800.0" y="257.5"/>
+        <di:waypoint x="785.0" y="257.5"/>
         <di:waypoint x="900.0" y="262.5"/>
         <bpmndi:BPMNLabel>
           <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>

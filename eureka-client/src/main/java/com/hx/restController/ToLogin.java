@@ -5,6 +5,7 @@ package com.hx.restController;/*
  *@功能:
  */
 
+import com.hx.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

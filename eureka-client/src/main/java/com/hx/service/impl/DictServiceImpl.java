@@ -29,6 +29,7 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.SEX );
             map.put( "list",list );
             map.put( "msg","查询成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -45,6 +46,7 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.MI_JI );
             map.put( "list",list );
             map.put( "msg","查询成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -61,6 +63,7 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.IS_MI );
             map.put( "list",list );
             map.put( "msg","查询成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -77,6 +80,7 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.FILE_LEVEL );
             map.put( "list",list );
             map.put( "msg","查询成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -93,6 +97,7 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.IS_READ);
             map.put( "list",list );
             map.put( "msg","查询成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -109,6 +114,7 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.IS_JI_YAO );
             map.put( "list",list );
             map.put( "msg","查询成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -125,6 +131,7 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.IMPORTANT);
             map.put( "list",list );
             map.put( "msg","查询成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -141,6 +148,7 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.COURT_TYPE);
             map.put( "list",list );
             map.put( "msg","查询成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -157,6 +165,7 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.DEPT_CODE);
             map.put( "list",list );
             map.put( "msg","查询成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -173,6 +182,7 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.WORK_STATUS);
             map.put( "list",list );
             map.put( "msg","查询成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -189,6 +199,7 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.Facility_Status_Code);
             map.put( "list",list );
             map.put( "msg","查询成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );

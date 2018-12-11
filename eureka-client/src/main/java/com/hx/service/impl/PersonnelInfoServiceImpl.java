@@ -106,10 +106,13 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
                 UserInfo userInfo1=userInfoRepository.save( userInfo );
                 if(userInfo1 != null){
                     insertMsg="录入成功";
+                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:录入成功" );
                 }else{
                     insertMsg="录入失败";
+                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:新增userInfo1==null" );
                 }
             }else{
+                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:新增personnel==null" );
                 insertMsg="录入失败";
             }
             return insertMsg;

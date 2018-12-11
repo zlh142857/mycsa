@@ -13,7 +13,7 @@ import java.util.Date;
 
 @Data
 @Entity
-public class ActMsg implements Serializable {
+public class ActMsgPersonnel implements Serializable {
     private static final long serialVersionUID = 1616155896819763487L;
     @Id
     @Column(unique=true)
@@ -32,15 +32,21 @@ public class ActMsg implements Serializable {
     private String dept; //所在部门
     private String phone; //联系电话
     //上岗
-    private String workContent;
+    private String workContent; //工作内容
     @Temporal( TemporalType.TIMESTAMP )
-    private Date toWorkTime;
+    private Date toWorkTime; //上岗时间
     @Temporal( TemporalType.TIMESTAMP )
-    private Date birTime;
-    private String deptLeader;
-    private Integer isMiCode;
+    private Date birTime;  //出生日期
+    private String deptLeader;  //部门领导
+    private Integer isMiCode;  //是否涉密编号
     //离职
-    private Date lPostTime;
+    private Date lPostTime;  //离职时间
+
+    private String taskId;  //任务id
+    private String taskName;  //任务名称
+    private String applyUserName; //申请人
+    @Temporal( TemporalType.TIMESTAMP )
+    private Date createTime; //任务创建时间
 
 
 }

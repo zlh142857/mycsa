@@ -33,6 +33,7 @@ public class ExamServiceImpl implements ExamService {
             List<ExamChoose> examChooses= examRepository.findAll();
             map.put( "examChooses",examChooses );
             map.put( "msg","获取考题成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -55,6 +56,7 @@ public class ExamServiceImpl implements ExamService {
             }else{
                 insertMsg="录入失败";
             }
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return insertMsg;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -70,8 +72,10 @@ public class ExamServiceImpl implements ExamService {
             String insertMsg="";
             if(exam!=null){
                 insertMsg="录入成功";
+                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:录入成功");
             }else{
                 insertMsg="录入失败";
+                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:保存exam==null");
             }
             return insertMsg;
         }catch (Throwable throwable){

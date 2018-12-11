@@ -5,7 +5,7 @@ package com.hx.restController;/*
  *@功能:工作流审批,提交申请
  */
 
-import com.hx.Activiti.ActMsg;
+import com.hx.Activiti.ActMsgPersonnel;
 import com.hx.UserInfo;
 import com.hx.service.ActivitiApproveService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -29,11 +29,11 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/lCountryRefer",method = RequestMethod.POST)
     @HystrixCommand(fallbackMethod ="lCountryReferError")
     @ResponseBody
-    public String lCountryRefer(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsg") ActMsg actMsg){
-        String referMsg=activitiApproveService.lCountryRefer(userInfo,actMsg);
+    public String lCountryRefer(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel){
+        String referMsg=activitiApproveService.lCountryRefer(userInfo, actMsgPersonnel );
         return referMsg;
     }
-    public String lCountryReferError(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsg") ActMsg actMsg) {
+    public String lCountryReferError(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel) {
         return "服务未响应";
     }
     /**
@@ -48,11 +48,11 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/goWorkRefer",method = RequestMethod.POST)
     @HystrixCommand(fallbackMethod ="goWorkReferError")
     @ResponseBody
-    public String goWorkRefer(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsg") ActMsg actMsg){
-        String referMsg=activitiApproveService.goWorkRefer(userInfo,actMsg);
+    public String goWorkRefer(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel){
+        String referMsg=activitiApproveService.goWorkRefer(userInfo, actMsgPersonnel );
         return referMsg;
     }
-    public String goWorkReferError(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsg") ActMsg actMsg) {
+    public String goWorkReferError(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel) {
         return "服务未响应";
     }
 
@@ -68,11 +68,30 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/lPostRefer",method = RequestMethod.POST)
     @HystrixCommand(fallbackMethod ="lPostReferError")
     @ResponseBody
-    public String lPostRefer(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsg") ActMsg actMsg){
-        String referMsg=activitiApproveService.lPostRefer(userInfo,actMsg);
+    public String lPostRefer(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel){
+        String referMsg=activitiApproveService.lPostRefer(userInfo, actMsgPersonnel );
         return referMsg;
     }
-    public String lPostReferError(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsg") ActMsg actMsg) {
+    public String lPostReferError(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel) {
+        return "服务未响应";
+    }
+    /**
+     *
+     * 功能描述: 查询自己要审批的任务
+     *
+     * @param: 
+     * @return: 
+     * @auther: 张立恒
+     * @date: 2018/12/11 9:17
+     */
+    @RequestMapping(value = "/selectSelfTask",method = RequestMethod.GET)
+    @HystrixCommand(fallbackMethod ="selectSelfTaskError")
+    @ResponseBody
+    public String selectSelfTask(@RequestParam("uid") String uid){
+        String taskList=activitiApproveService.selectSelfTask(uid);
+        return taskList;
+    }
+    public String selectSelfTaskError(@RequestParam("uid") String uid) {
         return "服务未响应";
     }
 }

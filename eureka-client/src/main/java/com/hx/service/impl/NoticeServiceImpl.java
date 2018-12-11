@@ -37,6 +37,7 @@ public class NoticeServiceImpl implements NoticeService {
             List<Notice> list= noticeRepository.find();
             map.put( "list",list );
             map.put( "msg","查询成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -53,8 +54,10 @@ public class NoticeServiceImpl implements NoticeService {
             String insertMsg="";
             if(notice != null){
                 insertMsg="发布成功";
+                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:发布成功");
             }else{
                 insertMsg="未能成功发布";
+                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:保存notice==null");
             }
             return insertMsg;
         }catch (Throwable throwable){
@@ -71,8 +74,10 @@ public class NoticeServiceImpl implements NoticeService {
             String delMsg="";
             if(count != 0){
                 delMsg="删除成功";
+                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:删除成功");
             }else{
                 delMsg="未能成功删除";
+                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:删除count==0");
             }
             return delMsg;
         }catch (Throwable throwable){

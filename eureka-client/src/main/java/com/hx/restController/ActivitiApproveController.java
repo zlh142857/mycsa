@@ -6,11 +6,13 @@ package com.hx.restController;/*
  */
 
 import com.alibaba.fastjson.JSONObject;
-import com.hx.Activiti.ActMsg;
+import com.hx.Activiti.ActMsgPersonnel;
 import com.hx.UserInfo;
 import com.hx.service.ActivitiApproveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "activitiApprove")
@@ -28,8 +30,8 @@ public class ActivitiApproveController {
      */
     @PostMapping(value = "/lCountryRefer")
     @ResponseBody
-    public String lCountryRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsg") ActMsg actMsg){
-        String referMsg=activitiApproveService.lCountryRefer(userInfo,actMsg);
+    public String lCountryRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel){
+        String referMsg=activitiApproveService.lCountryRefer(userInfo, actMsgPersonnel );
         return JSONObject.toJSONString( referMsg );
     }
     /**
@@ -43,8 +45,8 @@ public class ActivitiApproveController {
      */
     @PostMapping(value = "/goWorkRefer")
     @ResponseBody
-    public String goWorkRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsg") ActMsg actMsg){
-        String referMsg=activitiApproveService.goWorkRefer(userInfo,actMsg);
+    public String goWorkRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel){
+        String referMsg=activitiApproveService.goWorkRefer(userInfo, actMsgPersonnel );
         return JSONObject.toJSONString( referMsg );
     }
     /**
@@ -58,8 +60,23 @@ public class ActivitiApproveController {
      */
     @PostMapping(value = "/lPostRefer")
     @ResponseBody
-    public String lPostRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsg") ActMsg actMsg){
-        String referMsg=activitiApproveService.lPostRefer(userInfo,actMsg);
+    public String lPostRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel){
+        String referMsg=activitiApproveService.lPostRefer(userInfo, actMsgPersonnel );
         return JSONObject.toJSONString( referMsg );
+    }
+    /**
+     *
+     * 功能描述: 查询自己要审批的任务
+     *
+     * @param:
+     * @return:
+     * @auther: 张立恒
+     * @date: 2018/12/11 9:18
+     */
+    @GetMapping(value = "/selectSelfTask")
+    @ResponseBody
+    public String selectSelfTask(@RequestParam("uid") String uid){
+        Map<String,Object> map=activitiApproveService.selectSelfTask(uid );
+        return JSONObject.toJSONStringWithDateFormat( map,"yyyy-MM-dd HH:mm:ss" );
     }
 }

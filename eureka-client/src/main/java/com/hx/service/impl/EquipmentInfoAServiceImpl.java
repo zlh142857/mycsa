@@ -56,6 +56,7 @@ public class EquipmentInfoAServiceImpl implements EquipmentInfoAService {
             }
             map.put( "facilityInformationList",facilityInformationList );
             map.put( "msg","查询成功");
+            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
@@ -73,8 +74,10 @@ public class EquipmentInfoAServiceImpl implements EquipmentInfoAService {
             String insertMsg="";
             if(facility!=null){
                 insertMsg="录入成功";
+                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:录入成功");
             }else{
                 insertMsg="录入失败";
+                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:保存facility==null");
             }
             return insertMsg;
         }catch (Throwable throwable){

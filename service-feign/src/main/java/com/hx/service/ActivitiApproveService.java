@@ -16,6 +16,22 @@ public interface ActivitiApproveService {
     String goWorkRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel);
     @RequestMapping(value = "/activitiApprove/lPostRefer",method = RequestMethod.POST)
     String lPostRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel);
-    @RequestMapping(value = "/activitiApprove/selectSelfTask",method = RequestMethod.GET)
-    String selectSelfTask(@RequestParam("uid")String uid);
+    @RequestMapping(value = "/activitiApprove/selectSelfLCTask",method = RequestMethod.GET)
+    String selectSelfLCTask(@RequestParam("uid")String uid);
+    @RequestMapping(value = "/activitiApprove/selectSelfTWTask",method = RequestMethod.GET)
+    String selectSelfTWTask(@RequestParam("uid")String uid);
+    @RequestMapping(value = "/activitiApprove/selectSelfLPTask",method = RequestMethod.GET)
+    String selectSelfLPTask(@RequestParam("uid")String uid);
+    @RequestMapping(value = "/activitiApprove/aduitback",method = RequestMethod.GET)
+    String aduitback(@RequestParam("taskId")String taskId);
+    @RequestMapping(value = "/activitiApprove/aduitok",method = RequestMethod.GET)
+    String aduitok(@RequestParam("taskId")String taskId,@RequestParam("uid")Integer uid);
+    @RequestMapping(value = "/activitiApprove/goComplete",method = RequestMethod.GET)
+    String goComplete(@RequestParam("taskId") String taskId); //取消申请按钮
+    @RequestMapping(value = "/activitiApprove/applyAgain",method = RequestMethod.GET)
+    String applyAgain(@RequestParam("taskId")String taskId); //重新申请按钮
+    @RequestMapping(value = "/activitiApprove/selectRunningTask",method = RequestMethod.GET)
+    String selectRunningTask(@RequestParam("uid")Integer uid);  //查询该用户提交申请中正在进行审批的流程
+    @RequestMapping(value = "/activitiApprove/selectRunedTask",method = RequestMethod.GET)
+    String selectRunedTask(@RequestParam("uid")Integer uid); //查询该用户提交申请中已经运行结束的流程
 }

@@ -20,6 +20,7 @@ public class ActMsgPersonnel implements Serializable {
     @GeneratedValue(strategy=GenerationType.AUTO)//主键生成策略,默认情况下，JPA 自动选择一个最适合底层数据库的主键生成策略,MySQL 对应 auto increment
     private Integer id;
     private Integer uid; //关联的用户id
+    private String proId;//流程实例id
     //离境
     private String name; //姓名
     private String post; //职位,离岗职位,上岗职位
@@ -48,5 +49,7 @@ public class ActMsgPersonnel implements Serializable {
     @Temporal( TemporalType.TIMESTAMP )
     private Date createTime; //任务创建时间
 
-
+    private Integer status;  //审批状态 0为正在审批中,1为审批已结束
+    @Temporal( TemporalType.TIMESTAMP )
+    private Date overTime; //任务结束时间
 }

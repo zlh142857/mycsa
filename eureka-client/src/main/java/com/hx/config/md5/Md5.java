@@ -5,8 +5,11 @@ package com.hx.config.md5;/*
  *@功能:
  */
 
+import org.apache.shiro.crypto.hash.SimpleHash;
+import org.apache.shiro.util.ByteSource;
+
 public class Md5 {
-    /*public static String getPassword(String username,String password,String salt){
+    public static String getPassword(String username,String password,String salt){
         int hashIterations =2;
         String algorithmName="md5";
         String newPassword = new SimpleHash(
@@ -16,5 +19,5 @@ public class Md5 {
                 hashIterations
         ).toHex();
         return newPassword;
-    }*/
+    }
 }

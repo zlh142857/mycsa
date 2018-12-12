@@ -10,7 +10,6 @@ package com.hx.config;/*
 import com.hx.SysPermission;
 import com.hx.SysRole;
 import com.hx.UserInfo;
-import com.hx.feignService.UserInfoService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -55,28 +54,12 @@ authorizationInfo.setStringPermissions(stringPermissions);*/
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         UserInfo userInfo=(UserInfo)principalCollection.getPrimaryPrincipal();
-        //实际项目中，这里可以根据实际情况做缓存，如果不做，Shiro自己也是有时间间隔机制，2分钟内不会重复执行该方法
-        //权限单个添加;
-        // 或者按下面这样添加
-        //添加一个角色,不是配置意义上的添加,而是证明该用户拥有admin角色
-        //authorizationInfo.addRole("admin");
-        //添加权限
-        //authorizationInfo.addStringPermission("userInfo:query");
-        ///在认证成功之后返回.
-        //设置角色信息.
-        //支持 Set集合,
-        //用户的角色对应的所有权限，如果只使用角色定义访问权限，下面的四行可以不要
-       /* List<SysRole> roleList=userInfo.getRoleList();
-        for (SysRole role : roleList) {
-            authorizationInfo.addStringPermissions(role.getPermissions());
-        }*/
         for(SysRole role:userInfo.getRoleList()){
             authorizationInfo.addRole(role.getRole());
             for(SysPermission p:role.getPermissions()){
                 authorizationInfo.addStringPermission(p.getPermission());
             }
         }
-        //authorizationInfo.setStringPermissions(getStringPermissions(userInfo.getRoleList()));
         return authorizationInfo;
     }
     /**
@@ -92,50 +75,17 @@ authorizationInfo.setStringPermissions(stringPermissions);*/
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         //获取用户的输入的账号.
         String username = (String)authenticationToken.getPrincipal();
-        //通过username从数据库中查找 User对象，如果找到，没找到.
-        //实际项目中，这里可以根据实际情况做缓存，如果不做，Shiro自己也是有时间间隔机制，2分钟内不会重复执行该方法
         UserInfo userInfo = userInfoService.findByUsername(username);
         if(userInfo == null){
             return null;
         }
-        /*
-         * 获取权限信息:这里没有进行实现，
-         * 请自行根据UserInfo,Role,Permission进行实现；
-         * 获取之后可以在前端for循环显示所有链接;
-         */
-        //userInfo.setPermissions(userService.findPermissions(user));
-        //账号判断;
-        //加密方式;
-        //交给AuthenticatingRealm使用CredentialsMatcher进行密码匹配，如果觉得人家的不好可以自定义实现
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
                 userInfo, //用户名
                 userInfo.getPassword(), //密码
                 ByteSource.Util.bytes(userInfo.getCredentialsSalt()),//salt=username+salt
                 getName()  //realm name
         );
-        //明文: 若存在，将此用户存放到登录认证info中，无需自己做密码对比，Shiro会为我们进行密码对比校验
-       /* SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
-             userInfo, //用户名
-             userInfo.getPassword(), //密码
-             getName()  //realm name
-        );*/
         return authenticationInfo;
     }
-
-    /**
-     * 将权限对象中的权限code取出.
-     * @param permissions
-     * @return
-     * */
-    /*public Set<String> getStringPermissions(Set<SysPermission> permissions){
-        Set<String> stringPermissions = new HashSet<String>();
-        if(permissions != null){
-            for(SysPermission p : permissions) {
-            stringPermissions.add(p.getPermission());
-            }
-        }
-        return stringPermissions;
-    }*/
-
 
 }

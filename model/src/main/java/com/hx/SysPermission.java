@@ -7,11 +7,14 @@ package com.hx;/*
 
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
+@Data
 public class SysPermission implements Serializable {
     private static final long serialVersionUID = -3888124148318399177L;
     @Id
@@ -32,94 +35,9 @@ public class SysPermission implements Serializable {
 
     private Boolean available = Boolean.FALSE;
 
-    @ManyToMany
+    /*@ManyToMany
     @JoinTable(name="sys_role_permission",joinColumns={@JoinColumn(name="id")},inverseJoinColumns={@JoinColumn(name="permission_id")})
-    private List<SysRole> roles;
+    private List<SysRole> roles;*/
 
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getResourceType() {
-        return resourceType;
-    }
-
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getPermission() {
-        return permission;
-    }
-
-    public void setPermission(String permission) {
-        this.permission = permission;
-    }
-
-    public Long getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
-    }
-
-    public Boolean getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(Boolean available) {
-        this.available = available;
-    }
-
-    public List<SysRole> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<SysRole> roles) {
-        this.roles = roles;
-    }
-
-    public String getIndex() {
-        return index;
-    }
-
-    public void setIndex(String index) {
-        this.index = index;
-    }
-
-    @Override
-    public String toString() {
-        return "SysPermission{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", resourceType='" + resourceType + '\'' +
-                ", url='" + url + '\'' +
-                ", permission='" + permission + '\'' +
-                ", parentId=" + parentId +
-                ", index='" + index + '\'' +
-                ", available=" + available +
-                ", roles=" + roles +
-                '}';
-    }
 }

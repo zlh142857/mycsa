@@ -1,9 +1,10 @@
 package com.hx.service;/*
  */
 
-import com.hx.UserInfo;
+
+import java.util.Map;
 
 public interface UserInfoService {
-    UserInfo findByUsername(String username);
-    void save(UserInfo userInfo);
+    Map<String,Object> ajaxLogin(String name, String password);
+    void regisetUser();
 }

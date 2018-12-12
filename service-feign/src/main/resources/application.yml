@@ -21,32 +21,6 @@ spring:
     check-process-definitions: true
     process-definition-location-prefix: classpath:/processes/
     history-level: full
-  #datasource
-  datasource:
-    url : jdbc:mysql://172.16.107.205:3306/shiro?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
-    username : root
-    password : root
-    driverClassName : com.mysql.jdbc.Driver
-    max-active: 20
-    max-idle: 8
-    min-idle: 8
-    initial-size: 10
-  jpa:
-    database : MYSQL
-  # Show or not log for each sql query
-    show-sql : true
-  # Hibernate ddl auto (create, create-drop, update)
-    hibernate:
-      ddl-auto : update
-  # Naming strategy
-  #[org.hibernate.cfg.ImprovedNamingStrategy | org.hibernate.cfg.DefaultNamingStrategy]
-      naming-strategy : org.hibernate.cfg.DefaultNamingStrategy
-  # stripped before adding them to the entity manager)
-  properties:
-    hibernate:
-      dialect : org.hibernate.dialect.MySQL5Dialect
-  #classpath目录下的WEB-INF文件夹内容修改不重启
-      exclude: WEB-INF/**
   #redis:
     #shiro:
       #host: 127.0.0.1

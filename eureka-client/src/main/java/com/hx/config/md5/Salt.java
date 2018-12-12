@@ -5,9 +5,12 @@ package com.hx.config.md5;/*
  *@功能:
  */
 
+import org.apache.shiro.crypto.RandomNumberGenerator;
+import org.apache.shiro.crypto.SecureRandomNumberGenerator;
+
 public class Salt {
-    /*public static String getSalt(){
+    public static String getSalt(){
         RandomNumberGenerator randomNumberGenerator =new SecureRandomNumberGenerator();
         return randomNumberGenerator.nextBytes().toHex();
-    }*/
+    }
 }

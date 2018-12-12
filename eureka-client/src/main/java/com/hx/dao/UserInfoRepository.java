@@ -10,17 +10,13 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 
-@Transactional
 @Repository
-public interface UserInfoRepository extends CrudRepository<UserInfo, Long> {
-    UserInfo findByUsername(String username);
+@Transactional
+public interface UserInfoRepository extends CrudRepository<UserInfo, Integer> {
     @Query(value="SELECT uid FROM user_info WHERE dept_code=:deptCode AND personnel_name=:deptLeader",nativeQuery = true)
     Long findUserByDeptCodeAndDeptLeader(@Param( "deptCode" ) Integer deptCode,@Param( "deptLeader" ) String deptLeader);
     @Query(value="SELECT r.role as role FROM sys_user_role as ur,sys_role as r WHERE ur.role_id=r.id and ur.uid=:uid ",nativeQuery = true)
     String findRoleByUid(@Param( "uid" ) Integer uid);
     @Query(value="SELECT ur.uid as uid FROM sys_user_role as ur,sys_role as r WHERE ur.role_id=r.id and r.role like '%机要处领导%' ",nativeQuery = true)
     Integer findUidByRoleDept();
-    /**通过username查找用户信息;*/
-    /*@Query(value="SELECT uid,name,username,password,salt,state FROM user_info WHERE username=:username",nativeQuery = true)
-    UserInfo findByUsername(@Param("username") String username);*/
 }

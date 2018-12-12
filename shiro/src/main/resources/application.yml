@@ -1,8 +1,11 @@
 spring:
-  redis:
-      shiro:
-      host: 127.0.0.1
-      port: 6379
-      timeout: 0
-      password: 142857
-
+  #datasource
+  datasource:
+    url : jdbc:mysql://172.16.107.205:3306/shiro?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username : root
+    password : root
+    driverClassName : com.mysql.jdbc.Driver
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+    initial-size: 10

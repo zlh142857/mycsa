@@ -17,6 +17,7 @@ import java.util.List;
 public class UserInfo implements Serializable {
     private static final long serialVersionUID = 2572022766469712025L;
     @Id
+    @Column(unique=true)
     @GeneratedValue(strategy=GenerationType.AUTO)//主键生成策略,默认情况下，JPA 自动选择一个最适合底层数据库的主键生成策略,MySQL 对应 auto increment
     private Integer uid;//用户id;
 

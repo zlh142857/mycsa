@@ -8,5 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "eureka-client")
 public interface DefaulService {
     @RequestMapping(value="/unauth",method = RequestMethod.GET)
-    String login(@RequestParam(value = "userinfo")String userinfo);
+    String login();
+    /*@RequestMapping(value="/unauth",method = RequestMethod.GET)
+    String login(@RequestParam(value = "userinfo")String userinfo);*/
 }

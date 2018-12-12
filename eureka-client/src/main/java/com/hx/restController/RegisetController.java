@@ -5,27 +5,26 @@ package com.hx.restController;/*
  *@功能:
  */
 
+import com.alibaba.fastjson.JSONObject;
+import com.hx.UserInfo;
+import com.hx.config.md5.Md5;
+import com.hx.config.md5.Salt;
+import com.hx.service.UserInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value="/toRegiset")
 public class RegisetController {
-    /*@Autowired
+    @Autowired
     private UserInfoService userInfoService;
-    @RequestMapping(value="/regisetUser")
+    @GetMapping(value="/regisetUser")
     @ResponseBody
     public String regisetUser(){
-        String username="囧囧";
-        String password="123456";
-        String salt=Salt.getSalt();
-        String npassword=Md5.getPassword( username,password,salt );
-        UserInfo userInfo=new UserInfo();
-        userInfo.setName( "弓长张" );
-        userInfo.setPassword( npassword );
-        userInfo.setSalt( salt );
-        userInfo.setUsername( username );
-        userInfoService.save(userInfo);
+        userInfoService.regisetUser();
         return JSONObject.toJSONString("注册成功");
-    }*/
+    }
 }

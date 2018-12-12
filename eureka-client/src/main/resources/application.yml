@@ -46,10 +46,16 @@ spring:
     history-level: full
     #full 保存历史记录最高级别,none不保存历史记录
   # 显示后台处理的SQL语句
+  redis:
+    shiro:
+      host: 127.0.0.1
+      port: 6379
+      timeout: 0
+      password: 142857
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8860/eureka/
 logging.config:
   classpath: log4j2.xml
-logging.level.org.springframework: info
+logging.level.org.springframework: FATAL

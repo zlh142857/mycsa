@@ -6,6 +6,7 @@ package com.hx.Activiti;/*
  */
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -26,8 +27,10 @@ public class ActMsgPersonnel implements Serializable {
     private String post; //职位,离岗职位,上岗职位
     private String reason;  //离境原因,离岗原因
     @Temporal( TemporalType.TIMESTAMP )
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date lcTime;  //出国时间
     @Temporal( TemporalType.TIMESTAMP )
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date backTime; //回国时间
     private String goWhere; //去往地点
     private String dept; //所在部门
@@ -35,12 +38,16 @@ public class ActMsgPersonnel implements Serializable {
     //上岗
     private String workContent; //工作内容
     @Temporal( TemporalType.TIMESTAMP )
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date toWorkTime; //上岗时间
     @Temporal( TemporalType.TIMESTAMP )
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birTime;  //出生日期
     private String deptLeader;  //部门领导
     private Integer isMiCode;  //是否涉密编号
     //离职
+    @Temporal( TemporalType.TIMESTAMP )
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date lPostTime;  //离职时间
 
     private String taskId;  //任务id

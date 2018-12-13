@@ -6,6 +6,7 @@ package com.hx.exam;/*
  */
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -20,6 +21,7 @@ public class LeakCase {
     private String caseTitle;
     private String caseContent;
     @Temporal( TemporalType.TIMESTAMP )
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date caseTime;
     @Temporal( TemporalType.TIMESTAMP )
     private Date createTime;

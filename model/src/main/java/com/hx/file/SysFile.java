@@ -6,6 +6,7 @@ package com.hx.file;/*
  */
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -27,6 +28,7 @@ public class SysFile implements Serializable {
     private Integer deptId; //发送部门id
     private Integer papersSecretLevel; //公文密级
     @Temporal( TemporalType.TIMESTAMP )
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date receiveTime; //接收文件时间
     @Temporal( TemporalType.TIMESTAMP )
     private Date updateTime;

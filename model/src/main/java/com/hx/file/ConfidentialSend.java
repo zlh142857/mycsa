@@ -31,6 +31,7 @@ public class ConfidentialSend implements Serializable {
     private Integer papersSecretLevel; //公文密级0绝密 1机密 2秘密
     private String confidential; //定密人
     private String createUser; //发送人
+    @Temporal( TemporalType.TIMESTAMP )
     private Date createTime; //创建时间
     private Integer delFlag; //删除标识0正常  1删除
 }

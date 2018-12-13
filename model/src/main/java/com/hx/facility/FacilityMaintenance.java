@@ -6,6 +6,7 @@ package com.hx.facility;/*
  */
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -28,6 +29,7 @@ public class FacilityMaintenance implements Serializable {
 
     private String updateUser;
     @Temporal( TemporalType.TIMESTAMP )
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date maintenanceTime; //维修时间
     @Temporal( TemporalType.TIMESTAMP )
     private Date createTime; //创建时间

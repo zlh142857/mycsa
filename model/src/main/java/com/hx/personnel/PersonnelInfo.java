@@ -6,6 +6,7 @@ package com.hx.personnel;/*
  */
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -21,6 +22,7 @@ public class PersonnelInfo implements Serializable {
     @GeneratedValue(strategy=GenerationType.AUTO)//主键生成策略,默认情况下，JPA 自动选择一个最适合底层数据库的主键生成策略,MySQL 对应 auto increment
     private Integer perId;//人员id;
     private String perName;  //人员姓名
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal( TemporalType.TIMESTAMP )
     private Date birTime;  //出生日期
     private Integer sexCode; //性别

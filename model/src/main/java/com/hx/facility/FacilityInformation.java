@@ -6,6 +6,7 @@ package com.hx.facility;/*
  */
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -48,6 +49,7 @@ public class FacilityInformation implements Serializable {
 
     private Integer facilityStatusCode; //设备状态 设备状态 0 正常使用 1登记中 2维修中 3清退中 4暂无使用
     @Temporal( TemporalType.TIMESTAMP )
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date firstRegisterTime; //设备初次登记时间
 
     private Integer isMiCode; //是否涉密 0不涉密 1涉密

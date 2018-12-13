@@ -30,12 +30,13 @@ public class DictServiceImpl implements DictService {
             //直接返回list集合前端不能操作,所以单独把对象提出来
             int size=list.size();
             for(int i=0;i<size;i++){
-                map.put( "dict"+i,list.get( i ) );
+                map.put( "key"+i,list.get( i ).getDictSort() );
+                map.put( "value"+i,list.get( i ).getDictLabel() );
             }
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;
@@ -49,12 +50,13 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.MI_JI );
             int size=list.size();
             for(int i=0;i<size;i++){
-                map.put( "dict"+i,list.get( i ) );
+                map.put( "key"+i,list.get( i ).getDictSort() );
+                map.put( "value"+i,list.get( i ).getDictLabel() );
             }
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;
@@ -68,12 +70,13 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.IS_MI );
             int size=list.size();
             for(int i=0;i<size;i++){
-                map.put( "dict"+i,list.get( i ) );
+                map.put( "key"+i,list.get( i ).getDictSort() );
+                map.put( "value"+i,list.get( i ).getDictLabel() );
             }
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;
@@ -87,12 +90,13 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.FILE_LEVEL );
             int size=list.size();
             for(int i=0;i<size;i++){
-                map.put( "dict"+i,list.get( i ) );
+                map.put( "key"+i,list.get( i ).getDictSort() );
+                map.put( "value"+i,list.get( i ).getDictLabel() );
             }
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;
@@ -106,12 +110,13 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.IS_READ);
             int size=list.size();
             for(int i=0;i<size;i++){
-                map.put( "dict"+i,list.get( i ) );
+                map.put( "key"+i,list.get( i ).getDictSort() );
+                map.put( "value"+i,list.get( i ).getDictLabel() );
             }
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;
@@ -125,12 +130,13 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.IS_JI_YAO );
             int size=list.size();
             for(int i=0;i<size;i++){
-                map.put( "dict"+i,list.get( i ) );
+                map.put( "key"+i,list.get( i ).getDictSort() );
+                map.put( "value"+i,list.get( i ).getDictLabel() );
             }
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;
@@ -144,12 +150,13 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.IMPORTANT);
             int size=list.size();
             for(int i=0;i<size;i++){
-                map.put( "dict"+i,list.get( i ) );
+                map.put( "key"+i,list.get( i ).getDictSort() );
+                map.put( "value"+i,list.get( i ).getDictLabel() );
             }
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;
@@ -163,12 +170,13 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.COURT_TYPE);
             int size=list.size();
             for(int i=0;i<size;i++){
-                map.put( "dict"+i,list.get( i ) );
+                map.put( "key"+i,list.get( i ).getDictSort() );
+                map.put( "value"+i,list.get( i ).getDictLabel() );
             }
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;
@@ -182,12 +190,13 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.DEPT_CODE);
             int size=list.size();
             for(int i=0;i<size;i++){
-                map.put( "dict"+i,list.get( i ) );
+                map.put( "key"+i,list.get( i ).getDictSort() );
+                map.put( "value"+i,list.get( i ).getDictLabel() );
             }
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;
@@ -201,12 +210,13 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.WORK_STATUS);
             int size=list.size();
             for(int i=0;i<size;i++){
-                map.put( "dict"+i,list.get( i ) );
+                map.put( "key"+i,list.get( i ).getDictSort() );
+                map.put( "value"+i,list.get( i ).getDictLabel() );
             }
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;
@@ -220,12 +230,13 @@ public class DictServiceImpl implements DictService {
             List<SysDictData> list= codeRepository.find(DictCode.Facility_Status_Code);
             int size=list.size();
             for(int i=0;i<size;i++){
-                map.put( "dict"+i,list.get( i ) );
+                map.put( "key"+i,list.get( i ).getDictSort() );
+                map.put( "value"+i,list.get( i ).getDictLabel() );
             }
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;

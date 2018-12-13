@@ -23,6 +23,7 @@ public class Video implements Serializable {
     private Integer video_type; //视频重要程度0 一般,1重要,2很重要
     private String video_url; //视频存储地址
     private String remark; //视频描述
+    @Temporal( TemporalType.TIMESTAMP )
     private Date create_time;
 
 }

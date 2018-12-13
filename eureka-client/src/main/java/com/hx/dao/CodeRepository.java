@@ -19,6 +19,6 @@ import java.util.List;
 public interface CodeRepository extends CrudRepository<SysDictData, Integer> {
     @Query(value = "SELECT dict_label FROM sys_dict_data WHERE dict_id=:dictId AND dict_sort=:dictSort limit 1",nativeQuery = true)
     String findByDictIdAndDictSort(@Param( "dictId" ) Integer dictId, @Param( "dictSort" ) Integer dictSort);
-    @Query(value = "SELECT dict_label,dict_sort FROM sys_dict_data WHERE dict_id=:code",nativeQuery = true)
+    @Query(value = "SELECT dictLabel,dictSort FROM SysDictData WHERE dictId=:code")
     List<SysDictData> find(@Param( "code" ) Integer code);
 }

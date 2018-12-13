@@ -9,10 +9,7 @@ import com.hx.facility.FacilityInformation;
 import com.hx.service.EquipmentInfoAService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/equipmentInfo")
@@ -28,7 +25,7 @@ public class EquipmentInfo {
      * @auther: 张立恒
      * @date: 2018/12/6 14:13
      */
-    @RequestMapping(value = "/equipmentList",method = RequestMethod.GET)
+    @GetMapping(value = "/equipmentList")
     @ResponseBody
     @HystrixCommand(fallbackMethod ="equipmentListError")
     public String queryEquipmentList(Integer page,Integer size){

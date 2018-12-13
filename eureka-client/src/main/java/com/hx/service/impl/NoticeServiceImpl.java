@@ -40,8 +40,7 @@ public class NoticeServiceImpl implements NoticeService {
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            Map<String,Object> map=new HashMap<>(  );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );            Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;
         }
@@ -61,8 +60,7 @@ public class NoticeServiceImpl implements NoticeService {
             }
             return insertMsg;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            String insertMsg="未能成功发布";
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );            String insertMsg="未能成功发布";
             return insertMsg;
         }
     }
@@ -81,8 +79,7 @@ public class NoticeServiceImpl implements NoticeService {
             }
             return delMsg;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            String delMsg="未能成功删除";
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );            String delMsg="未能成功删除";
             return delMsg;
         }
     }

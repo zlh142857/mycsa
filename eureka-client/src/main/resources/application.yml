@@ -56,6 +56,14 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8860/eureka/
+    #下面配置为健康监测机制
+    #healthcheck:
+      #enabled : true
+    #instance:
+      # 每隔10s发送一次心跳
+      #lease-renewal-interval-in-seconds: 10
+      # 告知服务端30秒还未收到心跳的话，就将该服务移除列表
+      #lease-expiration-duration-in-seconds: 30
 logging.config:
   classpath: log4j2.xml
 logging.level.org.springframework: FATAL

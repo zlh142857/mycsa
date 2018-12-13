@@ -21,5 +21,10 @@ zuul:
   host:
     maxTotalConnections: 1000
     maxPerRouteConnections: 1000
+    #默认1000
+    socket-timeout-millis: 2000
+    #默认2000
+    connect-timeout-millis: 4000
   semaphore:
     max-semaphores: 5000
+

@@ -36,8 +36,7 @@ public class ExamServiceImpl implements ExamService {
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            Map<String,Object> map=new HashMap<>(  );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );            Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","获取考题失败");
             return map;
         }
@@ -59,8 +58,7 @@ public class ExamServiceImpl implements ExamService {
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return insertMsg;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            String insertMsg="录入失败,请重新保存";
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );            String insertMsg="录入失败,请重新保存";
             return insertMsg;
         }
     }
@@ -79,8 +77,7 @@ public class ExamServiceImpl implements ExamService {
             }
             return insertMsg;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            String insertMsg="录入失败,请重新录入";
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );            String insertMsg="录入失败,请重新录入";
             return insertMsg;
         }
     }

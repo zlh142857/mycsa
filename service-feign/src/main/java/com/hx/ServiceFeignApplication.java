@@ -1,5 +1,6 @@
 package com.hx;
 
+import feign.Retryer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -44,6 +45,10 @@ public class ServiceFeignApplication {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", buildConfig()); // 4
         return new CorsFilter(source);
+    }
+    @Bean
+    Retryer feignRetryer() {
+        return  new Retryer.Default();
     }
 
 }

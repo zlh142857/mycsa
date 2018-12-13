@@ -59,7 +59,8 @@ public class EquipmentInfoAServiceImpl implements EquipmentInfoAService {
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );            Map<String,Object> map=new HashMap<>(  );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;
         }
@@ -80,7 +81,8 @@ public class EquipmentInfoAServiceImpl implements EquipmentInfoAService {
             }
             return insertMsg;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );            String insertMsg="录入失败,请重新录入";
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            String insertMsg="录入失败,请重新录入";
             return insertMsg;
         }
     }

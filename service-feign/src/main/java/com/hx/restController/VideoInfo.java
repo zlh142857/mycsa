@@ -25,4 +25,6 @@ public class VideoInfo {
     public String hiError() {
         return "hi,sorry,error!";
     }
+
+    //视频删除操作进行服务降级,加熔断器
 }

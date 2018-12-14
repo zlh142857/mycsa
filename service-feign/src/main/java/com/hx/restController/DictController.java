@@ -94,4 +94,6 @@ public class DictController {
         String dictList=dictService.queryFacStatusAndSort();
         return dictList;
     }
+
+    //删除字典数据,进行服务降级
 }

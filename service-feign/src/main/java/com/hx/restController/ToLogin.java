@@ -25,12 +25,8 @@ public class ToLogin {
      */
     @RequestMapping(value = "/ajaxLogin",method = RequestMethod.POST)
     @ResponseBody
-    @HystrixCommand(fallbackMethod ="loginError")
     public String ajaxLogin(@RequestParam("name")String name, @RequestParam("password")String password) {
         return toLoginService.ajaxLogin(name,password);
-    }
-    public String loginError(@RequestParam("name")String name, @RequestParam("password")String password) {
-        return JSONObject.toJSONString( "服务未响应" );
     }
 
 }

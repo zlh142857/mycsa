@@ -19,7 +19,6 @@ public class DictController {
     @Autowired
     private DictService dictService;
     @RequestMapping(value = "/querySexNameAndSort",method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod ="queryDictDataNameAndSortError")
     @ResponseBody
     public String querySexNameAndSort(){
         String dictList=dictService.querySexNameAndSort();
@@ -27,7 +26,6 @@ public class DictController {
     }
 
     @RequestMapping(value = "/queryMiNameAndSort",method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod ="queryDictDataNameAndSortError")
     @ResponseBody
     public String queryMiNameAndSort(){
         String dictList=dictService.queryMiNameAndSort();
@@ -35,7 +33,6 @@ public class DictController {
     }
 
     @RequestMapping(value = "/queryIsMiNameAndSort",method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod ="queryDictDataNameAndSortError")
     @ResponseBody
     public String queryIsMiNameAndSort(){
         String dictList=dictService.queryIsMiNameAndSort();
@@ -43,7 +40,6 @@ public class DictController {
     }
 
     @RequestMapping(value = "/queryFileLevelNameAndSort",method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod ="queryDictDataNameAndSortError")
     @ResponseBody
     public String queryFileLevelNameAndSort(){
         String dictList=dictService.queryFileLevelNameAndSort();
@@ -51,7 +47,6 @@ public class DictController {
     }
 
     @RequestMapping(value = "/queryIsReadNameAndSort",method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod ="queryDictDataNameAndSortError")
     @ResponseBody
     public String queryIsReadNameAndSort(){
         String dictList=dictService.queryIsReadNameAndSort();
@@ -59,7 +54,6 @@ public class DictController {
     }
 
     @RequestMapping(value = "/queryIsJiyaoNameAndSort",method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod ="queryDictDataNameAndSortError")
     @ResponseBody
     public String queryIsJiyaoNameAndSort(){
         String dictList=dictService.queryIsJiyaoNameAndSort();
@@ -67,7 +61,6 @@ public class DictController {
     }
 
     @RequestMapping(value = "/queryImportantNameAndSort",method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod ="queryDictDataNameAndSortError")
     @ResponseBody
     public String queryImportantNameAndSort(){
         String dictList=dictService.queryImportantNameAndSort();
@@ -75,7 +68,6 @@ public class DictController {
     }
 
     @RequestMapping(value = "/queryCourtTypeNameAndSort",method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod ="queryDictDataNameAndSortError")
     @ResponseBody
     public String queryCourtTypeNameAndSort(){
         String dictList=dictService.queryCourtTypeNameAndSort();
@@ -83,7 +75,6 @@ public class DictController {
     }
 
     @RequestMapping(value = "/queryDeptNameAndSort",method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod ="queryDictDataNameAndSortError")
     @ResponseBody
     public String queryDeptNameAndSort(){
         String dictList=dictService.queryDeptNameAndSort();
@@ -91,7 +82,6 @@ public class DictController {
     }
 
     @RequestMapping(value = "/queryWorkStatusAndSort",method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod ="queryDictDataNameAndSortError")
     @ResponseBody
     public String queryWorkStatusAndSort(){
         String dictList=dictService.queryWorkStatusAndSort();
@@ -99,14 +89,9 @@ public class DictController {
     }
 
     @RequestMapping(value = "/queryFacStatusAndSort",method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod ="queryDictDataNameAndSortError")
     @ResponseBody
     public String queryFacStatusAndSort(){
         String dictList=dictService.queryFacStatusAndSort();
         return dictList;
-    }
-
-    public String queryDictDataNameAndSortError() {
-        return "查询失败!";
     }
 }

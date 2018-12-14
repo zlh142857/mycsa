@@ -31,7 +31,6 @@ public class NoticeController {
     }
 
     @RequestMapping(value = "/insertNotice",method = RequestMethod.POST)
-    @HystrixCommand(fallbackMethod ="insertNoticeError")
     @ResponseBody
     public String insertNotice(Notice notice){
         String insertMsg=noticeService.insertNotice(notice);
@@ -43,14 +42,10 @@ public class NoticeController {
 
 
     @RequestMapping(value = "/delNotice",method = RequestMethod.POST)
-    @HystrixCommand(fallbackMethod ="delNoticeError")
     @ResponseBody
     public String delNotice(Integer noticeId){
         String delMsg=noticeService.delNotice(noticeId);
         return delMsg;
-    }
-    public String delNoticeError(Integer noticeId) {
-        return "服务未响应";
     }
 
 }

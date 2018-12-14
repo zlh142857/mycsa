@@ -27,12 +27,8 @@ public class EquipmentInfo {
      */
     @GetMapping(value = "/equipmentList")
     @ResponseBody
-    @HystrixCommand(fallbackMethod ="equipmentListError")
     public String queryEquipmentList(Integer page,Integer size){
         return equipmentInfoAService.queryEquipmentList(page,size);
-    }
-    public String equipmentListError(Integer page,Integer size) {
-        return "服务未响应";
     }
     /**
      *
@@ -45,11 +41,7 @@ public class EquipmentInfo {
      */
     @RequestMapping(value = "/insertEquipment",method = RequestMethod.POST)
     @ResponseBody
-    @HystrixCommand(fallbackMethod ="insertEquipmentError")
     public String insertEquipment(@RequestBody FacilityInformation facilityInformation){
         return equipmentInfoAService.insertEquipment(facilityInformation);
-    }
-    public String insertEquipmentError(@RequestBody FacilityInformation facilityInformation) {
-        return "服务未响应";
     }
 }

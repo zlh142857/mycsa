@@ -32,31 +32,17 @@ public class PersonnelInfoController {
      * @date: 2018/12/6 13:37
      */
     @RequestMapping(value = "/personnelList",method = RequestMethod.GET)
-    @HystrixCommand(fallbackMethod ="queryPersonnelListError")
     @ResponseBody
     public String queryPersonnelList(Integer page,Integer size){
         String personnelList=personnelInfoService.queryPersonnelList(page,size);
         return personnelList;
     }
-    public String queryPersonnelListError(Integer page,Integer size) {
-        return "服务未响应";
-    }
 
     @PostMapping(value = "/insertPersonnel")
-    @HystrixCommand(fallbackMethod ="insertPerError")
     @ResponseBody
     public String insertPer(@RequestBody PersonnelInfo personnelInfo){
-        try{
-            String insertMsg=personnelInfoService.insertPer(personnelInfo);
-            return insertMsg;
-        }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            return throwable.toString();
-        }
-
-    }
-    public String insertPerError(@RequestBody PersonnelInfo personnelInfo) {
-        return "服务未响应";
+        String insertMsg=personnelInfoService.insertPer(personnelInfo);
+        return insertMsg;
     }
 
 

@@ -5,18 +5,21 @@ package com.hx.restController;/*
  *@功能:人员信息库crud
  */
 
+import com.alibaba.fastjson.JSONObject;
 import com.hx.personnel.PersonnelInfo;
 import com.hx.service.PersonnelInfoService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/personnelInfoController")
 public class PersonnelInfoController {
+    private Logger logger=LoggerFactory.getLogger( this.getClass() );
     @Autowired
     private PersonnelInfoService personnelInfoService;
     /**
@@ -39,14 +42,20 @@ public class PersonnelInfoController {
         return "服务未响应";
     }
 
-    @RequestMapping(value = "/insertPersonnel",method = RequestMethod.POST)
-    @HystrixCommand(fallbackMethod ="insertPersonnelError")
+    @PostMapping(value = "/insertPersonnel")
+    @HystrixCommand(fallbackMethod ="insertPerError")
     @ResponseBody
-    public String insertPersonnel(PersonnelInfo personnelInfo){
-        String insertMsg=personnelInfoService.insertPersonnel(personnelInfo);
-        return insertMsg;
+    public String insertPer(@RequestBody PersonnelInfo personnelInfo){
+        try{
+            String insertMsg=personnelInfoService.insertPer(personnelInfo);
+            return insertMsg;
+        }catch (Throwable throwable){
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
+            return throwable.toString();
+        }
+
     }
-    public String insertPersonnelError(PersonnelInfo personnelInfo) {
+    public String insertPerError(@RequestBody PersonnelInfo personnelInfo) {
         return "服务未响应";
     }
 

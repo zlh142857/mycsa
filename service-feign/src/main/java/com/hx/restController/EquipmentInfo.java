@@ -46,10 +46,10 @@ public class EquipmentInfo {
     @RequestMapping(value = "/insertEquipment",method = RequestMethod.POST)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="insertEquipmentError")
-    public String insertEquipment(FacilityInformation facilityInformation){
+    public String insertEquipment(@RequestBody FacilityInformation facilityInformation){
         return equipmentInfoAService.insertEquipment(facilityInformation);
     }
-    public String insertEquipmentError(FacilityInformation facilityInformation) {
+    public String insertEquipmentError(@RequestBody FacilityInformation facilityInformation) {
         return "服务未响应";
     }
 }

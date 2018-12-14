@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69b57276-89bc-4d23-aa76-51b7dbab3d4d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/CodeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/CodeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/ActivitiApproveServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/ActivitiApproveServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/PeosonnelInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/PeosonnelInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/DictServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/DictServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/EquipmentInfoAServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/EquipmentInfoAServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/NoticeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/NoticeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/hx/Activiti/ActMsgPersonnel.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/hx/Activiti/ActMsgPersonnel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/hx/SysDictData.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/hx/SysDictData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/hx/exam/LeakCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/hx/exam/LeakCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/hx/facility/FacilityClear.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/hx/facility/FacilityClear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/hx/facility/FacilityInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/hx/facility/FacilityInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/hx/facility/FacilityMaintenance.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/hx/facility/FacilityMaintenance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/hx/facility/FacilityUseInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/hx/facility/FacilityUseInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/hx/file/ConfidentialSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/hx/file/ConfidentialSend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/hx/file/SysFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/hx/file/SysFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/PersonnelInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/PersonnelInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client/src/test/java/com/hx/EurekaClientApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client/src/test/java/com/hx/EurekaClientApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/src/main/java/com/hx/personnel/PersonnelInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/hx/personnel/PersonnelInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/hx/video/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/hx/video/Video.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/PersonnelInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/PersonnelInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/PersonnelInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/PersonnelInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-feign/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
     <ignored path="$PROJECT_DIR$/eureka-client-schedule/target/" />
@@ -30,6 +25,7 @@
     <ignored path="$PROJECT_DIR$/model/target/" />
     <ignored path="$PROJECT_DIR$/shiro/target/" />
     <ignored path="$PROJECT_DIR$/activiti/target/" />
+    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +48,38 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CodeRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/CodeRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="23" column="79" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonnelInfoServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/PersonnelInfoServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="110" column="64" selection-start-line="110" selection-start-column="64" selection-end-line="110" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserInfoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/UserInfoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="83" column="34" lean-forward="true" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -67,10 +94,13 @@
       <find>map.put( &quot;dict&quot;+i,list.get( i ) );</find>
       <find>list.get( i )</find>
       <find>logger.error( &quot;类名:&quot;+this.getClass().getName()+&quot;;方法名:&quot;+Thread.currentThread().getStackTrace()[1].getMethodName()+&quot;报错行号:&quot;+Thread.currentThread().getStackTrace()[1].getLineNumber()+&quot;;异常&quot;+throwable.toString() );</find>
+      <find>find</find>
     </findStrings>
     <replaceStrings>
       <replace>sysDictData</replace>
       <replace>logger.error( &quot;类名:&quot;+this.getClass().getName()+&quot;;方法名:&quot;+Thread.currentThread().getStackTrace()[1].getMethodName()+&quot;;异常&quot;+throwable.toString() );</replace>
+      <replace>map.put( &quot;list&quot;,list );</replace>
+      <replace>findDictSortAndDictLabelByDictId</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -80,10 +110,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/ActivitiApproveService.java" />
-        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/ActivitiApproveController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/UserInfoService.java" />
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/config/md5/Md5.java" />
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/config/md5/Salt.java" />
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/RegisetController.java" />
@@ -100,7 +126,6 @@
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/UserInfoImpl.java" />
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/UserInfoRepository.java" />
         <option value="$PROJECT_DIR$/service-feign/pom.xml" />
-        <option value="$PROJECT_DIR$/eureka-client/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/EquipmentInfo.java" />
         <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/EquipmentInfo.java" />
         <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/EquipmentInfoAService.java" />
@@ -109,13 +134,7 @@
         <option value="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/ServiceFeignApplication.java" />
         <option value="$PROJECT_DIR$/service-gateway/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/service-feign/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/DictController.java" />
-        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/DictService.java" />
-        <option value="$PROJECT_DIR$/eureka-client/src/test/java/com/hx/EurekaClientApplicationTests.java" />
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/ExamServiceImpl.java" />
-        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/PersonnelInfoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/com/hx/personnel/PersonnelInfo.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/com/hx/Activiti/ActMsgPersonnel.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/com/hx/exam/LeakCase.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/com/hx/facility/FacilityClear.java" />
@@ -126,11 +145,22 @@
         <option value="$PROJECT_DIR$/model/src/main/java/com/hx/file/ConfidentialSend.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/com/hx/video/Video.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/com/hx/SysDictData.java" />
-        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/CodeRepository.java" />
-        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/DictServiceImpl.java" />
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/ActivitiApproveServiceImpl.java" />
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/EquipmentInfoAServiceImpl.java" />
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/NoticeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/eureka-client/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/DictService.java" />
+        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/DictController.java" />
+        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/DictServiceImpl.java" />
+        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/PersonnelInfoService.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/com/hx/personnel/PersonnelInfo.java" />
+        <option value="$PROJECT_DIR$/service-feign/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/PersonnelInfoService.java" />
+        <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/PersonnelInfoController.java" />
+        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/PeosonnelInfoController.java" />
+        <option value="$PROJECT_DIR$/eureka-client/src/test/java/com/hx/EurekaClientApplicationTests.java" />
+        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/CodeRepository.java" />
+        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/PersonnelInfoServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -234,6 +264,38 @@
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="mycsa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycsa" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycsa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycsa" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycsa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycsa" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycsa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycsa" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hx" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -277,6 +339,61 @@
       <recent name="D:\IdeaWorkspace\mycsa\shiro\src\main\java\com\hx\config" />
     </key>
   </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8863/personnelInfoController/insertPersonnel" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8863/equipmentInfo/insertEquipment" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8863/equipmentInfo/equipmentList" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8863/personnelInfoController/personnelList" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8862/personnelInfoController/insertPersonnel" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8863/dictController/queryMiNameAndSort" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8863/dictController/querySexNameAndSort" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -289,7 +406,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.EurekaClientApplication">
+  <component name="RunManager" selected="JUnit.EurekaClientApplicationTests.contextLoads">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -413,7 +530,9 @@
       <workItem from="1544597479629" duration="364000" />
       <workItem from="1544597864114" duration="9269000" />
       <workItem from="1544663120340" duration="7722000" />
-      <workItem from="1544679727690" duration="7127000" />
+      <workItem from="1544679727690" duration="11202000" />
+      <workItem from="1544691168603" duration="4248000" />
+      <workItem from="1544749443028" duration="5948000" />
     </task>
     <task id="LOCAL-00001" summary="提交人:张立恒 提交日期:2010/12/06">
       <created>1544087017577</created>
@@ -569,16 +688,50 @@
       <option name="project" value="LOCAL" />
       <updated>1544680884237</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="提交人:张立恒 提交日期:2018/12/13">
+      <created>1544686902970</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1544686902970</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EurekaClientApplicationTests_contextLoads - 2018.12.13 at 13h 45m 17s.xml">
+    <history-entry file="EurekaClientApplicationTests_contextLoads - 2018.12.14 at 10h 17m 41s.xml">
+      <configuration name="EurekaClientApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EurekaClientApplicationTests_contextLoads - 2018.12.14 at 10h 18m 13s.xml">
+      <configuration name="EurekaClientApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EurekaClientApplicationTests_contextLoads - 2018.12.14 at 10h 21m 09s.xml">
+      <configuration name="EurekaClientApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EurekaClientApplicationTests_contextLoads - 2018.12.14 at 10h 23m 29s.xml">
+      <configuration name="EurekaClientApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EurekaClientApplicationTests_contextLoads - 2018.12.14 at 10h 24m 20s.xml">
+      <configuration name="EurekaClientApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EurekaClientApplicationTests_contextLoads - 2018.12.14 at 10h 25m 03s.xml">
+      <configuration name="EurekaClientApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EurekaClientApplicationTests_contextLoads - 2018.12.14 at 10h 28m 14s.xml">
+      <configuration name="EurekaClientApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EurekaClientApplicationTests_contextLoads - 2018.12.14 at 10h 29m 11s.xml">
+      <configuration name="EurekaClientApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EurekaClientApplicationTests_contextLoads - 2018.12.14 at 10h 30m 33s.xml">
+      <configuration name="EurekaClientApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EurekaClientApplicationTests_contextLoads - 2018.12.14 at 10h 33m 24s.xml">
       <configuration name="EurekaClientApplicationTests.contextLoads" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94189000" />
+    <option name="totallyTimeSpent" value="108460000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -600,21 +753,21 @@
       <window_info id="Designer" order="2" />
       <window_info anchor="bottom" id="Tail" order="9" />
       <window_info anchor="right" id="Database" order="10" weight="0.32995737" />
-      <window_info id="Structure" order="1" sideWeight="0.50165564" side_tool="true" weight="0.16684435" />
+      <window_info id="Structure" order="1" sideWeight="0.50385207" side_tool="true" weight="0.15458423" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.4989339" weight="0.30552545" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.4989339" weight="0.3531961" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32936078" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Spring" order="13" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="14" weight="0.32936078" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49834436" visible="true" weight="0.15458423" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.5633803" />
+      <window_info anchor="bottom" id="Spring" order="12" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.32936078" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49614793" visible="true" weight="0.15778251" />
       <window_info anchor="right" id="Bean Validation" order="7" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="BPMNPalette" order="8" weight="0.07942431" />
@@ -647,171 +800,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/ToLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/UserInfoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1540">
-          <caret line="85" column="21" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/EurekaClientApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/EquipmentInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/EquipmentInfoAService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/EquipmentInfoAService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="12" column="53" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/EquipmentInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-server/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2750">
-          <caret line="125" column="19" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-server/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/config/utils/DictCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/ServiceFeignApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
-          <folding>
-            <element signature="e#1859#1860#0" expanded="true" />
-            <element signature="e#1904#1905#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-gateway/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/DictService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/test/java/com/hx/EurekaClientApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/LrealmMenageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/ExamServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="79" column="219" selection-start-line="79" selection-start-column="219" selection-end-line="79" selection-end-column="219" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/CaseInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/com/hx/personnel/PersonnelInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/com/hx/Activiti/ActMsgPersonnel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="717">
@@ -924,59 +916,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/PersonnelInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/PeosonnelInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/PersonnelInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="45" column="55" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/PersonnelInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/DictController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="23" column="45" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/com/hx/SysDictData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/CodeRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/DictServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="21" column="69" lean-forward="true" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -1001,10 +944,227 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/DictService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/DictService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/DictController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/UserInfoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/PersonnelInfoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/NoticeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/ExamRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/ExamInfoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/EquipmentInfoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/ActivitiRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/maven/repo/com/netflix/hystrix/hystrix-javanica/1.5.12/hystrix-javanica-1.5.12.jar!/com/netflix/hystrix/contrib/javanica/command/MethodExecutionAction.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/DictController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/EurekaClientApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/ServiceFeignApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1386" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/PersonnelInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/com/hx/personnel/PersonnelInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-229">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/ActivitiApproveController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/DictServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="53" column="153" lean-forward="true" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="153" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/RegisetController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/EquipmentInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/EquipmentInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/PersonnelInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/PersonnelInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/PeosonnelInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/test/java/com/hx/EurekaClientApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/CodeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="79" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/UserInfoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-506">
-          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+        <state relative-caret-position="432">
+          <caret line="83" column="34" lean-forward="true" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/PersonnelInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="110" column="64" selection-start-line="110" selection-start-column="64" selection-end-line="110" selection-end-column="64" />
         </state>
       </provider>
     </entry>

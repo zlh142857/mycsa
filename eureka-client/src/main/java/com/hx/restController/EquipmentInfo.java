@@ -27,7 +27,7 @@ public class EquipmentInfo {
 
     @PostMapping(value = "/insertEquipment")
     @ResponseBody
-    public String insertEquipment(FacilityInformation facilityInformation){
+    public String insertEquipment(@RequestBody FacilityInformation facilityInformation){
         String insertMsg=equipmentInfoService.insertEquipment(facilityInformation);
         return JSONObject.toJSONString(insertMsg);
     }

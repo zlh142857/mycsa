@@ -14,7 +14,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 @Service
@@ -23,22 +27,17 @@ public class DictServiceImpl implements DictService {
     @Autowired
     private CodeRepository codeRepository;
     @Override
-    public Map<String, Object> querySexNameAndSort() {
+    public Map<String,Object> querySexNameAndSort() {
         try{
             Map<String,Object> map=new HashMap<>(  );
-            List<SysDictData> list= codeRepository.find(DictCode.SEX );
-            //直接返回list集合前端不能操作,所以单独把对象提出来
-            int size=list.size();
-            for(int i=0;i<size;i++){
-                map.put( "key"+i,list.get( i ).getDictSort() );
-                map.put( "value"+i,list.get( i ).getDictLabel() );
-            }
+            List<SysDictData> list= codeRepository.findDictSortAndDictLabelByDictId(DictCode.SEX );
+            map.put( "list",list );
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
             logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             Map<String,Object> map=new HashMap<>(  );
-            map.put( "msg","查询失败");
+            map.put( "msg","查询失败" );
             return map;
         }
     }
@@ -46,13 +45,9 @@ public class DictServiceImpl implements DictService {
     @Override
     public Map<String, Object> queryMiNameAndSort() {
         try{
-            Map<String,Object> map=new HashMap<>(  );
-            List<SysDictData> list= codeRepository.find(DictCode.MI_JI );
-            int size=list.size();
-            for(int i=0;i<size;i++){
-                map.put( "key"+i,list.get( i ).getDictSort() );
-                map.put( "value"+i,list.get( i ).getDictLabel() );
-            }
+            Map<String,Object> map=new LinkedHashMap<>(  );
+            List<SysDictData> list= codeRepository.findDictSortAndDictLabelByDictId(DictCode.MI_JI );
+            map.put( "list",list );
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
@@ -66,13 +61,9 @@ public class DictServiceImpl implements DictService {
     @Override
     public Map<String, Object> queryIsMiNameAndSort() {
         try{
-            Map<String,Object> map=new HashMap<>(  );
-            List<SysDictData> list= codeRepository.find(DictCode.IS_MI );
-            int size=list.size();
-            for(int i=0;i<size;i++){
-                map.put( "key"+i,list.get( i ).getDictSort() );
-                map.put( "value"+i,list.get( i ).getDictLabel() );
-            }
+            Map<String,Object> map=new LinkedHashMap<>(  );
+            List<SysDictData> list= codeRepository.findDictSortAndDictLabelByDictId(DictCode.IS_MI );
+            map.put( "list",list );
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
@@ -86,13 +77,9 @@ public class DictServiceImpl implements DictService {
     @Override
     public Map<String, Object> queryFileLevelNameAndSort() {
         try{
-            Map<String,Object> map=new HashMap<>(  );
-            List<SysDictData> list= codeRepository.find(DictCode.FILE_LEVEL );
-            int size=list.size();
-            for(int i=0;i<size;i++){
-                map.put( "key"+i,list.get( i ).getDictSort() );
-                map.put( "value"+i,list.get( i ).getDictLabel() );
-            }
+            Map<String,Object> map=new LinkedHashMap<>(  );
+            List<SysDictData> list= codeRepository.findDictSortAndDictLabelByDictId(DictCode.FILE_LEVEL );
+            map.put( "list",list );
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
@@ -106,13 +93,9 @@ public class DictServiceImpl implements DictService {
     @Override
     public Map<String, Object> queryIsReadNameAndSort() {
         try{
-            Map<String,Object> map=new HashMap<>(  );
-            List<SysDictData> list= codeRepository.find(DictCode.IS_READ);
-            int size=list.size();
-            for(int i=0;i<size;i++){
-                map.put( "key"+i,list.get( i ).getDictSort() );
-                map.put( "value"+i,list.get( i ).getDictLabel() );
-            }
+            Map<String,Object> map=new LinkedHashMap<>(  );
+            List<SysDictData> list= codeRepository.findDictSortAndDictLabelByDictId(DictCode.IS_READ);
+            map.put( "list",list );
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
@@ -126,13 +109,9 @@ public class DictServiceImpl implements DictService {
     @Override
     public Map<String, Object> queryIsJiyaoNameAndSort() {
         try{
-            Map<String,Object> map=new HashMap<>(  );
-            List<SysDictData> list= codeRepository.find(DictCode.IS_JI_YAO );
-            int size=list.size();
-            for(int i=0;i<size;i++){
-                map.put( "key"+i,list.get( i ).getDictSort() );
-                map.put( "value"+i,list.get( i ).getDictLabel() );
-            }
+            Map<String,Object> map=new LinkedHashMap<>(  );
+            List<SysDictData> list= codeRepository.findDictSortAndDictLabelByDictId(DictCode.IS_JI_YAO );
+            map.put( "list",list );
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
@@ -146,13 +125,9 @@ public class DictServiceImpl implements DictService {
     @Override
     public Map<String, Object> queryImportantNameAndSort() {
         try{
-            Map<String,Object> map=new HashMap<>(  );
-            List<SysDictData> list= codeRepository.find(DictCode.IMPORTANT);
-            int size=list.size();
-            for(int i=0;i<size;i++){
-                map.put( "key"+i,list.get( i ).getDictSort() );
-                map.put( "value"+i,list.get( i ).getDictLabel() );
-            }
+            Map<String,Object> map=new LinkedHashMap<>(  );
+            List<SysDictData> list= codeRepository.findDictSortAndDictLabelByDictId(DictCode.IMPORTANT);
+            map.put( "list",list );
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
@@ -166,13 +141,9 @@ public class DictServiceImpl implements DictService {
     @Override
     public Map<String, Object> queryCourtTypeNameAndSort() {
         try{
-            Map<String,Object> map=new HashMap<>(  );
-            List<SysDictData> list= codeRepository.find(DictCode.COURT_TYPE);
-            int size=list.size();
-            for(int i=0;i<size;i++){
-                map.put( "key"+i,list.get( i ).getDictSort() );
-                map.put( "value"+i,list.get( i ).getDictLabel() );
-            }
+            Map<String,Object> map=new LinkedHashMap<>(  );
+            List<SysDictData> list= codeRepository.findDictSortAndDictLabelByDictId(DictCode.COURT_TYPE);
+            map.put( "list",list );
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
@@ -186,13 +157,9 @@ public class DictServiceImpl implements DictService {
     @Override
     public Map<String, Object> queryDeptNameAndSort() {
         try{
-            Map<String,Object> map=new HashMap<>(  );
-            List<SysDictData> list= codeRepository.find(DictCode.DEPT_CODE);
-            int size=list.size();
-            for(int i=0;i<size;i++){
-                map.put( "key"+i,list.get( i ).getDictSort() );
-                map.put( "value"+i,list.get( i ).getDictLabel() );
-            }
+            Map<String,Object> map=new LinkedHashMap<>(  );
+            List<SysDictData> list= codeRepository.findDictSortAndDictLabelByDictId(DictCode.DEPT_CODE);
+            map.put( "list",list );
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
@@ -206,13 +173,9 @@ public class DictServiceImpl implements DictService {
     @Override
     public Map<String, Object> queryWorkStatusAndSort() {
         try{
-            Map<String,Object> map=new HashMap<>(  );
-            List<SysDictData> list= codeRepository.find(DictCode.WORK_STATUS);
-            int size=list.size();
-            for(int i=0;i<size;i++){
-                map.put( "key"+i,list.get( i ).getDictSort() );
-                map.put( "value"+i,list.get( i ).getDictLabel() );
-            }
+            Map<String,Object> map=new LinkedHashMap<>(  );
+            List<SysDictData> list= codeRepository.findDictSortAndDictLabelByDictId(DictCode.WORK_STATUS);
+            map.put( "list",list );
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){
@@ -226,13 +189,9 @@ public class DictServiceImpl implements DictService {
     @Override
     public Map<String, Object> queryFacStatusAndSort() {
         try{
-            Map<String,Object> map=new HashMap<>(  );
-            List<SysDictData> list= codeRepository.find(DictCode.Facility_Status_Code);
-            int size=list.size();
-            for(int i=0;i<size;i++){
-                map.put( "key"+i,list.get( i ).getDictSort() );
-                map.put( "value"+i,list.get( i ).getDictLabel() );
-            }
+            Map<String,Object> map=new LinkedHashMap<>(  );
+            List<SysDictData> list= codeRepository.findDictSortAndDictLabelByDictId(DictCode.Facility_Status_Code);
+            map.put( "list",list );
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;
         }catch (Throwable throwable){

@@ -6,6 +6,15 @@
     </list>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FUSUsageTrigger">
+    <session id="-996590752">
+      <usages-collector id="statistics.spring.boot.mvc.usages">
+        <counts>
+          <entry key="RestClientRequestRunnerNavigator.fromCode" value="34" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>

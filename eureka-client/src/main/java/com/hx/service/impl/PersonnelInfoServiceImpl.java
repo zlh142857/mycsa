@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -79,7 +80,7 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
             map.put( "msg","查询成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             Map<String,Object> map=new HashMap<>(  );
             map.put( "msg","查询失败");
             return map;
@@ -90,6 +91,7 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
     @Override
     public String insertPersonnel(PersonnelInfo personnelInfo) {
         try{
+            personnelInfo.setCreateTime( new Date(  ) );
             PersonnelInfo personnel=personnelInfoRepository.save(personnelInfo);
             String insertMsg="";
             if(personnel!=null){
@@ -102,7 +104,11 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
                 userInfo.setDeptCode( deptCode );
                 userInfo.setDeptLeader( deptLeader );
                 userInfo.setPersonnelName( personnelName );
-                userInfo.setPassword( "123456" );
+                String salt=Salt.getSalt();
+                userInfo.setSalt( salt );
+                String npassword=Md5.getPassword( personnelInfo.getPerName(),"123456",salt );
+                userInfo.setPassword( npassword );
+                userInfo.setUsername( personnelInfo.getPerName() );
                 UserInfo userInfo1=userInfoRepository.save( userInfo );
                 if(userInfo1 != null){
                     insertMsg="录入成功";
@@ -117,7 +123,7 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
             }
             return insertMsg;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"报错行号:"+Thread.currentThread().getStackTrace()[1].getLineNumber()+";异常"+throwable.toString() );
+            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
             String insertMsg="录入失败,请重新录入";
             return insertMsg;
         }

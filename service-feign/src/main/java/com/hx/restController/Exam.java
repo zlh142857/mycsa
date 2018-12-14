@@ -21,33 +21,21 @@ public class Exam {
     private ExamService examService;
     @RequestMapping(value = "/examList",method = RequestMethod.GET)
     @ResponseBody
-    @HystrixCommand(fallbackMethod ="examListError")
     public String examList(){
         return examService.examList();
-    }
-    public String examListError() {
-        return "服务未响应";
     }
 
 
     @RequestMapping(value = "/insertExamInfo",method = RequestMethod.POST)
     @ResponseBody
-    @HystrixCommand(fallbackMethod ="insertExamInfoError")
     public String insertExamInfo(Integer userId,Integer score){
         return examService.insertExamInfo(userId,score);
-    }
-    public String insertExamInfoError() {
-        return "服务未响应";
     }
 
 
     @RequestMapping(value = "/insertExamChoose",method = RequestMethod.POST)
     @ResponseBody
-    @HystrixCommand(fallbackMethod ="insertExamChooseError")
     public String insertExamChoose(ExamChoose examChoose){
         return examService.insertExamChoose(examChoose);
-    }
-    public String insertExamChooseError() {
-        return "服务未响应";
     }
 }

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69b57276-89bc-4d23-aa76-51b7dbab3d4d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/NoticeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/NoticeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/EquipmentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/EquipmentInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/Exam.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/Exam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/PersonnelInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/PersonnelInfoController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
     <ignored path="$PROJECT_DIR$/eureka-client-schedule/target/" />
@@ -42,26 +43,8 @@
       <file leaf-file-name="PersonnelInfoController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/PersonnelInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DictController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/DictController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActivitiApproveController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/ActivitiApproveController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4312">
-              <caret line="201" column="1" lean-forward="true" selection-start-line="201" selection-start-column="1" selection-end-line="201" selection-end-column="1" />
+            <state relative-caret-position="613">
+              <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -69,26 +52,26 @@
       <file leaf-file-name="Exam.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/Exam.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="40" column="1" lean-forward="true" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+            <state relative-caret-position="616">
+              <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoticeController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/NoticeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EquipmentInfo.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EquipmentInfo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/EquipmentInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+            <state relative-caret-position="657">
+              <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DictController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/DictController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="583">
+              <caret line="96" selection-start-line="96" selection-end-line="96" />
             </state>
           </provider>
         </entry>
@@ -124,7 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/DefaultController.java" />
         <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/DefaultController.java" />
         <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/DefaulService.java" />
         <option value="$PROJECT_DIR$/shiro/src/main/java/com/hx/config/ShiroConfiguration.java" />
@@ -133,7 +115,6 @@
         <option value="$PROJECT_DIR$/model/src/main/java/com/hx/SysRole.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/com/hx/SysPermission.java" />
         <option value="$PROJECT_DIR$/eureka-client/src/main/resources/log4j2.xml" />
-        <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/ToLogin.java" />
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/UserInfoImpl.java" />
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/dao/UserInfoRepository.java" />
         <option value="$PROJECT_DIR$/service-feign/pom.xml" />
@@ -170,11 +151,13 @@
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/service/impl/PersonnelInfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/eureka-client/src/main/java/com/hx/restController/EquipmentInfo.java" />
         <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/service/EquipmentInfoAService.java" />
-        <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/PersonnelInfoController.java" />
-        <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/EquipmentInfo.java" />
         <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/ActivitiApproveController.java" />
-        <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/Exam.java" />
         <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/NoticeController.java" />
+        <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/ToLogin.java" />
+        <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/DictController.java" />
+        <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/PersonnelInfoController.java" />
+        <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/Exam.java" />
+        <option value="$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/EquipmentInfo.java" />
       </list>
     </option>
   </component>
@@ -503,7 +486,7 @@
       <workItem from="1544663120340" duration="7722000" />
       <workItem from="1544679727690" duration="11202000" />
       <workItem from="1544691168603" duration="4248000" />
-      <workItem from="1544749443028" duration="7123000" />
+      <workItem from="1544749443028" duration="7671000" />
     </task>
     <task id="LOCAL-00001" summary="提交人:张立恒 提交日期:2010/12/06">
       <created>1544087017577</created>
@@ -694,7 +677,28 @@
       <option name="project" value="LOCAL" />
       <updated>1544756545676</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="提交人:张立恒 提交日期:2018/12/14  公告查询取消断路器降级操作">
+      <created>1544756599178</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1544756599178</updated>
+    </task>
+    <task id="LOCAL-00029" summary="提交人:张立恒 提交日期:2018/12/14  登录取消断路器降级操作">
+      <created>1544756634553</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1544756634553</updated>
+    </task>
+    <task id="LOCAL-00030" summary="提交人:张立恒 提交日期:2018/12/14  查询字典数据取消断路器降级操作">
+      <created>1544757065457</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1544757065457</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -730,7 +734,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109635000" />
+    <option name="totallyTimeSpent" value="110183000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -743,6 +747,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50159913" side_tool="true" weight="0.20476706" />
@@ -763,7 +768,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32936078" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.156013" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.11375948" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.32936078" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49614793" visible="true" weight="0.15778251" />
@@ -799,7 +804,10 @@
     <MESSAGE value="提交人:张立恒 提交日期:2018/12/14  人员和设备取消断路器降级操作" />
     <MESSAGE value="提交人:张立恒 提交日期:2018/12/14  工作流取消断路器降级操作" />
     <MESSAGE value="提交人:张立恒 提交日期:2018/12/14  考试考核取消断路器降级操作" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交人:张立恒 提交日期:2018/12/14  考试考核取消断路器降级操作" />
+    <MESSAGE value="提交人:张立恒 提交日期:2018/12/14  公告查询取消断路器降级操作" />
+    <MESSAGE value="提交人:张立恒 提交日期:2018/12/14  登录取消断路器降级操作" />
+    <MESSAGE value="提交人:张立恒 提交日期:2018/12/14  查询字典数据取消断路器降级操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交人:张立恒 提交日期:2018/12/14  查询字典数据取消断路器降级操作" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -807,13 +815,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/com/hx/facility/FacilityClear.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/com/hx/facility/FacilityInformation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -1129,24 +1130,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/EquipmentInfo.java">
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/NoticeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+        <state relative-caret-position="280">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/PersonnelInfoController.java">
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/ToLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/DictController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="343">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
@@ -1157,17 +1151,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/Exam.java">
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/DictController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="40" column="1" lean-forward="true" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+        <state relative-caret-position="583">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/NoticeController.java">
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/PersonnelInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        <state relative-caret-position="613">
+          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/Exam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-feign/src/main/java/com/hx/restController/EquipmentInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
         </state>
       </provider>
     </entry>

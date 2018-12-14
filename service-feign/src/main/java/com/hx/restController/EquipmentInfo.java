@@ -44,4 +44,6 @@ public class EquipmentInfo {
     public String insertEquipment(@RequestBody FacilityInformation facilityInformation){
         return equipmentInfoAService.insertEquipment(facilityInformation);
     }
+
+    //删除增加断路器,提示 服务器繁忙,未响应
 }

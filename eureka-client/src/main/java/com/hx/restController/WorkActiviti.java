@@ -11,14 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping(value="/workActiviti")
 public class WorkActiviti {
     @Autowired
     private WorkActivitiService workActivitiService;
     @RequestMapping(value = "/workExamine",method = RequestMethod.GET)
-    public boolean workExamine(){
-        return workActivitiService.workExam();
+    public boolean workExamine(HttpServletRequest request){
+        return workActivitiService.workExam(request);
     }
 
 }

@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping(value = "/workActiviti")
 public class WorkActiviti {
@@ -21,11 +23,17 @@ public class WorkActiviti {
     @RequestMapping(value = "/workExamine",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
-    public boolean workExamine(){
-        return workActivitiService.workExamine();
-    }
+    public boolean workExamine(HttpServletRequest request){
 
-    public boolean hiError() {
+        try{
+
+            return workActivitiService.workExamine(request);
+        }catch (Throwable throwable){
+            System.out.println(throwable);
+            return false;
+        }
+    }
+    public boolean hiError(HttpServletRequest request) {
         return false;
     }
 }

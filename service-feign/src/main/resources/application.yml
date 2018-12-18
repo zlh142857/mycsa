@@ -33,7 +33,9 @@ feign:
 hystrix:
   threadpool:
     default:
-      coreSize: 50
+      coreSize: 10
+      maximumSize: 10
+      maxQueueSize: -1
 #hystrix的超时时间
   command:
     default:

@@ -1,4 +1,7 @@
 server:
+  tomcat:
+    max-connections: 0 # 默认值
+    max-threads: 0 # 默认值
   port: 8860
 eureka:
   instance:

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69b57276-89bc-4d23-aa76-51b7dbab3d4d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-feign/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-feign/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-feign/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
@@ -440,7 +438,7 @@
       <workItem from="1544691168603" duration="4248000" />
       <workItem from="1544749443028" duration="12897000" />
       <workItem from="1544774931844" duration="224000" />
-      <workItem from="1545113217789" duration="1160000" />
+      <workItem from="1545113217789" duration="1784000" />
     </task>
     <task id="LOCAL-00001" summary="提交人:张立恒 提交日期:2010/12/06">
       <created>1544087017577</created>
@@ -673,7 +671,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544757420041</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="提交人:张立恒 提交日期:2018/12/18">
+      <created>1545114401166</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1545114401166</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -709,7 +714,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116793000" />
+    <option name="totallyTimeSpent" value="117417000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -722,6 +727,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50159913" side_tool="true" weight="0.20476706" />
@@ -781,7 +787,8 @@
     <MESSAGE value="提交人:张立恒 提交日期:2018/12/14  登录取消断路器降级操作" />
     <MESSAGE value="提交人:张立恒 提交日期:2018/12/14  查询字典数据取消断路器降级操作" />
     <MESSAGE value="提交人:张立恒 提交日期:2018/12/14" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交人:张立恒 提交日期:2018/12/14" />
+    <MESSAGE value="提交人:张立恒 提交日期:2018/12/18" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交人:张立恒 提交日期:2018/12/18" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

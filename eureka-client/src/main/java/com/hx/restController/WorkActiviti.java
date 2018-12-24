@@ -19,8 +19,15 @@ public class WorkActiviti {
     @Autowired
     private WorkActivitiService workActivitiService;
     @RequestMapping(value = "/workExamine",method = RequestMethod.GET)
-    public boolean workExamine(HttpServletRequest request){
+    public String workExamine(HttpServletRequest request){
         return workActivitiService.workExam(request);
     }
-
+    @RequestMapping(value = "/rateLimiterC",method = RequestMethod.GET)
+    public void rateLimiterC(){
+        workActivitiService.rateLimiterC();
+    }
+    @RequestMapping(value = "/rateLimiterD",method = RequestMethod.GET)
+    public void rateLimiterD(){
+        workActivitiService.rateLimiterD();
+    }
 }

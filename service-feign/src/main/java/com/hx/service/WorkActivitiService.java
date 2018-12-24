@@ -11,5 +11,5 @@ import javax.servlet.http.HttpServletRequest;
 @FeignClient(value = "eureka-client")
 public interface WorkActivitiService {
     @RequestMapping(value = "/workActiviti/workExamine",method = RequestMethod.GET)
-    boolean workExamine(@RequestParam("request") HttpServletRequest request);
+    String workExamine(@RequestParam("request") HttpServletRequest request);
 }

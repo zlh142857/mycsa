@@ -6,7 +6,7 @@
         <groupId>com.hx</groupId>
         <artifactId>spring-confidential</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.hx</groupId>
     <artifactId>model</artifactId>
@@ -17,6 +17,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <start-class>com.hx.EurekaServerApplication</start-class>
     </properties>
 
     <dependencies>
@@ -43,6 +44,7 @@
                         </goals>
                     </execution>
                 </executions>
+
             </plugin>
         </plugins>
     </build>

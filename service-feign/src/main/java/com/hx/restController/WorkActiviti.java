@@ -23,14 +23,14 @@ public class WorkActiviti {
     @RequestMapping(value = "/workExamine",method = RequestMethod.GET)
     @ResponseBody
     @HystrixCommand(fallbackMethod ="hiError")
-    public boolean workExamine(HttpServletRequest request){
+    public String workExamine(HttpServletRequest request){
 
         try{
 
             return workActivitiService.workExamine(request);
         }catch (Throwable throwable){
             System.out.println(throwable);
-            return false;
+            return "false";
         }
     }
     public boolean hiError(HttpServletRequest request) {

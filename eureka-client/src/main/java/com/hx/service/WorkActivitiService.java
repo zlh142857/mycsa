@@ -4,5 +4,9 @@ package com.hx.service;/*
 import javax.servlet.http.HttpServletRequest;
 
 public interface WorkActivitiService {
-    boolean workExam(HttpServletRequest request);
+    String workExam(HttpServletRequest request);
+
+    void rateLimiterC();
+
+    void rateLimiterD();
 }

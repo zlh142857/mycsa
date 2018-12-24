@@ -6,7 +6,7 @@ package com.hx.restController.notice;/*
  */
 
 import com.alibaba.fastjson.JSONObject;
-import com.hx.Notice;
+import com.hx.system.Notice;
 import com.hx.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

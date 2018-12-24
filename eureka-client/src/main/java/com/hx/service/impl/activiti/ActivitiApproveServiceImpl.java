@@ -6,7 +6,7 @@ package com.hx.service.impl.activiti;/*
  */
 
 import com.hx.Activiti.ActMsgPersonnel;
-import com.hx.UserInfo;
+import com.hx.shiro.UserInfo;
 import com.hx.config.utils.ActType;
 import com.hx.config.utils.ProKey;
 import com.hx.dao.ActivitiRepository;

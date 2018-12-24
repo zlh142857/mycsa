@@ -5,7 +5,7 @@ package com.hx.config;/*
  *@功能:
  */
 
-import com.hx.UserInfo;
+import com.hx.shiro.UserInfo;
 
 public interface UserInfoService {
     UserInfo findByUsername(String username);

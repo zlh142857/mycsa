@@ -7,9 +7,9 @@ package com.hx.config;/*
 
 
 
-import com.hx.SysPermission;
-import com.hx.SysRole;
-import com.hx.UserInfo;
+import com.hx.shiro.SysPermission;
+import com.hx.shiro.SysRole;
+import com.hx.shiro.UserInfo;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;

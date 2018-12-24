@@ -5,7 +5,7 @@ package com.hx.config;/*
  *@功能:
  */
 
-import com.hx.UserInfo;
+import com.hx.shiro.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

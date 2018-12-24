@@ -2,7 +2,7 @@ package com.hx.dao;
 /*用户信息仓库
  */
 
-import com.hx.UserInfo;
+import com.hx.shiro.UserInfo;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

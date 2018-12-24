@@ -1,7 +1,7 @@
 package com.hx.service;/*
  */
 
-import com.hx.Notice;
+import com.hx.system.Notice;
 
 import java.util.Map;
 

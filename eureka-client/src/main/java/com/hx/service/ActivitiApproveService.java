@@ -2,8 +2,7 @@ package com.hx.service;/*
  */
 
 import com.hx.Activiti.ActMsgPersonnel;
-import com.hx.UserInfo;
-import org.springframework.web.bind.annotation.RequestParam;
+import com.hx.shiro.UserInfo;
 
 import java.util.Map;
 

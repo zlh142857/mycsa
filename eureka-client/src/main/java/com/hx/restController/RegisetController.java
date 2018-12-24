@@ -6,9 +6,6 @@ package com.hx.restController;/*
  */
 
 import com.alibaba.fastjson.JSONObject;
-import com.hx.UserInfo;
-import com.hx.config.md5.Md5;
-import com.hx.config.md5.Salt;
 import com.hx.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

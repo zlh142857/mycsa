@@ -5,7 +5,7 @@ package com.hx.service.impl.dict;/*
  *@功能:
  */
 
-import com.hx.SysDictData;
+import com.hx.dict.SysDictData;
 import com.hx.config.utils.DictCode;
 import com.hx.dao.CodeRepository;
 import com.hx.service.DictService;
@@ -14,9 +14,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;

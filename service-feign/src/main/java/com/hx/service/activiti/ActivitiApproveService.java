@@ -2,7 +2,7 @@ package com.hx.service.activiti;/*
  */
 
 import com.hx.Activiti.ActMsgPersonnel;
-import com.hx.UserInfo;
+import com.hx.shiro.UserInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

@@ -5,19 +5,12 @@ package com.hx.service.impl.notice;/*
  *@功能:
  */
 
-import com.hx.Notice;
-import com.hx.config.utils.DictCode;
+import com.hx.system.Notice;
 import com.hx.dao.NoticeRepository;
-import com.hx.dao.PersonnelInfoRepository;
-import com.hx.personnel.PersonnelInfo;
 import com.hx.service.NoticeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

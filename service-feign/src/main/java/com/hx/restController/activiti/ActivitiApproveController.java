@@ -6,7 +6,7 @@ package com.hx.restController.activiti;/*
  */
 
 import com.hx.Activiti.ActMsgPersonnel;
-import com.hx.UserInfo;
+import com.hx.shiro.UserInfo;
 import com.hx.service.activiti.ActivitiApproveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

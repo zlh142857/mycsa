@@ -1,4 +1,4 @@
-package com.hx;/*
+package com.hx.shiro;/*
  *//*
  *@作者:张立恒
  *@时间:2018/9/30 10:38
@@ -6,6 +6,7 @@ package com.hx;/*
  */
 
 
+import com.hx.shiro.SysPermission;
 import lombok.Data;
 
 import javax.persistence.*;

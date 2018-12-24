@@ -1,7 +1,7 @@
 package com.hx.service.notice;/*
  */
 
-import com.hx.Notice;
+import com.hx.system.Notice;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

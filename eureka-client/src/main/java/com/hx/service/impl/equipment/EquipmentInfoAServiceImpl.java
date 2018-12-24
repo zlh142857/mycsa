@@ -6,8 +6,8 @@ package com.hx.service.impl.equipment;/*
  */
 
 import com.hx.config.utils.DictCode;
-import com.hx.dao.CodeRepository;
-import com.hx.dao.EquipmentInfoRepository;
+import com.hx.dao.code.CodeRepository;
+import com.hx.dao.equipment.EquipmentInfoRepository;
 import com.hx.facility.FacilityInformation;
 import com.hx.service.EquipmentInfoAService;
 import org.slf4j.Logger;

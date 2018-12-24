@@ -1,4 +1,4 @@
-package com.hx.dao;/*
+package com.hx.dao.exam;/*
  */
 
 import com.hx.exam.ExamChoose;

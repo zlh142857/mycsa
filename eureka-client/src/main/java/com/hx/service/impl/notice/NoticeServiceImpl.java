@@ -6,7 +6,7 @@ package com.hx.service.impl.notice;/*
  */
 
 import com.hx.system.Notice;
-import com.hx.dao.NoticeRepository;
+import com.hx.dao.system.NoticeRepository;
 import com.hx.service.NoticeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -7,7 +7,7 @@ package com.hx.service.impl.dict;/*
 
 import com.hx.dict.SysDictData;
 import com.hx.config.utils.DictCode;
-import com.hx.dao.CodeRepository;
+import com.hx.dao.code.CodeRepository;
 import com.hx.service.DictService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

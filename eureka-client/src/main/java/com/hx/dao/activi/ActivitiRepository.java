@@ -1,4 +1,4 @@
-package com.hx.dao;/*
+package com.hx.dao.activi;/*
  */
 
 import com.hx.Activiti.ActMsgPersonnel;

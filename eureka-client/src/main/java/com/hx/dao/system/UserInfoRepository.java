@@ -1,4 +1,4 @@
-package com.hx.dao;
+package com.hx.dao.system;
 /*用户信息仓库
  */
 

@@ -1,4 +1,4 @@
-package com.hx.dao;/*
+package com.hx.dao.system;/*
  */
 
 import com.hx.system.Notice;

@@ -10,7 +10,7 @@ import com.hx.shiro.SysRole;
 import com.hx.shiro.UserInfo;
 import com.hx.config.md5.Md5;
 import com.hx.config.md5.Salt;
-import com.hx.dao.UserInfoRepository;
+import com.hx.dao.system.UserInfoRepository;
 import com.hx.service.UserInfoService;
 
 import org.apache.shiro.SecurityUtils;

@@ -1,4 +1,4 @@
-package com.hx.dao;/*
+package com.hx.dao.equipment;/*
  */
 
 import com.hx.facility.FacilityInformation;

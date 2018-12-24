@@ -5,8 +5,8 @@ package com.hx.service.impl.exam;/*
  *@功能:
  */
 
-import com.hx.dao.ExamInfoRepository;
-import com.hx.dao.ExamRepository;
+import com.hx.dao.exam.ExamInfoRepository;
+import com.hx.dao.exam.ExamRepository;
 import com.hx.exam.ExamChoose;
 import com.hx.exam.ExamInfo;
 import com.hx.service.ExamService;

@@ -18,7 +18,7 @@
     <sequenceFlow id="_12" name="back2" sourceRef="_5" targetRef="_3">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${message=='驳回'}]]></conditionExpression>
     </sequenceFlow>
-    <userTask activiti:assignee="userID3" activiti:exclusive="true" id="_6" name="机要委领导审批"/>
+    <userTask activiti:assignee="userID3" activiti:exclusive="true" id="_6" name="办公厅厅长审批"/>
     <sequenceFlow id="_10" name="go2" sourceRef="_5" targetRef="_6">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${message=='批准'}]]></conditionExpression>
     </sequenceFlow>

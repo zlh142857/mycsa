@@ -2,20 +2,24 @@ package com.hx.service.activiti;/*
  */
 
 import com.hx.Activiti.ActMsgPersonnel;
+import com.hx.Object.MuchObj;
 import com.hx.shiro.UserInfo;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Map;
+
 @FeignClient(value = "eureka-client")
 public interface ActivitiApproveService {
     @RequestMapping(value = "/activitiApprove/lCountryRefer",method = RequestMethod.POST)
-    String lCountryRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel);
-    @RequestMapping(value = "/activitiApprove/lCountryRefer",method = RequestMethod.POST)
-    String goWorkRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel);
+    String lCountryRefer(@RequestBody MuchObj muchObj);
+    @RequestMapping(value = "/activitiApprove/goWorkRefer",method = RequestMethod.POST)
+    String goWorkRefer(@RequestBody MuchObj muchObj);
     @RequestMapping(value = "/activitiApprove/lPostRefer",method = RequestMethod.POST)
-    String lPostRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel);
+    String lPostRefer(@RequestBody MuchObj muchObj);
     @RequestMapping(value = "/activitiApprove/selectSelfLCTask",method = RequestMethod.GET)
     String selectSelfLCTask(@RequestParam("uid")String uid);
     @RequestMapping(value = "/activitiApprove/selectSelfTWTask",method = RequestMethod.GET)

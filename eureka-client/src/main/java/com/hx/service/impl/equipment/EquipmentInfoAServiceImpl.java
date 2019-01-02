@@ -50,7 +50,7 @@ public class EquipmentInfoAServiceImpl implements EquipmentInfoAService {
                     facilityInformation.setIsMi( isMi );
                 }
                 if(miLevelCode!=null){
-                    String miLevel=codeRepository.findByDictIdAndDictSort(DictCode.MI_JI,miLevelCode);
+                    String miLevel=codeRepository.findByDictIdAndDictSort(DictCode.Mi_Ji_Code,miLevelCode);
                     facilityInformation.setMiLevel( miLevel );
                 }
             }

@@ -7,6 +7,7 @@ package com.hx.restController.activiti;/*
 
 import com.alibaba.fastjson.JSONObject;
 import com.hx.Activiti.ActMsgPersonnel;
+import com.hx.Object.MuchObj;
 import com.hx.shiro.UserInfo;
 import com.hx.service.ActivitiApproveService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +24,17 @@ public class ActivitiApproveController {
      *
      * 功能描述: 离境申请
      *
-     * @param:
+     * @param:UserInfo 对象,包含uid,deptCode,deptLeader
+     * @param:ActMsgPersonnel 工作流表单内容
      * @return:
      * @auther: 张立恒
      * @date: 2018/12/10 13:42
      */
     @PostMapping(value = "/lCountryRefer")
     @ResponseBody
-    public String lCountryRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel){
+    public String lCountryRefer(@RequestBody MuchObj muchObj){
+        UserInfo userInfo= muchObj.userInfo;
+        ActMsgPersonnel actMsgPersonnel= muchObj.actMsgPersonnel;
         String referMsg=activitiApproveService.lCountryRefer(userInfo, actMsgPersonnel );
         return JSONObject.toJSONString( referMsg );
     }
@@ -45,7 +49,9 @@ public class ActivitiApproveController {
      */
     @PostMapping(value = "/goWorkRefer")
     @ResponseBody
-    public String goWorkRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel){
+    public String goWorkRefer(@RequestBody MuchObj muchObj){
+        UserInfo userInfo= muchObj.userInfo;
+        ActMsgPersonnel actMsgPersonnel= muchObj.actMsgPersonnel;
         String referMsg=activitiApproveService.goWorkRefer(userInfo, actMsgPersonnel );
         return JSONObject.toJSONString( referMsg );
     }
@@ -60,7 +66,9 @@ public class ActivitiApproveController {
      */
     @PostMapping(value = "/lPostRefer")
     @ResponseBody
-    public String lPostRefer(@RequestParam("userInfo") UserInfo userInfo, @RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel){
+    public String lPostRefer(@RequestBody MuchObj muchObj){
+        UserInfo userInfo= muchObj.userInfo;
+        ActMsgPersonnel actMsgPersonnel= muchObj.actMsgPersonnel;
         String referMsg=activitiApproveService.lPostRefer(userInfo, actMsgPersonnel );
         return JSONObject.toJSONString( referMsg );
     }

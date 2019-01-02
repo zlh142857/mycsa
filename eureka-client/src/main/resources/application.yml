@@ -45,7 +45,7 @@ spring:
       max-file-size: 1024Mb
       max-request-size: 10240Mb
   activiti:
-    database-schema-update: true
+    database-schema-update: false
     check-process-definitions: true
     process-definition-location-prefix: classpath:/processes/
     history-level: full

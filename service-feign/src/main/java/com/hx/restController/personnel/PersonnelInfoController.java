@@ -5,17 +5,16 @@ package com.hx.restController.personnel;/*
  *@功能:人员信息库crud
  */
 
-import com.hx.personnel.PersonnelInfo;
+import com.hx.Object.MuchObj;
 import com.hx.service.personnel.PersonnelInfoService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping("/personnelInfoController")
 public class PersonnelInfoController {
-    private Logger logger=LoggerFactory.getLogger( this.getClass() );
     @Autowired
     private PersonnelInfoService personnelInfoService;
     /**
@@ -33,15 +32,36 @@ public class PersonnelInfoController {
         String personnelList=personnelInfoService.queryPersonnelList(page,size);
         return personnelList;
     }
+    /**
+     *
+     * 功能描述: 查询单个人员详情
+     *
+     * @param:
+     * @return:
+     * @auther: 张立恒
+     * @date: 2018/12/26 13:27
+     */
+    @GetMapping(value = "/personnelDetail")
+    @ResponseBody
+    public String personnelDetail(Integer perId){
+        String personnel=personnelInfoService.personnelDetail(perId);
+        return personnel;
+    }
 
     @PostMapping(value = "/insertPersonnel")
     @ResponseBody
-    public String insertPer(@RequestBody PersonnelInfo personnelInfo){
-        String insertMsg=personnelInfoService.insertPer(personnelInfo);
-        return insertMsg;
+    public String insertPer(@RequestBody MuchObj muchObj){
+        String insertMsg=personnelInfoService.insertPer(muchObj);
+        return "";
     }
 
     //删除增加断路器,提示 服务器繁忙,未响应
 
+
+    @GetMapping(value = "/showImage")
+    @ResponseBody
+    public void showImage(String photoUrl, HttpServletResponse response){
+        personnelInfoService.showImage(photoUrl,response);
+    }
 
 }

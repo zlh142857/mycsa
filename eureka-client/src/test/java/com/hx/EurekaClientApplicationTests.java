@@ -1,4 +1,5 @@
 package com.hx;
+import com.hx.config.utils.FileUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,5 +23,6 @@ public class EurekaClientApplicationTests {
         System.out.println(JSONObject.toJSONString( list ));
 */
     }
+
 
 }

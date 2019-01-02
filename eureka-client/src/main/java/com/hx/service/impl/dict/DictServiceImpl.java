@@ -43,7 +43,7 @@ public class DictServiceImpl implements DictService {
     public Map<String, Object> queryMiNameAndSort() {
         try{
             Map<String,Object> map=new LinkedHashMap<>(  );
-            List<SysDictData> list= codeRepository.findDictSortAndDictLabelByDictId(DictCode.MI_JI );
+            List<SysDictData> list= codeRepository.findDictSortAndDictLabelByDictId(DictCode.Mi_Ji_Code );
             map.put( "list",list );
             logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
             return map;

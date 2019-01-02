@@ -56,8 +56,9 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 variables2.put("backTime", actMsgPersonnel.getBackTime());
                 variables2.put("goWhere", actMsgPersonnel.getGoWhere());
                 variables2.put("dept", actMsgPersonnel.getDept());
-                variables2.put("phone", actMsgPersonnel.getPhone());
+                //variables2.put("phone", actMsgPersonnel.getPhone());
                 variables2.put("type",ActType.LC);
+                variables2.put("message", "提交申请");
                 Long uid=userInfoRepository.findUserByDeptCodeAndDeptLeader(userInfo.getDeptCode(),userInfo.getDeptLeader());
                 variables2.put("userID1", uid.toString());//查找该用户领导,将其领导做为下一个审批人
                 //用户确认申请请假,提交到下一个节点
@@ -114,6 +115,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 variables2.put("phone", actMsgPersonnel.getPhone());
                 variables2.put("isMiCode", actMsgPersonnel.getIsMiCode());
                 variables2.put("type",ActType.TW);
+                variables2.put("message", "提交申请");
                 Long uid=userInfoRepository.findUserByDeptCodeAndDeptLeader(userInfo.getDeptCode(),userInfo.getDeptLeader());
                 variables2.put("userID1", uid.toString());//查找该用户领导,将其领导做为下一个审批人
                 //用户确认申请请假,提交到下一个节点
@@ -169,6 +171,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 variables2.put("phone", actMsgPersonnel.getPhone());
                 variables2.put("isMiCode", actMsgPersonnel.getIsMiCode());
                 variables2.put("type", ActType.LP);
+                variables2.put("message", "提交申请");
                 Long uid=userInfoRepository.findUserByDeptCodeAndDeptLeader(userInfo.getDeptCode(),userInfo.getDeptLeader());
                 variables2.put("userID1", uid.toString());//查找该用户领导,将其领导做为下一个审批人
                 //用户确认申请请假,提交到下一个节点
@@ -362,7 +365,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                     }
                     logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:机要处领导审批通过" );
                     return msg="审批通过";
-                }else if(role=="机要委领导"){
+                }else if(role=="办公厅厅长"){
                     //审核通过之后,流程结束,需要改变actMagPersonnel表中的状态值,表示审批已经结束,等到查询已经结束的流程中可以直接查询
                     String pid=taskService.createTaskQuery().taskId(taskId).singleResult().getProcessInstanceId();
                     Integer userid=(Integer) taskService.getVariable( taskId,"inputUser" );

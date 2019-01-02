@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -14,6 +15,7 @@ import org.springframework.web.filter.CorsFilter;
 @EnableEurekaClient
 @ConditionalOnClass
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
+@EnableAsync  //多线程异步调用
 public class EurekaClientApplication {
 
     public static void main(String[] args) {
@@ -46,5 +48,6 @@ public class EurekaClientApplication {
         source.registerCorsConfiguration("/**", buildConfig()); // 4
         return new CorsFilter(source);
     }
+
 
 }

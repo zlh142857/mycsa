@@ -56,7 +56,7 @@ public class UserInfoImpl implements UserInfoService {
             map.put("permissionsList", permissionsList);
             map.put("token", subject.getSession().getId());
             map.put("msg", "登录成功");
-            map.put("userId", userInfo.getUid());
+            map.put("userInfo", userInfo);
             return map;
         }catch (IncorrectCredentialsException e) {
             map.put("msg", "密码错误");

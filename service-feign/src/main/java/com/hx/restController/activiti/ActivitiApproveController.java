@@ -6,10 +6,13 @@ package com.hx.restController.activiti;/*
  */
 
 import com.hx.Activiti.ActMsgPersonnel;
+import com.hx.Object.MuchObj;
 import com.hx.shiro.UserInfo;
 import com.hx.service.activiti.ActivitiApproveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "activitiApprove")
@@ -25,10 +28,10 @@ public class ActivitiApproveController {
      * @auther: 张立恒
      * @date: 2018/12/10 13:42
      */
-    @RequestMapping(value = "/lCountryRefer",method = RequestMethod.POST)
+    @PostMapping(value = "/lCountryRefer")
     @ResponseBody
-    public String lCountryRefer(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel){
-        String referMsg=activitiApproveService.lCountryRefer(userInfo, actMsgPersonnel );
+    public String lCountryRefer(@RequestBody MuchObj muchObj){
+        String referMsg=activitiApproveService.lCountryRefer(muchObj);
         return referMsg;
     }
     /**
@@ -42,8 +45,8 @@ public class ActivitiApproveController {
      */
     @RequestMapping(value = "/goWorkRefer",method = RequestMethod.POST)
     @ResponseBody
-    public String goWorkRefer(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel){
-        String referMsg=activitiApproveService.goWorkRefer(userInfo, actMsgPersonnel );
+    public String goWorkRefer(@RequestBody MuchObj muchObj){
+        String referMsg=activitiApproveService.goWorkRefer(muchObj );
         return referMsg;
     }
 
@@ -58,8 +61,8 @@ public class ActivitiApproveController {
      */
     @RequestMapping(value = "/lPostRefer",method = RequestMethod.POST)
     @ResponseBody
-    public String lPostRefer(@RequestParam("userInfo") UserInfo userInfo,@RequestParam("actMsgPersonnel") ActMsgPersonnel actMsgPersonnel){
-        String referMsg=activitiApproveService.lPostRefer(userInfo, actMsgPersonnel );
+    public String lPostRefer(@RequestBody MuchObj muchObj){
+        String referMsg=activitiApproveService.lPostRefer(muchObj);
         return referMsg;
     }
     /**

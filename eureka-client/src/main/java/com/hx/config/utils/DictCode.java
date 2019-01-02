@@ -9,7 +9,7 @@ public class DictCode {
     //性别
     public static final Integer SEX=1;
     //密级
-    public static final Integer MI_JI=2;
+    public static final Integer Mi_Ji_Code=2;
     //是否涉密
     public static final Integer IS_MI=3;
     //公文等级

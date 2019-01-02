@@ -31,13 +31,11 @@ public class UserInfo implements Serializable {
 
     private String salt;//加密密码的盐,salt主要是用来进行密码加密的，当然也可以使用明文进行编码测试，实际开发中还是建议密码进行加密。
 
-    private Integer deptCode; //部门编号
-
     private String deptLeader;  //部门领导姓名
 
     private Integer personnelId; //关联的人员信息库id
-    @Transient
-    private String dept;  //所在部门
+
+    private Integer deptCode;  //所在部门
 
 
     @ManyToMany(fetch=FetchType.EAGER)//存在多对多关系,关闭懒加载,立即从数据库中进行加载数据;

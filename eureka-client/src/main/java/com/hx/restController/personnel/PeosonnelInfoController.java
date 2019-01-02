@@ -19,6 +19,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,36 +33,36 @@ public class PeosonnelInfoController {
     private PersonnelInfoService personnelInfoService;
     @GetMapping(value = "/personnelList")
     @ResponseBody
-    public String queryPersonnelList(Integer page,Integer size){
-        Map<String,Object> personnelList=personnelInfoService.queryPersonnelList(page,size);
+    public String queryPersonnelList(Integer page,Integer size, HttpServletRequest request,String username){
+        Map<String,Object> personnelList=personnelInfoService.queryPersonnelList(page,size,request,username);
         return JSONObject.toJSONStringWithDateFormat( personnelList,"yyyy-MM-dd HH:mm:ss" );
     }
 
     @GetMapping(value = "/personnelDetail")
     @ResponseBody
-    public String queryPersonnelDetail(Integer perId){
-        Map<String,Object> personnel=personnelInfoService.queryPersonnelDetail(perId);
+    public String queryPersonnelDetail(Integer perId, HttpServletRequest request,String username){
+        Map<String,Object> personnel=personnelInfoService.queryPersonnelDetail(perId,request,username);
         return JSONObject.toJSONStringWithDateFormat( personnel,"yyyy-MM-dd HH:mm:ss" );
     }
 
     @PostMapping(value = "/insertPer")
     @ResponseBody
     @Async
-    public String insertPersonnel(@RequestBody MuchObj muchObj){
+    public String insertPersonnel(@RequestBody MuchObj muchObj, HttpServletRequest request){
         PersonnelInfo personnelInfo=muchObj.personnelInfo;
         List<PersonnelRecord> personnelRecords=muchObj.personnelRecords;
         List<ClanInfo> clanInfos=muchObj.clanInfos;
         String base64=muchObj.base64;
         base64=base64.replaceFirst("data:image/jpeg;base64,", "");
         base64.replaceAll(" ", "+");
-        String insertMsg=personnelInfoService.insertPersonnel(personnelInfo,personnelRecords,clanInfos,base64);
+        String insertMsg=personnelInfoService.insertPersonnel(personnelInfo,personnelRecords,clanInfos,base64,request);
         return JSONObject.toJSONString( insertMsg );
     }
     @GetMapping(value = "/showImage")
     @ResponseBody
     @Async //多线程异步调用
-    public void showImage(String photoUrl,HttpServletResponse response){
-        personnelInfoService.showImage(photoUrl,response);
+    public void showImage(String photoUrl,HttpServletResponse response, HttpServletRequest request){
+        personnelInfoService.showImage(photoUrl,response,request);
     }
     /*@PostMapping(value = "/up")
     @ResponseBody

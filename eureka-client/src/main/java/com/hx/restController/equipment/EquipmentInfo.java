@@ -11,6 +11,7 @@ import com.hx.service.EquipmentInfoAService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @RestController
@@ -20,15 +21,15 @@ public class EquipmentInfo {
     private EquipmentInfoAService equipmentInfoService;
     @GetMapping(value = "/equipmentList")
     @ResponseBody
-    public String queryEquipmentList(Integer page,Integer size){
-        Map<String,Object> personnelList=equipmentInfoService.queryEquipmentList(page,size);
+    public String queryEquipmentList(Integer page,Integer size,String username,HttpServletRequest request){
+        Map<String,Object> personnelList=equipmentInfoService.queryEquipmentList(page,size,username,request);
         return JSONObject.toJSONStringWithDateFormat( personnelList,"yyyy-MM-dd HH:mm:ss" );
     }
 
     @PostMapping(value = "/insertEquipment")
     @ResponseBody
-    public String insertEquipment(@RequestBody FacilityInformation facilityInformation){
-        String insertMsg=equipmentInfoService.insertEquipment(facilityInformation);
+    public String insertEquipment(@RequestBody FacilityInformation facilityInformation,String username,HttpServletRequest request){
+        String insertMsg=equipmentInfoService.insertEquipment(facilityInformation,username,request);
         return JSONObject.toJSONString(insertMsg);
     }
 

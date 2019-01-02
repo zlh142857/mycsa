@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 @RestController
 @RequestMapping(value = "/exam")
@@ -29,16 +30,16 @@ public class Exam {
 
     @RequestMapping(value = "/insertExamInfo",method = RequestMethod.POST)
     @ResponseBody
-    public String insertExamInfo(Integer userId,Integer score){
-        String insertMsg=examService.insertExamInfo(userId,score);
+    public String insertExamInfo(Integer userId,Integer score,String username,HttpServletRequest request){
+        String insertMsg=examService.insertExamInfo(userId,score,username,request);
         return JSONObject.toJSONString( insertMsg);
     }
 
 
     @RequestMapping(value = "/insertExamChoose",method = RequestMethod.POST)
     @ResponseBody
-    public String insertExamChoose(ExamChoose examChoose){
-        String insertMsg=examService.insertExamChoose(examChoose);
+    public String insertExamChoose(ExamChoose examChoose,String username,HttpServletRequest request){
+        String insertMsg=examService.insertExamChoose(examChoose,username,request);
         return JSONObject.toJSONString( insertMsg);
     }
 

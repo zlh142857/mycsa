@@ -9,3 +9,6 @@ spring:
     max-idle: 8
     min-idle: 8
     initial-size: 10
+logging.config:
+  classpath: log4j2.xml
+logging.level.org.springframework: info

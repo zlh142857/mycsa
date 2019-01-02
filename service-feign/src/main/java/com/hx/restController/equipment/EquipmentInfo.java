@@ -10,6 +10,8 @@ import com.hx.service.equipment.EquipmentInfoAService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping(value = "/equipmentInfo")
 public class EquipmentInfo {
@@ -26,8 +28,8 @@ public class EquipmentInfo {
      */
     @GetMapping(value = "/equipmentList")
     @ResponseBody
-    public String queryEquipmentList(Integer page,Integer size){
-        return equipmentInfoAService.queryEquipmentList(page,size);
+    public String queryEquipmentList(Integer page, Integer size, @RequestParam("username") String username, HttpServletRequest request){
+        return equipmentInfoAService.queryEquipmentList(page,size,username,request);
     }
     /**
      *
@@ -40,8 +42,8 @@ public class EquipmentInfo {
      */
     @RequestMapping(value = "/insertEquipment",method = RequestMethod.POST)
     @ResponseBody
-    public String insertEquipment(@RequestBody FacilityInformation facilityInformation){
-        return equipmentInfoAService.insertEquipment(facilityInformation);
+    public String insertEquipment(@RequestBody FacilityInformation facilityInformation,@RequestParam("username") String username, HttpServletRequest request){
+        return equipmentInfoAService.insertEquipment(facilityInformation,username,request);
     }
 
     //删除增加断路器,提示 服务器繁忙,未响应

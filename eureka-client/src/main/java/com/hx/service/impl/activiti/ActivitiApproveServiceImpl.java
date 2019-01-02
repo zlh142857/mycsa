@@ -6,6 +6,7 @@ package com.hx.service.impl.activiti;/*
  */
 
 import com.hx.Activiti.ActMsgPersonnel;
+import com.hx.component.GetIpUtil;
 import com.hx.shiro.UserInfo;
 import com.hx.config.utils.ActType;
 import com.hx.config.utils.ProKey;
@@ -16,11 +17,13 @@ import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
+import org.jboss.logging.MDC;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 @Service
@@ -35,7 +38,10 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
     @Autowired
     private UserInfoRepository userInfoRepository;
     @Override
-    public String lCountryRefer(UserInfo userInfo, ActMsgPersonnel actMsgPersonnel) {
+    public String lCountryRefer(UserInfo userInfo, ActMsgPersonnel actMsgPersonnel, HttpServletRequest request) {
+        MDC.put( "username", userInfo.getUsername());
+        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
+        String refMsg="申请失败";
         try{
             //启动流程实例
             Map<String, Object> variables = new HashMap<String, Object>();
@@ -46,7 +52,6 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
             actMsgPersonnel.setCreateTime( new Date(  ) );
             actMsgPersonnel.setProId( pi.getId());
             ActMsgPersonnel actMsgPersonnel1 =activitiRepository.save( actMsgPersonnel );
-            String refMsg="申请失败";
             if(actMsgPersonnel1 != null){
                 Map<String, Object> variables2 = new HashMap<String, Object>();
                 variables2.put("name", actMsgPersonnel.getName());
@@ -56,7 +61,6 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 variables2.put("backTime", actMsgPersonnel.getBackTime());
                 variables2.put("goWhere", actMsgPersonnel.getGoWhere());
                 variables2.put("dept", actMsgPersonnel.getDept());
-                //variables2.put("phone", actMsgPersonnel.getPhone());
                 variables2.put("type",ActType.LC);
                 variables2.put("message", "提交申请");
                 Long uid=userInfoRepository.findUserByDeptCodeAndDeptLeader(userInfo.getDeptCode(),userInfo.getDeptLeader());
@@ -69,30 +73,32 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                             synchronized (task.getId()){
                                 taskService.complete( task.getId(),variables2 );
                             }
-                            refMsg="申请成功";
-                            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功" );
+                            logger.info( "提交申请成功" );
+                            refMsg="提交申请成功";
                             return refMsg;
                         }
                     }
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:没有找到相对应实例id的流程" );
+                    logger.error( "没有找到相对应实例id的流程" );
                     return refMsg;
                 }else{
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:taskList==null" );
+                    logger.error( "taskList==null" );
                     return refMsg;
                 }
             }else{
-                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:actMsgPersonnel1==null" );
+                logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:actMsgPersonnel1==null" );
                 return refMsg;
             }
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            String refMsg="申请失败";
+            logger.error(throwable.toString() );
             return refMsg;
         }
     }
 
     @Override
-    public String goWorkRefer(UserInfo userInfo, ActMsgPersonnel actMsgPersonnel) {
+    public String goWorkRefer(UserInfo userInfo, ActMsgPersonnel actMsgPersonnel, HttpServletRequest request) {
+        MDC.put( "username", userInfo.getUsername());
+        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
+        String refMsg="申请失败";
         try{
             //启动流程实例
             Map<String, Object> variables = new HashMap<String, Object>();
@@ -102,7 +108,6 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
             actMsgPersonnel.setUid( userInfo.getUid());
             actMsgPersonnel.setCreateTime( new Date(  ) );
             ActMsgPersonnel actMsgPersonnel1 =activitiRepository.save( actMsgPersonnel );
-            String refMsg="申请失败";
             if(actMsgPersonnel1 != null){
                 Map<String, Object> variables2 = new HashMap<String, Object>();
                 variables2.put("name", actMsgPersonnel.getName());
@@ -126,30 +131,33 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                             synchronized (task.getId()){
                                 taskService.complete( task.getId(),variables2 );
                             }
-                            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功" );
-                            refMsg="申请成功";
+                            logger.info( "提交申请成功" );
+                            refMsg="提交申请成功";
                             return refMsg;
                         }
                     }
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:没有找到相对应实例id的流程" );
+
+                    logger.info( "没有找到相对应实例id的流程" );
                     return refMsg;
                 }else{
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:taskList==null" );
+                    logger.info( "taskList==null" );
                     return refMsg;
                 }
             }else{
-                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:actMsgPersonnel1==null" );
+                logger.info( "actMsgPersonnel1==null" );
                 return refMsg;
             }
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            String refMsg="申请失败";
+            logger.error( throwable.toString() );
             return refMsg;
         }
     }
 
     @Override
-    public String lPostRefer(UserInfo userInfo, ActMsgPersonnel actMsgPersonnel) {
+    public String lPostRefer(UserInfo userInfo, ActMsgPersonnel actMsgPersonnel, HttpServletRequest request) {
+        MDC.put( "username", userInfo.getUsername());
+        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
+        String refMsg="申请失败";
         try{
             //启动流程实例
             Map<String, Object> variables = new HashMap<String, Object>();
@@ -159,7 +167,6 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
             actMsgPersonnel.setUid( userInfo.getUid());
             actMsgPersonnel.setCreateTime( new Date(  ) );
             ActMsgPersonnel actMsgPersonnel1 =activitiRepository.save( actMsgPersonnel );
-            String refMsg="申请失败";
             if(actMsgPersonnel1 != null){
                 Map<String, Object> variables2 = new HashMap<String, Object>();
                 variables2.put("name", actMsgPersonnel.getName());
@@ -182,32 +189,33 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                             synchronized (task.getId()){
                                 taskService.complete( task.getId(),variables2 );
                             }
-                            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功" );
+                            logger.info( "提交申请成功" );
                             refMsg="申请成功";
                             return refMsg;
                         }
                     }
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:没有找到相对应实例id的流程" );
+                    logger.info( "没有找到相对应实例id的流程" );
                     return refMsg;
                 }else{
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:taskList==null" );
+                    logger.info( "taskList==null" );
                     return refMsg;
                 }
             }else{
-                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:actMsgPersonnel1==null" );
+                logger.info( "actMsgPersonnel1==null" );
                 return refMsg;
             }
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            String refMsg="申请失败";
+            logger.error( throwable.toString() );
             return refMsg;
         }
     }
 
     @Override
-    public Map<String,Object> selectSelfLCTask(String uid) {
+    public Map<String,Object> selectSelfLCTask(String uid, HttpServletRequest request, String username) {
+        MDC.put( "username",username);
+        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
+        Map<String,Object> map=new HashMap<>(  );
         try{
-            Map<String,Object> map=new HashMap<>(  );
             List<Task> list= taskService.createTaskQuery().taskAssignee(uid).list();
             List<ActMsgPersonnel> taskList = new ArrayList<>(  );
             for(Task task:list){
@@ -231,20 +239,21 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
             }
             map.put( "taskList",taskList );
             map.put( "msg","获取信息成功" );
-            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功" );
+            logger.info( "获取待审批任务成功" );
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            Map<String,Object> map=new HashMap<>(  );
+            logger.error( throwable.toString() );
             map.put( "msg","获取信息失败" );
             return map;
         }
     }
 
     @Override
-    public Map<String, Object> selectSelfTWTask(String uid) {
+    public Map<String, Object> selectSelfTWTask(String uid, HttpServletRequest request, String username) {
+        MDC.put( "username",username);
+        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
+        Map<String,Object> map=new HashMap<>(  );
         try{
-            Map<String,Object> map=new HashMap<>(  );
             List<Task> list= taskService.createTaskQuery().taskAssignee(uid).list();
             List<ActMsgPersonnel> taskList = new ArrayList<>(  );
             for(Task task:list){
@@ -267,19 +276,20 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
             }
             map.put( "taskList",taskList );
             map.put( "msg","获取信息成功" );
-            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功" );
+            logger.info( "获取待审批任务成功" );
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            Map<String,Object> map=new HashMap<>(  );
+            logger.error( throwable.toString() );
             map.put( "msg","获取信息失败" );
             return map;
         }
     }
 
     @Override
-    public Map<String, Object> selectSelfLPTask(String uid) {
+    public Map<String, Object> selectSelfLPTask(String uid, HttpServletRequest request, String username) {
         Map<String,Object> map=new HashMap<>(  );
+        MDC.put( "username",username);
+        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
         try{
             List<Task> list= taskService.createTaskQuery().taskAssignee(uid).list();
             List<ActMsgPersonnel> taskList = new ArrayList<>(  );
@@ -303,17 +313,19 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
             }
             map.put( "taskList",taskList );
             map.put( "msg","获取信息成功" );
-            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功" );
+            logger.info( "获取待审批任务成功" );
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
+            logger.error( throwable.toString() );
             map.put( "msg","获取信息失败" );
             return map;
         }
     }
 
     @Override
-    public String aduitback(String taskId) {
+    public String aduitback(String taskId, HttpServletRequest request, String username) {
+        MDC.put( "username",username);
+        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
         String msg="";
         try{
             if(taskId==null || taskId==""){
@@ -325,18 +337,20 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 synchronized (taskId){
                     taskService.complete(taskId,variables);
                 }
-                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:驳回成功" );
+                logger.info( "驳回成功" );
                 return msg="驳回成功";
             }
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
+            logger.error( throwable.toString() );
             return msg="程序出错,操作失败";
         }
     }
 
     @Override
-    public String aduitok(String taskId,Integer uid) {
+    public String aduitok(String taskId,Integer uid, HttpServletRequest request, String username) {
         String msg="";
+        MDC.put( "username",username);
+        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
         try{
             if(taskId==null || uid ==null){
                 logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:taskId或者uid没有传值到后台" );
@@ -354,7 +368,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                     synchronized (taskId){
                         taskService.complete(taskId,variables);
                     }
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:部门领导审批通过" );
+                    logger.info( "部门领导审批通过" );
                     return msg="审批通过";
                 }else if(role=="机要处领导"){
                     //根据角色获取上级领导的uid
@@ -363,7 +377,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                     synchronized (taskId){
                         taskService.complete(taskId,variables);
                     }
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:机要处领导审批通过" );
+                    logger.info( "机要处领导审批通过" );
                     return msg="审批通过";
                 }else if(role=="办公厅厅长"){
                     //审核通过之后,流程结束,需要改变actMagPersonnel表中的状态值,表示审批已经结束,等到查询已经结束的流程中可以直接查询
@@ -371,32 +385,34 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                     Integer userid=(Integer) taskService.getVariable( taskId,"inputUser" );
                     int count=activitiRepository.updateStatusByPid(pid,userid,new Date(  ));
                     if(count == 0){
-                        logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:修改actMsgPersonnel表状态失败" );
+                        logger.error( "修改actMsgPersonnel表状态失败" );
                         return msg="审批失败";
                     }else{
                         synchronized (taskId){
                             taskService.complete(taskId,variables);
                         }
-                        logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:机要委领导审批通过" );
+                        logger.info( "办公厅厅长审批通过" );
                         return msg="审批通过";
                     }
                 }else{
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:该用户角色没有审批权限" );
+                    logger.error( "该用户角色没有审批权限" );
                     return msg="该用户角色没有审批权限";
                 }
             }
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
+            logger.error( throwable.toString() );
             return msg="程序出错,操作失败";
         }
     }
 
     @Override
-    public String goComplete(String taskId) {
+    public String goComplete(String taskId, HttpServletRequest request, String username) {
         String msg="";
+        MDC.put( "username",username);
+        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
         try{
             if(taskId==null || taskId==""){
-                logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:taskId没有传值到后台" );
+                logger.error( "taskId没有传值到后台" );
                 return msg="taskId为空";
             }else{
                 //审核通过之后,流程结束,需要改变actMagPersonnel表中的状态值,表示审批已经结束,等到查询已经结束的流程中可以直接查询
@@ -404,7 +420,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 Integer userid=(Integer) taskService.getVariable( taskId,"inputUser" );
                 int count=activitiRepository.updateStatusByPid(pid,userid,new Date(  ));
                 if(count == 0){
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:修改actMsgPersonnel表状态失败" );
+                    logger.error( "修改actMsgPersonnel表状态失败" );
                     return msg="操作失败";
                 }else{
                     Map<String, Object> variables = new HashMap<String, Object>();
@@ -412,22 +428,24 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                     synchronized (taskId){
                         taskService.complete(taskId,variables);
                     }
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:取消申请成功" );
+                    logger.info( "取消申请成功" );
                     return msg="取消申请成功";
                 }
             }
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
+            logger.error( throwable.toString() );
             return msg="程序出错,操作失败";
         }
     }
 
     @Override
-    public String applyAgain(String taskId) {
+    public String applyAgain(String taskId, HttpServletRequest request, String username) {
         String msg="";
+        MDC.put( "username",username);
+        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
         try{
             if(taskId==null || taskId==""){
-                logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:taskId没有传值到后台" );
+                logger.error( "taskId没有传值到后台" );
                 return msg="taskId为空";
             }else{
                 Map<String, Object> variables = new HashMap<String, Object>();
@@ -435,21 +453,23 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 synchronized (taskId){
                     taskService.complete(taskId,variables);
                 }
-                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:重新申请成功" );
+                logger.info( "重新申请成功" );
                 return msg="重新申请成功";
             }
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
+            logger.error( throwable.toString() );
             return msg="程序出错,操作失败";
         }
     }
 
     @Override
-    public Map<String,Object> selectRunningTask(Integer uid) {
+    public Map<String,Object> selectRunningTask(Integer uid, HttpServletRequest request, String username) {
         Map<String,Object> map=new HashMap<>(  );
+        MDC.put( "username",username);
+        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
         try{
             if(uid==null){
-                logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:uid没有传值到后台" );
+                logger.error( "uid没有传值到后台" );
                 map.put( "msg","uid为空" );
                 return map;
             }else{
@@ -457,27 +477,29 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 if(list != null){
                     map.put( "list",list );
                     map.put( "msg","查询成功" );
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:查询成功" );
+                    logger.info( "查询成功" );
                     return map;
                 }else{
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:查询到的list为空" );
+                    logger.error( "查询到的list为空" );
                     map.put( "msg","list为空" );
                     return map;
                 }
             }
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
+            logger.error( throwable.toString() );
             map.put( "msg","程序出错,操作失败" );
             return map;
         }
     }
 
     @Override
-    public Map<String, Object> selectRunedTask(Integer uid) {
+    public Map<String, Object> selectRunedTask(Integer uid, HttpServletRequest request, String username) {
         Map<String,Object> map=new HashMap<>(  );
+        MDC.put( "username",username);
+        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
         try{
             if(uid==null){
-                logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:uid没有传值到后台" );
+                logger.error( "uid没有传值到后台" );
                 map.put( "msg","uid为空" );
                 return map;
             }else{
@@ -485,16 +507,16 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 if(list != null){
                     map.put( "list",list );
                     map.put( "msg","查询成功" );
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:查询成功" );
+                    logger.info( ":查询成功" );
                     return map;
                 }else{
-                    logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:查询到的list为空" );
+                    logger.error( "查询到的list为空" );
                     map.put( "msg","list为空" );
                     return map;
                 }
             }
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
+            logger.error( throwable.toString() );
             map.put( "msg","程序出错,操作失败" );
             return map;
         }

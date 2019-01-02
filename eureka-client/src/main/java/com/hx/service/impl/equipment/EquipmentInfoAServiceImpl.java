@@ -5,6 +5,7 @@ package com.hx.service.impl.equipment;/*
  *@功能:
  */
 
+import com.hx.component.GetIpUtil;
 import com.hx.config.utils.DictCode;
 import com.hx.dao.code.CodeRepository;
 import com.hx.dao.equipment.EquipmentInfoRepository;
@@ -12,6 +13,7 @@ import com.hx.facility.FacilityInformation;
 import com.hx.service.EquipmentInfoAService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,6 +21,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,9 +34,11 @@ public class EquipmentInfoAServiceImpl implements EquipmentInfoAService {
     @Autowired
     private CodeRepository codeRepository;
     @Override
-    public Map<String, Object> queryEquipmentList(Integer page, Integer size) {
+    public Map<String, Object> queryEquipmentList(Integer page, Integer size,String username,HttpServletRequest request) {
+        Map<String,Object> map=new HashMap<>(  );
+        MDC.put( "username",username );
+        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
         try{
-            Map<String,Object> map=new HashMap<>(  );
             Pageable pageable = PageRequest.of(page, size,Sort.Direction.ASC,"id");
             Page<FacilityInformation> facilityInformationList=equipmentInfoRepository.findAll(pageable);
             List<FacilityInformation> list= facilityInformationList.getContent();
@@ -56,11 +61,10 @@ public class EquipmentInfoAServiceImpl implements EquipmentInfoAService {
             }
             map.put( "facilityInformationList",facilityInformationList );
             map.put( "msg","查询成功");
-            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:成功");
+            logger.info( "查询设备成功");
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            Map<String,Object> map=new HashMap<>(  );
+            logger.error(throwable.toString() );
             map.put( "msg","查询失败");
             return map;
         }
@@ -68,20 +72,22 @@ public class EquipmentInfoAServiceImpl implements EquipmentInfoAService {
     }
 
     @Override
-    public String insertEquipment(FacilityInformation facilityInformation) {
+    public String insertEquipment(FacilityInformation facilityInformation,String username,HttpServletRequest request) {
+        MDC.put( "username",username );
+        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
         try{
             FacilityInformation facility=equipmentInfoRepository.save(facilityInformation);
             String insertMsg="";
             if(facility!=null){
                 insertMsg="录入成功";
-                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:录入成功");
+                logger.info( "录入成功");
             }else{
                 insertMsg="录入失败";
-                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:保存facility==null");
+                logger.error( "保存facility==null");
             }
             return insertMsg;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
+            logger.error(throwable.toString() );
             String insertMsg="录入失败,请重新录入";
             return insertMsg;
         }

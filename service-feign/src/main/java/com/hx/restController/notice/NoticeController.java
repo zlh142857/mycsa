@@ -9,16 +9,24 @@ import com.hx.system.Notice;
 import com.hx.service.notice.NoticeService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping(value = "/noticeController")
 public class NoticeController {
     @Autowired
     private NoticeService noticeService;
+    /**
+     *
+     * 功能描述: 查询公告
+     *
+     * @param:
+     * @return:
+     * @auther: 张立恒
+     * @date: 2019/1/2 16:05
+     */
     @RequestMapping(value = "/queryNoticeList",method = RequestMethod.GET)
     @HystrixCommand(fallbackMethod ="queryNoticeListError")
     @ResponseBody
@@ -27,24 +35,40 @@ public class NoticeController {
         return noticeList;
     }
     public String queryNoticeListError() {
-        return "服务未响应";
+        return "当前系统繁忙,请稍后重试";
     }
-
+    /**
+     *
+     * 功能描述: 新增公告
+     *
+     * @param:
+     * @return:
+     * @auther: 张立恒
+     * @date: 2019/1/2 16:05
+     */
     @RequestMapping(value = "/insertNotice",method = RequestMethod.POST)
     @ResponseBody
-    public String insertNotice(Notice notice){
-        String insertMsg=noticeService.insertNotice(notice);
+    public String insertNotice(Notice notice, @RequestParam("username") String username, HttpServletRequest request){
+        String insertMsg=noticeService.insertNotice(notice,username,request);
         return insertMsg;
     }
     public String insertNoticeError(Notice notice) {
-        return "服务未响应";
+        return "当前系统繁忙,请稍后重试";
     }
 
-
+    /**
+     *
+     * 功能描述: 删除公告
+     *
+     * @param:
+     * @return:
+     * @auther: 张立恒
+     * @date: 2019/1/2 16:05
+     */
     @RequestMapping(value = "/delNotice",method = RequestMethod.POST)
     @ResponseBody
-    public String delNotice(Integer noticeId){
-        String delMsg=noticeService.delNotice(noticeId);
+    public String delNotice(Integer noticeId, @RequestParam("username") String username, HttpServletRequest request){
+        String delMsg=noticeService.delNotice(noticeId,username,request);
         return delMsg;
     }
 

@@ -11,6 +11,7 @@ import com.hx.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @RestController
@@ -27,15 +28,15 @@ public class NoticeController {
 
     @PostMapping(value = "/insertNotice")
     @ResponseBody
-    public String insertNotice(Notice notice){
-        String insertMsg=noticeService.insertNotice(notice);
+    public String insertNotice(Notice notice,String username,HttpServletRequest request){
+        String insertMsg=noticeService.insertNotice(notice,username,request);
         return JSONObject.toJSONString( insertMsg);
     }
 
     @PostMapping(value = "/delNotice")
     @ResponseBody
-    public String delNotice(Integer noticeId){
-        String delMsg=noticeService.delNotice(noticeId);
+    public String delNotice(Integer noticeId,String username,HttpServletRequest request){
+        String delMsg=noticeService.delNotice(noticeId,username,request);
         return JSONObject.toJSONString( delMsg);
     }
 }

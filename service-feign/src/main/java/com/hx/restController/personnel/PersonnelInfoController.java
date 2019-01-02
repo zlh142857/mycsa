@@ -10,6 +10,7 @@ import com.hx.service.personnel.PersonnelInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
@@ -28,8 +29,8 @@ public class PersonnelInfoController {
      */
     @RequestMapping(value = "/personnelList",method = RequestMethod.GET)
     @ResponseBody
-    public String queryPersonnelList(Integer page,Integer size){
-        String personnelList=personnelInfoService.queryPersonnelList(page,size);
+    public String queryPersonnelList(Integer page,Integer size, HttpServletRequest request,String username){
+        String personnelList=personnelInfoService.queryPersonnelList(page,size,request,username);
         return personnelList;
     }
     /**
@@ -43,15 +44,15 @@ public class PersonnelInfoController {
      */
     @GetMapping(value = "/personnelDetail")
     @ResponseBody
-    public String personnelDetail(Integer perId){
-        String personnel=personnelInfoService.personnelDetail(perId);
+    public String personnelDetail(Integer perId, HttpServletRequest request,String username){
+        String personnel=personnelInfoService.personnelDetail(perId,request,username);
         return personnel;
     }
 
     @PostMapping(value = "/insertPersonnel")
     @ResponseBody
-    public String insertPer(@RequestBody MuchObj muchObj){
-        String insertMsg=personnelInfoService.insertPer(muchObj);
+    public String insertPer(@RequestBody MuchObj muchObj, HttpServletRequest request){
+        String insertMsg=personnelInfoService.insertPer(muchObj,request);
         return "";
     }
 

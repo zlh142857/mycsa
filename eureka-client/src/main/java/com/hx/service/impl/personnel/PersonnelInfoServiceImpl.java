@@ -5,6 +5,7 @@ package com.hx.service.impl.personnel;/*
  *@功能:人员信息库
  */
 
+import com.hx.component.GetIpUtil;
 import com.hx.config.utils.Base;
 import com.hx.config.utils.FileUtil;
 import com.hx.config.utils.FtpUtil;
@@ -21,6 +22,7 @@ import com.hx.dao.personnel.PersonnelInfoRepository;
 import com.hx.dao.system.UserInfoRepository;
 import com.hx.personnel.PersonnelInfo;
 import com.hx.service.PersonnelInfoService;
+import org.apache.log4j.MDC;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +33,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.*;
@@ -49,9 +52,11 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
     @Autowired
     private ClanInfoRepository clanInfoRepository;
     @Override
-    public Map<String, Object> queryPersonnelList(Integer page,Integer size) {
+    public Map<String, Object> queryPersonnelList(Integer page,Integer size, HttpServletRequest request,String username) {
+        Map<String,Object> map=new HashMap<>(  );
+        MDC.put( "username",username );
+        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
         try{
-            Map<String,Object> map=new HashMap<>(  );
             //分页
             Integer pag=page-1;
             Pageable pageable = PageRequest.of(pag, size,Sort.Direction.DESC,"create_time");
@@ -77,11 +82,10 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
             }
             map.put( "personnelInfoList",personnelInfoList );
             map.put( "msg","查询成功");
-            logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:查询成功" );
+            logger.info("查询成功" );
             return map;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
-            Map<String,Object> map=new HashMap<>(  );
+            logger.error(throwable.toString() );
             map.put( "msg","查询失败");
             return map;
         }
@@ -90,7 +94,8 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
 
     @Override
     public String insertPersonnel(PersonnelInfo personnelInfo, List<PersonnelRecord> personnelRecords,
-                                  List<ClanInfo> clanInfos, String base64) {
+                                  List<ClanInfo> clanInfos, String base64, HttpServletRequest request) {
+        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
         try{
             String insertMsg="";
             //保存图片
@@ -127,22 +132,22 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
                     UserInfo userInfo1=userInfoRepository.save( userInfo );
                     if(userInfo1 != null){
                         insertMsg="录入成功";
-                        logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:录入成功" );
+                        logger.info( "录入成功" );
                     }else{
                         insertMsg="录入失败";
-                        logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:新增userInfo1==null" );
+                        logger.error( "新增userInfo1==null" );
                     }
                 }else{
-                    logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:新增personnel==null" );
+                    logger.error( "新增personnel==null" );
                     insertMsg="录入失败";
                 }
             }else{
                 insertMsg="ftp登录失败";
-                logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:ftp登录失败" );
+                logger.error( "ftp登录失败" );
             }
             return insertMsg;
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
+            logger.error( throwable.toString() );
             String insertMsg="录入失败,请重新录入";
             return insertMsg;
         }
@@ -177,17 +182,19 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
         }
     }*/
     @Override
-    public void showImage(String photoUrl, HttpServletResponse response){
+    public void showImage(String photoUrl, HttpServletResponse response, HttpServletRequest request){
         try {
             FtpUtil.ftpDown( photoUrl,response );
         } catch (Exception e) {
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+e.toString() );
+            logger.error( e.toString() );
         }
     }
 
     @Override
-    public Map<String, Object> queryPersonnelDetail(Integer perId) {
-         Map<String,Object> map=new HashMap<>(  );
+    public Map<String, Object> queryPersonnelDetail(Integer perId, HttpServletRequest request,String username) {
+        Map<String,Object> map=new HashMap<>(  );
+        MDC.put( "username",username );
+        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
         try{
             Optional optional=personnelInfoRepository.findById(perId);
             PersonnelRecord personnelRecord=personnelRecordRepository.findByPerId( perId );
@@ -213,15 +220,15 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
                 map.put( "clanInfo",clanInfo );
                 map.put( "personnelRecord",personnelRecord );
                 map.put( "msg","查询成功");
-                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:查询成功" );
+                logger.info( "查询成功" );
                 return map;
             }else{
                 map.put( "msg","查询为空");
-                logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:查询为空" );
+                logger.error( "查询为空" );
                 return map;
             }
         }catch (Throwable throwable){
-            logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+throwable.toString() );
+            logger.error( throwable.toString() );
             map.put( "msg","查询失败");
             return map;
         }

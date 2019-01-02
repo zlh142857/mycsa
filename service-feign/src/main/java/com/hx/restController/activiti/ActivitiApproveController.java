@@ -12,6 +12,7 @@ import com.hx.service.activiti.ActivitiApproveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @RestController
@@ -30,8 +31,8 @@ public class ActivitiApproveController {
      */
     @PostMapping(value = "/lCountryRefer")
     @ResponseBody
-    public String lCountryRefer(@RequestBody MuchObj muchObj){
-        String referMsg=activitiApproveService.lCountryRefer(muchObj);
+    public String lCountryRefer(@RequestBody MuchObj muchObj, HttpServletRequest request){
+        String referMsg=activitiApproveService.lCountryRefer(muchObj,request);
         return referMsg;
     }
     /**
@@ -45,8 +46,8 @@ public class ActivitiApproveController {
      */
     @RequestMapping(value = "/goWorkRefer",method = RequestMethod.POST)
     @ResponseBody
-    public String goWorkRefer(@RequestBody MuchObj muchObj){
-        String referMsg=activitiApproveService.goWorkRefer(muchObj );
+    public String goWorkRefer(@RequestBody MuchObj muchObj, HttpServletRequest request){
+        String referMsg=activitiApproveService.goWorkRefer(muchObj,request );
         return referMsg;
     }
 
@@ -61,8 +62,8 @@ public class ActivitiApproveController {
      */
     @RequestMapping(value = "/lPostRefer",method = RequestMethod.POST)
     @ResponseBody
-    public String lPostRefer(@RequestBody MuchObj muchObj){
-        String referMsg=activitiApproveService.lPostRefer(muchObj);
+    public String lPostRefer(@RequestBody MuchObj muchObj, HttpServletRequest request){
+        String referMsg=activitiApproveService.lPostRefer(muchObj,request);
         return referMsg;
     }
     /**
@@ -76,8 +77,8 @@ public class ActivitiApproveController {
      */
     @RequestMapping(value = "/selectSelfLCTask",method = RequestMethod.GET)
     @ResponseBody
-    public String selectSelfLCTask(@RequestParam("uid") String uid){
-        String map=activitiApproveService.selectSelfLCTask(uid);
+    public String selectSelfLCTask(@RequestParam("uid") String uid, HttpServletRequest request,@RequestParam("username")String username){
+        String map=activitiApproveService.selectSelfLCTask(uid,request,username);
         return map;
     }
     /**
@@ -91,8 +92,8 @@ public class ActivitiApproveController {
      */
     @RequestMapping(value = "/selectSelfTWTask",method = RequestMethod.GET)
     @ResponseBody
-    public String selectSelfTWTask(@RequestParam("uid") String uid){
-        String map=activitiApproveService.selectSelfTWTask(uid);
+    public String selectSelfTWTask(@RequestParam("uid") String uid, HttpServletRequest request,@RequestParam("username")String username){
+        String map=activitiApproveService.selectSelfTWTask(uid,request,username);
         return map;
     }
     /**
@@ -106,8 +107,8 @@ public class ActivitiApproveController {
      */
     @RequestMapping(value = "/selectSelfLPTask",method = RequestMethod.GET)
     @ResponseBody
-    public String selectSelfLPTask(@RequestParam("uid") String uid){
-        String map=activitiApproveService.selectSelfLPTask(uid);
+    public String selectSelfLPTask(@RequestParam("uid") String uid, HttpServletRequest request,@RequestParam("username")String username){
+        String map=activitiApproveService.selectSelfLPTask(uid,request,username);
         return map;
     }
     /**
@@ -121,8 +122,8 @@ public class ActivitiApproveController {
      */
     @RequestMapping(value = "/aduitback",method = RequestMethod.GET)
     @ResponseBody
-    public String aduitback(@RequestParam("taskId") String taskId){
-        String msg=activitiApproveService.aduitback(taskId);
+    public String aduitback(@RequestParam("taskId") String taskId, HttpServletRequest request,@RequestParam("username")String username){
+        String msg=activitiApproveService.aduitback(taskId,request,username);
         return msg;
     }
     /**
@@ -136,8 +137,8 @@ public class ActivitiApproveController {
      */
     @RequestMapping(value = "/aduitok",method = RequestMethod.GET)
     @ResponseBody
-    public String aduitok(@RequestParam("taskId") String taskId,@RequestParam("uid")Integer uid){
-        String msg=activitiApproveService.aduitok(taskId,uid);
+    public String aduitok(@RequestParam("taskId") String taskId,@RequestParam("uid")Integer uid, HttpServletRequest request,@RequestParam("username")String username){
+        String msg=activitiApproveService.aduitok(taskId,uid,request,username);
         return msg;
     }
     /**
@@ -151,8 +152,8 @@ public class ActivitiApproveController {
      */
     @RequestMapping(value = "/goComplete",method = RequestMethod.GET)
     @ResponseBody
-    public String goComplete(@RequestParam("taskId") String taskId){
-        String msg=activitiApproveService.goComplete(taskId);
+    public String goComplete(@RequestParam("taskId") String taskId, HttpServletRequest request,@RequestParam("username")String username){
+        String msg=activitiApproveService.goComplete(taskId,request,username);
         return msg;
     }
     /**
@@ -166,8 +167,8 @@ public class ActivitiApproveController {
      */
     @RequestMapping(value = "/applyAgain",method = RequestMethod.GET)
     @ResponseBody
-    public String applyAgain(@RequestParam("taskId") String taskId){
-        String msg=activitiApproveService.applyAgain(taskId);
+    public String applyAgain(@RequestParam("taskId") String taskId, HttpServletRequest request,@RequestParam("username")String username){
+        String msg=activitiApproveService.applyAgain(taskId,request,username);
         return msg;
     }
 
@@ -182,8 +183,8 @@ public class ActivitiApproveController {
      */
     @RequestMapping(value = "/selectRunningTask",method = RequestMethod.GET)
     @ResponseBody
-    public String selectRunningTask(@RequestParam("uid") Integer uid){
-        String msg=activitiApproveService.selectRunningTask(uid);
+    public String selectRunningTask(@RequestParam("uid") Integer uid, HttpServletRequest request,@RequestParam("username")String username){
+        String msg=activitiApproveService.selectRunningTask(uid,request,username);
         return msg;
     }
     /**
@@ -197,8 +198,8 @@ public class ActivitiApproveController {
      */
     @RequestMapping(value = "/selectRunedTask",method = RequestMethod.GET)
     @ResponseBody
-    public String selectRunedTask(@RequestParam("uid") Integer uid){
-        String msg=activitiApproveService.selectRunedTask(uid);
+    public String selectRunedTask(@RequestParam("uid") Integer uid, HttpServletRequest request,@RequestParam("username")String username){
+        String msg=activitiApproveService.selectRunedTask(uid,request,username);
         return msg;
     }
 }

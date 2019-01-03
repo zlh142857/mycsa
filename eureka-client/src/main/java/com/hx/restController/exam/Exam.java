@@ -9,10 +9,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.hx.exam.ExamChoose;
 import com.hx.service.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
@@ -30,16 +27,16 @@ public class Exam {
 
     @RequestMapping(value = "/insertExamInfo",method = RequestMethod.POST)
     @ResponseBody
-    public String insertExamInfo(Integer userId,Integer score,String username,HttpServletRequest request){
-        String insertMsg=examService.insertExamInfo(userId,score,username,request);
+    public String insertExamInfo(Integer userId,Integer score,String username,@RequestParam("ip")String ip){
+        String insertMsg=examService.insertExamInfo(userId,score,username,ip);
         return JSONObject.toJSONString( insertMsg);
     }
 
 
     @RequestMapping(value = "/insertExamChoose",method = RequestMethod.POST)
     @ResponseBody
-    public String insertExamChoose(ExamChoose examChoose,String username,HttpServletRequest request){
-        String insertMsg=examService.insertExamChoose(examChoose,username,request);
+    public String insertExamChoose(ExamChoose examChoose,String username,@RequestParam("ip")String ip){
+        String insertMsg=examService.insertExamChoose(examChoose,username,ip);
         return JSONObject.toJSONString( insertMsg);
     }
 

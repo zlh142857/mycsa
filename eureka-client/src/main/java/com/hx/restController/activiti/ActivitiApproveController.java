@@ -33,10 +33,10 @@ public class ActivitiApproveController {
      */
     @PostMapping(value = "/lCountryRefer")
     @ResponseBody
-    public String lCountryRefer(@RequestBody MuchObj muchObj, HttpServletRequest request){
+    public String lCountryRefer(@RequestBody MuchObj muchObj,@RequestParam("ip")String ip){
         UserInfo userInfo= muchObj.userInfo;
         ActMsgPersonnel actMsgPersonnel= muchObj.actMsgPersonnel;
-        String referMsg=activitiApproveService.lCountryRefer(userInfo, actMsgPersonnel,request );
+        String referMsg=activitiApproveService.lCountryRefer(userInfo, actMsgPersonnel,ip );
         return JSONObject.toJSONString( referMsg );
     }
     /**
@@ -50,10 +50,10 @@ public class ActivitiApproveController {
      */
     @PostMapping(value = "/goWorkRefer")
     @ResponseBody
-    public String goWorkRefer(@RequestBody MuchObj muchObj, HttpServletRequest request){
+    public String goWorkRefer(@RequestBody MuchObj muchObj,@RequestParam("ip")String ip){
         UserInfo userInfo= muchObj.userInfo;
         ActMsgPersonnel actMsgPersonnel= muchObj.actMsgPersonnel;
-        String referMsg=activitiApproveService.goWorkRefer(userInfo, actMsgPersonnel ,request);
+        String referMsg=activitiApproveService.goWorkRefer(userInfo, actMsgPersonnel ,ip);
         return JSONObject.toJSONString( referMsg );
     }
     /**
@@ -67,10 +67,10 @@ public class ActivitiApproveController {
      */
     @PostMapping(value = "/lPostRefer")
     @ResponseBody
-    public String lPostRefer(@RequestBody MuchObj muchObj, HttpServletRequest request){
+    public String lPostRefer(@RequestBody MuchObj muchObj,@RequestParam("ip")String ip){
         UserInfo userInfo= muchObj.userInfo;
         ActMsgPersonnel actMsgPersonnel= muchObj.actMsgPersonnel;
-        String referMsg=activitiApproveService.lPostRefer(userInfo, actMsgPersonnel,request );
+        String referMsg=activitiApproveService.lPostRefer(userInfo, actMsgPersonnel,ip );
         return JSONObject.toJSONString( referMsg );
     }
     /**
@@ -84,8 +84,8 @@ public class ActivitiApproveController {
      */
     @GetMapping(value = "/selectSelfLCTask")
     @ResponseBody
-    public String selectSelfLCTask(@RequestParam("uid") String uid, HttpServletRequest request,@RequestParam("username") String username){
-        Map<String,Object> map=activitiApproveService.selectSelfLCTask(uid ,request,username);
+    public String selectSelfLCTask(@RequestParam("uid") String uid,@RequestParam("ip")String ip,@RequestParam("username") String username){
+        Map<String,Object> map=activitiApproveService.selectSelfLCTask(uid ,ip,username);
         return JSONObject.toJSONStringWithDateFormat( map,"yyyy-MM-dd HH:mm:ss" );
     }
     /**
@@ -99,8 +99,8 @@ public class ActivitiApproveController {
      */
     @GetMapping(value = "/selectSelfTWTask")
     @ResponseBody
-    public String selectSelfTWTask(@RequestParam("uid") String uid, HttpServletRequest request,@RequestParam("username") String username){
-        Map<String,Object> map=activitiApproveService.selectSelfTWTask(uid ,request,username);
+    public String selectSelfTWTask(@RequestParam("uid") String uid,@RequestParam("ip")String ip,@RequestParam("username") String username){
+        Map<String,Object> map=activitiApproveService.selectSelfTWTask(uid ,ip,username);
         return JSONObject.toJSONStringWithDateFormat( map,"yyyy-MM-dd HH:mm:ss" );
     }
     /**
@@ -114,8 +114,8 @@ public class ActivitiApproveController {
      */
     @GetMapping(value = "/selectSelfLPTask")
     @ResponseBody
-    public String selectSelfLPTask(@RequestParam("uid") String uid, HttpServletRequest request,@RequestParam("username") String username){
-        Map<String,Object> map=activitiApproveService.selectSelfLPTask(uid,request,username );
+    public String selectSelfLPTask(@RequestParam("uid") String uid,@RequestParam("ip")String ip,@RequestParam("username") String username){
+        Map<String,Object> map=activitiApproveService.selectSelfLPTask(uid,ip,username );
         return JSONObject.toJSONStringWithDateFormat( map,"yyyy-MM-dd HH:mm:ss" );
     }
     /**
@@ -129,8 +129,8 @@ public class ActivitiApproveController {
      */
     @GetMapping(value = "/aduitback")
     @ResponseBody
-    public String aduitback(@RequestParam("taskId") String taskId, HttpServletRequest request,@RequestParam("username") String username){
-        String msg=activitiApproveService.aduitback(taskId,request ,username);
+    public String aduitback(@RequestParam("taskId") String taskId,@RequestParam("ip")String ip,@RequestParam("username") String username){
+        String msg=activitiApproveService.aduitback(taskId,ip ,username);
         return JSONObject.toJSONString( msg);
     }
     /**
@@ -144,8 +144,8 @@ public class ActivitiApproveController {
      */
     @GetMapping(value = "/aduitok")
     @ResponseBody
-    public String aduitok(@RequestParam("taskId") String taskId,@RequestParam("uid")Integer uid, HttpServletRequest request,@RequestParam("username") String username){
-        String msg=activitiApproveService.aduitok(taskId,uid ,request,username);
+    public String aduitok(@RequestParam("taskId") String taskId,@RequestParam("uid")Integer uid, @RequestParam("ip")String ip,@RequestParam("username") String username){
+        String msg=activitiApproveService.aduitok(taskId,uid ,ip,username);
         return JSONObject.toJSONString( msg);
     }
     /**
@@ -159,8 +159,8 @@ public class ActivitiApproveController {
      */
     @GetMapping(value = "/goComplete")
     @ResponseBody
-    public String goComplete(@RequestParam("taskId") String taskId, HttpServletRequest request,@RequestParam("username") String username){
-        String msg=activitiApproveService.goComplete(taskId,request,username);
+    public String goComplete(@RequestParam("taskId") String taskId, @RequestParam("ip")String ip,@RequestParam("username") String username){
+        String msg=activitiApproveService.goComplete(taskId,ip,username);
         return JSONObject.toJSONString( msg);
     }
     /**
@@ -174,8 +174,8 @@ public class ActivitiApproveController {
      */
     @GetMapping(value = "/applyAgain")
     @ResponseBody
-    public String applyAgain(@RequestParam("taskId") String taskId, HttpServletRequest request,@RequestParam("username") String username){
-        String msg=activitiApproveService.applyAgain(taskId,request,username);
+    public String applyAgain(@RequestParam("taskId") String taskId, @RequestParam("ip")String ip,@RequestParam("username") String username){
+        String msg=activitiApproveService.applyAgain(taskId,ip,username);
         return JSONObject.toJSONString( msg);
     }
     /**
@@ -189,8 +189,8 @@ public class ActivitiApproveController {
      */
     @GetMapping(value = "/selectRunningTask")
     @ResponseBody
-    public String selectRunningTask(@RequestParam("uid")Integer uid, HttpServletRequest request,@RequestParam("username") String username){
-        Map<String,Object> map=activitiApproveService.selectRunningTask(uid,request,username);
+    public String selectRunningTask(@RequestParam("uid")Integer uid, @RequestParam("ip")String ip,@RequestParam("username") String username){
+        Map<String,Object> map=activitiApproveService.selectRunningTask(uid,ip,username);
         return JSONObject.toJSONString( map);
     }
     /**
@@ -204,8 +204,8 @@ public class ActivitiApproveController {
      */
     @GetMapping(value = "/selectRunedTask")
     @ResponseBody
-    public String selectRunedTask(@RequestParam("uid")Integer uid, HttpServletRequest request,@RequestParam("username") String username){
-        Map<String,Object> map=activitiApproveService.selectRunedTask(uid,request,username);
+    public String selectRunedTask(@RequestParam("uid")Integer uid, @RequestParam("ip")String ip,@RequestParam("username") String username){
+        Map<String,Object> map=activitiApproveService.selectRunedTask(uid,ip,username);
         return JSONObject.toJSONString( map);
     }
 }

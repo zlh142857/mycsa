@@ -5,15 +5,13 @@ package com.hx.restController.activiti;/*
  *@功能:工作流审批,提交申请
  */
 
-import com.hx.Activiti.ActMsgPersonnel;
 import com.hx.Object.MuchObj;
-import com.hx.shiro.UserInfo;
+import com.hx.config.GetIpUtil;
 import com.hx.service.activiti.ActivitiApproveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
 
 @RestController
 @RequestMapping(value = "activitiApprove")
@@ -32,7 +30,8 @@ public class ActivitiApproveController {
     @PostMapping(value = "/lCountryRefer")
     @ResponseBody
     public String lCountryRefer(@RequestBody MuchObj muchObj, HttpServletRequest request){
-        String referMsg=activitiApproveService.lCountryRefer(muchObj,request);
+        String ip=GetIpUtil.getIpAddr( request );
+        String referMsg=activitiApproveService.lCountryRefer(muchObj,ip);
         return referMsg;
     }
     /**
@@ -47,7 +46,8 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/goWorkRefer",method = RequestMethod.POST)
     @ResponseBody
     public String goWorkRefer(@RequestBody MuchObj muchObj, HttpServletRequest request){
-        String referMsg=activitiApproveService.goWorkRefer(muchObj,request );
+        String ip=GetIpUtil.getIpAddr( request );
+        String referMsg=activitiApproveService.goWorkRefer(muchObj,ip );
         return referMsg;
     }
 
@@ -63,7 +63,8 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/lPostRefer",method = RequestMethod.POST)
     @ResponseBody
     public String lPostRefer(@RequestBody MuchObj muchObj, HttpServletRequest request){
-        String referMsg=activitiApproveService.lPostRefer(muchObj,request);
+        String ip=GetIpUtil.getIpAddr( request );
+        String referMsg=activitiApproveService.lPostRefer(muchObj,ip);
         return referMsg;
     }
     /**
@@ -78,7 +79,8 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/selectSelfLCTask",method = RequestMethod.GET)
     @ResponseBody
     public String selectSelfLCTask(@RequestParam("uid") String uid, HttpServletRequest request,@RequestParam("username")String username){
-        String map=activitiApproveService.selectSelfLCTask(uid,request,username);
+        String ip=GetIpUtil.getIpAddr( request );
+        String map=activitiApproveService.selectSelfLCTask(uid,ip,username);
         return map;
     }
     /**
@@ -93,7 +95,8 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/selectSelfTWTask",method = RequestMethod.GET)
     @ResponseBody
     public String selectSelfTWTask(@RequestParam("uid") String uid, HttpServletRequest request,@RequestParam("username")String username){
-        String map=activitiApproveService.selectSelfTWTask(uid,request,username);
+        String ip=GetIpUtil.getIpAddr( request );
+        String map=activitiApproveService.selectSelfTWTask(uid,ip,username);
         return map;
     }
     /**
@@ -108,7 +111,8 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/selectSelfLPTask",method = RequestMethod.GET)
     @ResponseBody
     public String selectSelfLPTask(@RequestParam("uid") String uid, HttpServletRequest request,@RequestParam("username")String username){
-        String map=activitiApproveService.selectSelfLPTask(uid,request,username);
+        String ip=GetIpUtil.getIpAddr( request );
+        String map=activitiApproveService.selectSelfLPTask(uid,ip,username);
         return map;
     }
     /**
@@ -123,7 +127,8 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/aduitback",method = RequestMethod.GET)
     @ResponseBody
     public String aduitback(@RequestParam("taskId") String taskId, HttpServletRequest request,@RequestParam("username")String username){
-        String msg=activitiApproveService.aduitback(taskId,request,username);
+        String ip=GetIpUtil.getIpAddr( request );
+        String msg=activitiApproveService.aduitback(taskId,ip,username);
         return msg;
     }
     /**
@@ -138,7 +143,8 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/aduitok",method = RequestMethod.GET)
     @ResponseBody
     public String aduitok(@RequestParam("taskId") String taskId,@RequestParam("uid")Integer uid, HttpServletRequest request,@RequestParam("username")String username){
-        String msg=activitiApproveService.aduitok(taskId,uid,request,username);
+        String ip=GetIpUtil.getIpAddr( request );
+        String msg=activitiApproveService.aduitok(taskId,uid,ip,username);
         return msg;
     }
     /**
@@ -153,7 +159,8 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/goComplete",method = RequestMethod.GET)
     @ResponseBody
     public String goComplete(@RequestParam("taskId") String taskId, HttpServletRequest request,@RequestParam("username")String username){
-        String msg=activitiApproveService.goComplete(taskId,request,username);
+        String ip=GetIpUtil.getIpAddr( request );
+        String msg=activitiApproveService.goComplete(taskId,ip,username);
         return msg;
     }
     /**
@@ -168,7 +175,8 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/applyAgain",method = RequestMethod.GET)
     @ResponseBody
     public String applyAgain(@RequestParam("taskId") String taskId, HttpServletRequest request,@RequestParam("username")String username){
-        String msg=activitiApproveService.applyAgain(taskId,request,username);
+        String ip=GetIpUtil.getIpAddr( request );
+        String msg=activitiApproveService.applyAgain(taskId,ip,username);
         return msg;
     }
 
@@ -184,7 +192,8 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/selectRunningTask",method = RequestMethod.GET)
     @ResponseBody
     public String selectRunningTask(@RequestParam("uid") Integer uid, HttpServletRequest request,@RequestParam("username")String username){
-        String msg=activitiApproveService.selectRunningTask(uid,request,username);
+        String ip=GetIpUtil.getIpAddr( request );
+        String msg=activitiApproveService.selectRunningTask(uid,ip,username);
         return msg;
     }
     /**
@@ -199,7 +208,8 @@ public class ActivitiApproveController {
     @RequestMapping(value = "/selectRunedTask",method = RequestMethod.GET)
     @ResponseBody
     public String selectRunedTask(@RequestParam("uid") Integer uid, HttpServletRequest request,@RequestParam("username")String username){
-        String msg=activitiApproveService.selectRunedTask(uid,request,username);
+        String ip=GetIpUtil.getIpAddr( request );
+        String msg=activitiApproveService.selectRunedTask(uid,ip,username);
         return msg;
     }
 }

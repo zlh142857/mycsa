@@ -21,15 +21,15 @@ public class EquipmentInfo {
     private EquipmentInfoAService equipmentInfoService;
     @GetMapping(value = "/equipmentList")
     @ResponseBody
-    public String queryEquipmentList(Integer page,Integer size,String username,HttpServletRequest request){
-        Map<String,Object> personnelList=equipmentInfoService.queryEquipmentList(page,size,username,request);
+    public String queryEquipmentList(Integer page,Integer size,String username,@RequestParam("ip")String ip){
+        Map<String,Object> personnelList=equipmentInfoService.queryEquipmentList(page,size,username,ip);
         return JSONObject.toJSONStringWithDateFormat( personnelList,"yyyy-MM-dd HH:mm:ss" );
     }
 
     @PostMapping(value = "/insertEquipment")
     @ResponseBody
-    public String insertEquipment(@RequestBody FacilityInformation facilityInformation,String username,HttpServletRequest request){
-        String insertMsg=equipmentInfoService.insertEquipment(facilityInformation,username,request);
+    public String insertEquipment(@RequestBody FacilityInformation facilityInformation,String username,@RequestParam("ip")String ip){
+        String insertMsg=equipmentInfoService.insertEquipment(facilityInformation,username,ip);
         return JSONObject.toJSONString(insertMsg);
     }
 

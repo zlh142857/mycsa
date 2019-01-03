@@ -5,6 +5,7 @@ package com.hx.restController.equipment;/*
  *@功能:设备信息库crud
  */
 
+import com.hx.config.GetIpUtil;
 import com.hx.facility.FacilityInformation;
 import com.hx.service.equipment.EquipmentInfoAService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,8 @@ public class EquipmentInfo {
     @GetMapping(value = "/equipmentList")
     @ResponseBody
     public String queryEquipmentList(Integer page, Integer size, @RequestParam("username") String username, HttpServletRequest request){
-        return equipmentInfoAService.queryEquipmentList(page,size,username,request);
+        String ip=GetIpUtil.getIpAddr( request );
+        return equipmentInfoAService.queryEquipmentList(page,size,username,ip);
     }
     /**
      *
@@ -43,7 +45,8 @@ public class EquipmentInfo {
     @RequestMapping(value = "/insertEquipment",method = RequestMethod.POST)
     @ResponseBody
     public String insertEquipment(@RequestBody FacilityInformation facilityInformation,@RequestParam("username") String username, HttpServletRequest request){
-        return equipmentInfoAService.insertEquipment(facilityInformation,username,request);
+        String ip=GetIpUtil.getIpAddr( request );
+        return equipmentInfoAService.insertEquipment(facilityInformation,username,ip);
     }
 
     //删除增加断路器,提示 服务器繁忙,未响应

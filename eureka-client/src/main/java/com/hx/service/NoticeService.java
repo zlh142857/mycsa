@@ -10,7 +10,7 @@ import java.util.Map;
 public interface NoticeService {
     Map<String,Object> queryNoticeList();  //获取公告信息
 
-    String insertNotice(Notice notice,String username,HttpServletRequest request);  //发布公告
+    String insertNotice(Notice notice,String username,String ip);  //发布公告
 
-    String delNotice(Integer noticeId,String username,HttpServletRequest request);  //删除公告
+    String delNotice(Integer noticeId,String username,String ip);  //删除公告
 }

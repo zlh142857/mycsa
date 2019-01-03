@@ -5,7 +5,6 @@ package com.hx.service.impl.notice;/*
  *@功能:
  */
 
-import com.hx.component.GetIpUtil;
 import com.hx.system.Notice;
 import com.hx.dao.system.NoticeRepository;
 import com.hx.service.NoticeService;
@@ -15,7 +14,6 @@ import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,23 +42,24 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
-    public String insertNotice(Notice notice,String username,HttpServletRequest request) {
-        MDC.put( "username",username );
-        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
+    public String insertNotice(Notice notice,String username,String ip) {
         try{
+            MDC.put( "username",username );
+            MDC.put( "ip",ip );
             Notice notice1= noticeRepository.save(notice);
             String insertMsg="";
-            if(notice != null){
+            if(notice1 != null){
                 insertMsg="发布成功";
                 logger.info( "发布成功");
             }else{
                 insertMsg="未能成功发布";
                 MDC.put( "username",username );
-                MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
+                MDC.put( "ip",ip );
                 logger.error( "保存notice==null");
             }
             return insertMsg;
         }catch (Throwable throwable){
+            MDC.put( "ip",ip );
             logger.error( throwable.toString() );
             String insertMsg="未能成功发布";
             return insertMsg;
@@ -68,10 +67,10 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
-    public String delNotice(Integer noticeId,String username,HttpServletRequest request) {
-        MDC.put( "username",username );
-        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
+    public String delNotice(Integer noticeId,String username,String ip) {
         try{
+            MDC.put( "username",username );
+            MDC.put( "ip",ip );
             Integer count =noticeRepository.deleteNoticeById(noticeId);
             String delMsg="";
             if(count != 0){
@@ -83,6 +82,7 @@ public class NoticeServiceImpl implements NoticeService {
             }
             return delMsg;
         }catch (Throwable throwable){
+            MDC.put( "ip",ip );
             logger.error( throwable.toString() );
             String delMsg="未能成功删除";
             return delMsg;

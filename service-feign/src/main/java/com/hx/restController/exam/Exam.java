@@ -5,6 +5,7 @@ package com.hx.restController.exam;/*
  *@功能:考试考核
  */
 
+import com.hx.config.GetIpUtil;
 import com.hx.exam.ExamChoose;
 import com.hx.service.exam.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,8 @@ public class Exam {
     @RequestMapping(value = "/insertExamInfo",method = RequestMethod.POST)
     @ResponseBody
     public String insertExamInfo(Integer userId, Integer score, @RequestParam("username") String username, HttpServletRequest request){
-        return examService.insertExamInfo(userId,score,username,request);
+        String ip=GetIpUtil.getIpAddr( request );
+        return examService.insertExamInfo(userId,score,username,ip);
     }
 
     /**
@@ -59,7 +61,8 @@ public class Exam {
     @RequestMapping(value = "/insertExamChoose",method = RequestMethod.POST)
     @ResponseBody
     public String insertExamChoose(ExamChoose examChoose, @RequestParam("username") String username, HttpServletRequest request){
-        return examService.insertExamChoose(examChoose,username,request);
+        String ip=GetIpUtil.getIpAddr( request );
+        return examService.insertExamChoose(examChoose,username,ip);
     }
 
     //删除增加断路器,提示 服务器繁忙,未响应

@@ -5,9 +5,7 @@ package com.hx.service.impl.personnel;/*
  *@功能:人员信息库
  */
 
-import com.hx.component.GetIpUtil;
 import com.hx.config.utils.Base;
-import com.hx.config.utils.FileUtil;
 import com.hx.config.utils.FtpUtil;
 import com.hx.dao.personnel.ClanInfoRepository;
 import com.hx.dao.personnel.PersonnelRecordRepository;
@@ -22,16 +20,15 @@ import com.hx.dao.personnel.PersonnelInfoRepository;
 import com.hx.dao.system.UserInfoRepository;
 import com.hx.personnel.PersonnelInfo;
 import com.hx.service.PersonnelInfoService;
-import org.apache.log4j.MDC;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -52,11 +49,11 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
     @Autowired
     private ClanInfoRepository clanInfoRepository;
     @Override
-    public Map<String, Object> queryPersonnelList(Integer page,Integer size, HttpServletRequest request,String username) {
+    public Map<String, Object> queryPersonnelList(Integer page,Integer size,String ip,String username) {
         Map<String,Object> map=new HashMap<>(  );
-        MDC.put( "username",username );
-        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
         try{
+            MDC.put( "username",username );
+            MDC.put( "ip",ip );
             //分页
             Integer pag=page-1;
             Pageable pageable = PageRequest.of(pag, size,Sort.Direction.DESC,"create_time");
@@ -85,6 +82,7 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
             logger.info("查询成功" );
             return map;
         }catch (Throwable throwable){
+            MDC.put( "ip",ip );
             logger.error(throwable.toString() );
             map.put( "msg","查询失败");
             return map;
@@ -94,8 +92,8 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
 
     @Override
     public String insertPersonnel(PersonnelInfo personnelInfo, List<PersonnelRecord> personnelRecords,
-                                  List<ClanInfo> clanInfos, String base64, HttpServletRequest request) {
-        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
+                                  List<ClanInfo> clanInfos, String base64, String ip) {
+        MDC.put( "ip",ip );
         try{
             String insertMsg="";
             //保存图片
@@ -191,11 +189,11 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
     }
 
     @Override
-    public Map<String, Object> queryPersonnelDetail(Integer perId, HttpServletRequest request,String username) {
+    public Map<String, Object> queryPersonnelDetail(Integer perId, String ip,String username) {
         Map<String,Object> map=new HashMap<>(  );
-        MDC.put( "username",username );
-        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
         try{
+            MDC.put( "username",username );
+            MDC.put( "ip",ip );
             Optional optional=personnelInfoRepository.findById(perId);
             PersonnelRecord personnelRecord=personnelRecordRepository.findByPerId( perId );
             ClanInfo clanInfo=clanInfoRepository.findByPerId(perId);
@@ -228,6 +226,7 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
                 return map;
             }
         }catch (Throwable throwable){
+            MDC.put( "ip",ip );
             logger.error( throwable.toString() );
             map.put( "msg","查询失败");
             return map;

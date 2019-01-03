@@ -16,11 +16,11 @@ import java.util.List;
 @FeignClient(value = "eureka-client")
 public interface PersonnelInfoService {
     @RequestMapping(value = "/personnelInfoController/personnelList",method = RequestMethod.GET)
-    String queryPersonnelList(@RequestParam(value = "page")Integer page,@RequestParam(value = "size") Integer size,@RequestParam(value = "request") HttpServletRequest request,@RequestParam(value = "username")String username);
+    String queryPersonnelList(@RequestParam(value = "page")Integer page,@RequestParam(value = "size") Integer size,@RequestParam(value = "ip")String ip,@RequestParam(value = "username")String username);
     @PostMapping(value = "/personnelInfoController/insertPer")
-    String insertPer(@RequestBody MuchObj muchObj,@RequestParam(value = "request") HttpServletRequest request);
+    String insertPer(@RequestBody MuchObj muchObj,@RequestParam(value = "ip") String ip);
     @GetMapping(value = "/personnelInfoController/showImage")
     void showImage(@RequestParam(value = "photoUrl")String photoUrl,@RequestParam(value = "response") HttpServletResponse response);
     @GetMapping(value = "/personnelInfoController/personnelDetail")
-    String personnelDetail(@RequestParam(value = "perId")Integer perId,@RequestParam(value = "request") HttpServletRequest request,@RequestParam(value = "username")String username);
+    String personnelDetail(@RequestParam(value = "perId")Integer perId,@RequestParam(value = "ip") String ip,@RequestParam(value = "username")String username);
 }

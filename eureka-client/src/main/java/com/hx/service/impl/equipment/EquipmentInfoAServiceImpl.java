@@ -5,7 +5,6 @@ package com.hx.service.impl.equipment;/*
  *@功能:
  */
 
-import com.hx.component.GetIpUtil;
 import com.hx.config.utils.DictCode;
 import com.hx.dao.code.CodeRepository;
 import com.hx.dao.equipment.EquipmentInfoRepository;
@@ -21,7 +20,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,11 +32,11 @@ public class EquipmentInfoAServiceImpl implements EquipmentInfoAService {
     @Autowired
     private CodeRepository codeRepository;
     @Override
-    public Map<String, Object> queryEquipmentList(Integer page, Integer size,String username,HttpServletRequest request) {
+    public Map<String, Object> queryEquipmentList(Integer page, Integer size,String username,String ip) {
         Map<String,Object> map=new HashMap<>(  );
-        MDC.put( "username",username );
-        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
         try{
+            MDC.put( "username",username );
+            MDC.put( "ip",ip );
             Pageable pageable = PageRequest.of(page, size,Sort.Direction.ASC,"id");
             Page<FacilityInformation> facilityInformationList=equipmentInfoRepository.findAll(pageable);
             List<FacilityInformation> list= facilityInformationList.getContent();
@@ -64,6 +62,7 @@ public class EquipmentInfoAServiceImpl implements EquipmentInfoAService {
             logger.info( "查询设备成功");
             return map;
         }catch (Throwable throwable){
+            MDC.put( "ip",ip );
             logger.error(throwable.toString() );
             map.put( "msg","查询失败");
             return map;
@@ -72,10 +71,10 @@ public class EquipmentInfoAServiceImpl implements EquipmentInfoAService {
     }
 
     @Override
-    public String insertEquipment(FacilityInformation facilityInformation,String username,HttpServletRequest request) {
-        MDC.put( "username",username );
-        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
+    public String insertEquipment(FacilityInformation facilityInformation,String username,String ip) {
         try{
+            MDC.put( "username",username );
+            MDC.put( "ip",ip );
             FacilityInformation facility=equipmentInfoRepository.save(facilityInformation);
             String insertMsg="";
             if(facility!=null){
@@ -87,6 +86,7 @@ public class EquipmentInfoAServiceImpl implements EquipmentInfoAService {
             }
             return insertMsg;
         }catch (Throwable throwable){
+            MDC.put( "ip",ip );
             logger.error(throwable.toString() );
             String insertMsg="录入失败,请重新录入";
             return insertMsg;

@@ -5,7 +5,6 @@ package com.hx.service.impl.exam;/*
  *@功能:
  */
 
-import com.hx.component.GetIpUtil;
 import com.hx.dao.exam.ExamInfoRepository;
 import com.hx.dao.exam.ExamRepository;
 import com.hx.exam.ExamChoose;
@@ -17,7 +16,6 @@ import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,10 +44,10 @@ public class ExamServiceImpl implements ExamService {
     }
 
     @Override
-    public String insertExamInfo(Integer userId, Integer score,String username,HttpServletRequest request) {
-        MDC.put( "username",username );
-        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
+    public String insertExamInfo(Integer userId, Integer score,String username,String ip) {
         try{
+            MDC.put( "username",username );
+            MDC.put( "ip",ip );
             ExamInfo examInfo=new ExamInfo();
             examInfo.setUserId( userId );
             examInfo.setScore( score );
@@ -58,16 +56,17 @@ public class ExamServiceImpl implements ExamService {
             if(exam!=null){
                 insertMsg="录入成功";
                 MDC.put( "username",username );
-                MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
+                MDC.put( "ip",ip );
                 logger.info( "录入成功");
             }else{
                 insertMsg="录入失败";
                 MDC.put( "username",username );
-                MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
+                MDC.put( "ip",ip );
                 logger.error( "录入失败");
             }
             return insertMsg;
         }catch (Throwable throwable){
+            MDC.put( "ip",ip );
             logger.error( throwable.toString() );
             String insertMsg="录入失败,请重新保存";
             return insertMsg;
@@ -75,25 +74,26 @@ public class ExamServiceImpl implements ExamService {
     }
 
     @Override
-    public String insertExamChoose(ExamChoose examChoose,String username,HttpServletRequest request) {
-        MDC.put( "username",username );
-        MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
+    public String insertExamChoose(ExamChoose examChoose,String username,String ip) {
         try{
+            MDC.put( "username",username );
+            MDC.put( "ip",ip );
             ExamChoose exam=examRepository.save(examChoose);
             String insertMsg="";
             if(exam!=null){
                 insertMsg="录入成功";
                 MDC.put( "username",username );
-                MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
+                MDC.put( "ip",ip );
                 logger.info( "录入成功");
             }else{
                 insertMsg="录入失败";
                 MDC.put( "username",username );
-                MDC.put( "ip",GetIpUtil.getIpAddr( request ) );
+                MDC.put( "ip",ip );
                 logger.error( "保存exam==null");
             }
             return insertMsg;
         }catch (Throwable throwable){
+            MDC.put( "ip",ip );
             logger.error(throwable.toString() );
             String insertMsg="录入失败,请重新录入";
             return insertMsg;

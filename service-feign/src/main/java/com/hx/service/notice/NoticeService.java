@@ -14,7 +14,7 @@ public interface NoticeService {
     @RequestMapping(value = "/noticeController/queryNoticeList",method = RequestMethod.GET)
     String queryNoticeList();
     @RequestMapping(value = "/noticeController/insertNotice",method = RequestMethod.POST)
-    String insertNotice(@RequestParam("notice") Notice notice, @RequestParam(value = "username")String username, @RequestParam(value = "request")HttpServletRequest request);
+    String insertNotice(@RequestParam("notice") Notice notice, @RequestParam(value = "username")String username,@RequestParam(value = "ip") String ip);
     @RequestMapping(value = "/noticeController/delNotice",method = RequestMethod.POST)
-    String delNotice(Integer noticeId, @RequestParam(value = "username")String username, @RequestParam(value = "request")HttpServletRequest request);
+    String delNotice(Integer noticeId, @RequestParam(value = "username")String username,@RequestParam(value = "ip") String ip);
 }

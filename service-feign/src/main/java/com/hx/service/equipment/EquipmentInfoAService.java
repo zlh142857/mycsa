@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 @FeignClient(value = "eureka-client")
 public interface EquipmentInfoAService {
     @GetMapping(value = "/equipmentInfo/equipmentList")
-    String queryEquipmentList(@RequestParam(value = "page")Integer page, @RequestParam(value = "size") Integer size, @RequestParam(value = "username")String username, @RequestParam(value = "request")HttpServletRequest request);
+    String queryEquipmentList(@RequestParam(value = "page")Integer page, @RequestParam(value = "size") Integer size, @RequestParam(value = "username")String username,@RequestParam(value = "ip") String ip);
     @RequestMapping(value = "/equipmentInfo/insertEquipment",method = RequestMethod.POST)
-    String insertEquipment(@RequestBody FacilityInformation facilityInformation, @RequestParam(value = "username")String username, @RequestParam(value = "request")HttpServletRequest request);
+    String insertEquipment(@RequestBody FacilityInformation facilityInformation, @RequestParam(value = "username")String username,@RequestParam(value = "ip") String ip);
 }

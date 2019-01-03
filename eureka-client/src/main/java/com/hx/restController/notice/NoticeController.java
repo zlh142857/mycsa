@@ -28,15 +28,15 @@ public class NoticeController {
 
     @PostMapping(value = "/insertNotice")
     @ResponseBody
-    public String insertNotice(Notice notice,String username,HttpServletRequest request){
-        String insertMsg=noticeService.insertNotice(notice,username,request);
+    public String insertNotice(Notice notice,String username,@RequestParam("ip")String ip){
+        String insertMsg=noticeService.insertNotice(notice,username,ip);
         return JSONObject.toJSONString( insertMsg);
     }
 
     @PostMapping(value = "/delNotice")
     @ResponseBody
-    public String delNotice(Integer noticeId,String username,HttpServletRequest request){
-        String delMsg=noticeService.delNotice(noticeId,username,request);
+    public String delNotice(Integer noticeId,String username,@RequestParam("ip")String ip){
+        String delMsg=noticeService.delNotice(noticeId,username,ip);
         return JSONObject.toJSONString( delMsg);
     }
 }

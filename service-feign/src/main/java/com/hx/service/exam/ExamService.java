@@ -14,7 +14,7 @@ public interface ExamService {
     @RequestMapping(value = "/exam/examList",method = RequestMethod.GET)
     String examList();
     @RequestMapping(value = "/exam/insertExamInfo",method = RequestMethod.POST)
-    String insertExamInfo(@RequestParam("userId") Integer userId,@RequestParam("score") Integer score, @RequestParam(value = "username")String username, @RequestParam(value = "request")HttpServletRequest request);
+    String insertExamInfo(@RequestParam("userId") Integer userId,@RequestParam("score") Integer score, @RequestParam(value = "username")String username,@RequestParam(value = "ip") String ip);
     @RequestMapping(value = "/exam/insertExamChoose",method = RequestMethod.POST)
-    String insertExamChoose(@RequestParam("examChoose")ExamChoose examChoose, @RequestParam(value = "username")String username, @RequestParam(value = "request")HttpServletRequest request);
+    String insertExamChoose(@RequestParam("examChoose")ExamChoose examChoose, @RequestParam(value = "username")String username,@RequestParam(value = "ip") String ip);
 }

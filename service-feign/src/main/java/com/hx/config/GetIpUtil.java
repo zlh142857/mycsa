@@ -1,4 +1,4 @@
-package com.hx.component;
+package com.hx.config;
 
 
 import javax.servlet.http.HttpServletRequest;

@@ -6,7 +6,6 @@ package com.hx.service.impl.activiti;/*
  */
 
 import com.hx.Activiti.ActMsgPersonnel;
-import com.hx.component.GetIpUtil;
 import com.hx.shiro.UserInfo;
 import com.hx.config.utils.ActType;
 import com.hx.config.utils.ProKey;
@@ -17,13 +16,12 @@ import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
-import org.jboss.logging.MDC;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 @Service
@@ -38,11 +36,11 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
     @Autowired
     private UserInfoRepository userInfoRepository;
     @Override
-    public String lCountryRefer(UserInfo userInfo, ActMsgPersonnel actMsgPersonnel, HttpServletRequest request) {
-        MDC.put( "username", userInfo.getUsername());
-        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
+    public String lCountryRefer(UserInfo userInfo, ActMsgPersonnel actMsgPersonnel, String ip) {
         String refMsg="申请失败";
         try{
+            MDC.put( "username", userInfo.getUsername());
+            MDC.put( "ip", ip );
             //启动流程实例
             Map<String, Object> variables = new HashMap<String, Object>();
             variables.put("inputUser", userInfo.getUid());
@@ -89,17 +87,18 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 return refMsg;
             }
         }catch (Throwable throwable){
+            MDC.put( "ip", ip );
             logger.error(throwable.toString() );
             return refMsg;
         }
     }
 
     @Override
-    public String goWorkRefer(UserInfo userInfo, ActMsgPersonnel actMsgPersonnel, HttpServletRequest request) {
-        MDC.put( "username", userInfo.getUsername());
-        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
+    public String goWorkRefer(UserInfo userInfo, ActMsgPersonnel actMsgPersonnel, String ip) {
         String refMsg="申请失败";
         try{
+            MDC.put( "username", userInfo.getUsername());
+            MDC.put( "ip", ip );
             //启动流程实例
             Map<String, Object> variables = new HashMap<String, Object>();
             variables.put("inputUser", userInfo.getUid());
@@ -148,17 +147,18 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 return refMsg;
             }
         }catch (Throwable throwable){
+            MDC.put( "ip", ip );
             logger.error( throwable.toString() );
             return refMsg;
         }
     }
 
     @Override
-    public String lPostRefer(UserInfo userInfo, ActMsgPersonnel actMsgPersonnel, HttpServletRequest request) {
-        MDC.put( "username", userInfo.getUsername());
-        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
+    public String lPostRefer(UserInfo userInfo, ActMsgPersonnel actMsgPersonnel, String ip) {
         String refMsg="申请失败";
         try{
+            MDC.put( "username", userInfo.getUsername());
+            MDC.put( "ip", ip );
             //启动流程实例
             Map<String, Object> variables = new HashMap<String, Object>();
             variables.put("inputUser", userInfo.getUid());
@@ -205,17 +205,18 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 return refMsg;
             }
         }catch (Throwable throwable){
+            MDC.put( "ip", ip );
             logger.error( throwable.toString() );
             return refMsg;
         }
     }
 
     @Override
-    public Map<String,Object> selectSelfLCTask(String uid, HttpServletRequest request, String username) {
-        MDC.put( "username",username);
-        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
+    public Map<String,Object> selectSelfLCTask(String uid, String ip, String username) {
         Map<String,Object> map=new HashMap<>(  );
         try{
+            MDC.put( "username",username);
+            MDC.put( "ip", ip );
             List<Task> list= taskService.createTaskQuery().taskAssignee(uid).list();
             List<ActMsgPersonnel> taskList = new ArrayList<>(  );
             for(Task task:list){
@@ -242,6 +243,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
             logger.info( "获取待审批任务成功" );
             return map;
         }catch (Throwable throwable){
+            MDC.put( "ip", ip );
             logger.error( throwable.toString() );
             map.put( "msg","获取信息失败" );
             return map;
@@ -249,11 +251,11 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
     }
 
     @Override
-    public Map<String, Object> selectSelfTWTask(String uid, HttpServletRequest request, String username) {
-        MDC.put( "username",username);
-        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
+    public Map<String, Object> selectSelfTWTask(String uid, String ip, String username) {
         Map<String,Object> map=new HashMap<>(  );
         try{
+            MDC.put( "username",username);
+            MDC.put( "ip", ip );
             List<Task> list= taskService.createTaskQuery().taskAssignee(uid).list();
             List<ActMsgPersonnel> taskList = new ArrayList<>(  );
             for(Task task:list){
@@ -279,6 +281,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
             logger.info( "获取待审批任务成功" );
             return map;
         }catch (Throwable throwable){
+            MDC.put( "ip", ip );
             logger.error( throwable.toString() );
             map.put( "msg","获取信息失败" );
             return map;
@@ -286,11 +289,11 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
     }
 
     @Override
-    public Map<String, Object> selectSelfLPTask(String uid, HttpServletRequest request, String username) {
+    public Map<String, Object> selectSelfLPTask(String uid, String ip, String username) {
         Map<String,Object> map=new HashMap<>(  );
-        MDC.put( "username",username);
-        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
         try{
+            MDC.put( "username",username);
+            MDC.put( "ip", ip );
             List<Task> list= taskService.createTaskQuery().taskAssignee(uid).list();
             List<ActMsgPersonnel> taskList = new ArrayList<>(  );
             for(Task task:list){
@@ -316,6 +319,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
             logger.info( "获取待审批任务成功" );
             return map;
         }catch (Throwable throwable){
+            MDC.put( "ip", ip );
             logger.error( throwable.toString() );
             map.put( "msg","获取信息失败" );
             return map;
@@ -323,11 +327,11 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
     }
 
     @Override
-    public String aduitback(String taskId, HttpServletRequest request, String username) {
-        MDC.put( "username",username);
-        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
+    public String aduitback(String taskId, String ip, String username) {
         String msg="";
         try{
+            MDC.put( "username",username);
+            MDC.put( "ip", ip );
             if(taskId==null || taskId==""){
                 logger.info( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:taskId没有传值到后台" );
                 return msg="taskId为空";
@@ -341,17 +345,18 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 return msg="驳回成功";
             }
         }catch (Throwable throwable){
+            MDC.put( "ip", ip );
             logger.error( throwable.toString() );
             return msg="程序出错,操作失败";
         }
     }
 
     @Override
-    public String aduitok(String taskId,Integer uid, HttpServletRequest request, String username) {
+    public String aduitok(String taskId,Integer uid, String ip, String username) {
         String msg="";
-        MDC.put( "username",username);
-        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
         try{
+            MDC.put( "username",username);
+            MDC.put( "ip", ip );
             if(taskId==null || uid ==null){
                 logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";操作:taskId或者uid没有传值到后台" );
                 return msg="taskId为空,或者uid为空";
@@ -400,17 +405,18 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 }
             }
         }catch (Throwable throwable){
+            MDC.put( "ip", ip );
             logger.error( throwable.toString() );
             return msg="程序出错,操作失败";
         }
     }
 
     @Override
-    public String goComplete(String taskId, HttpServletRequest request, String username) {
+    public String goComplete(String taskId, String ip, String username) {
         String msg="";
-        MDC.put( "username",username);
-        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
         try{
+            MDC.put( "username",username);
+            MDC.put( "ip", ip );
             if(taskId==null || taskId==""){
                 logger.error( "taskId没有传值到后台" );
                 return msg="taskId为空";
@@ -433,17 +439,18 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 }
             }
         }catch (Throwable throwable){
+            MDC.put( "ip", ip );
             logger.error( throwable.toString() );
             return msg="程序出错,操作失败";
         }
     }
 
     @Override
-    public String applyAgain(String taskId, HttpServletRequest request, String username) {
+    public String applyAgain(String taskId, String ip, String username) {
         String msg="";
-        MDC.put( "username",username);
-        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
         try{
+            MDC.put( "username",username);
+            MDC.put( "ip", ip );
             if(taskId==null || taskId==""){
                 logger.error( "taskId没有传值到后台" );
                 return msg="taskId为空";
@@ -457,17 +464,18 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 return msg="重新申请成功";
             }
         }catch (Throwable throwable){
+            MDC.put( "ip", ip );
             logger.error( throwable.toString() );
             return msg="程序出错,操作失败";
         }
     }
 
     @Override
-    public Map<String,Object> selectRunningTask(Integer uid, HttpServletRequest request, String username) {
+    public Map<String,Object> selectRunningTask(Integer uid, String ip, String username) {
         Map<String,Object> map=new HashMap<>(  );
-        MDC.put( "username",username);
-        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
         try{
+            MDC.put( "username",username);
+            MDC.put( "ip", ip );
             if(uid==null){
                 logger.error( "uid没有传值到后台" );
                 map.put( "msg","uid为空" );
@@ -486,6 +494,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 }
             }
         }catch (Throwable throwable){
+            MDC.put( "ip", ip );
             logger.error( throwable.toString() );
             map.put( "msg","程序出错,操作失败" );
             return map;
@@ -493,11 +502,11 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
     }
 
     @Override
-    public Map<String, Object> selectRunedTask(Integer uid, HttpServletRequest request, String username) {
+    public Map<String, Object> selectRunedTask(Integer uid, String ip, String username) {
         Map<String,Object> map=new HashMap<>(  );
-        MDC.put( "username",username);
-        MDC.put( "ip", GetIpUtil.getIpAddr(request) );
         try{
+            MDC.put( "username",username);
+            MDC.put( "ip", ip );
             if(uid==null){
                 logger.error( "uid没有传值到后台" );
                 map.put( "msg","uid为空" );
@@ -516,6 +525,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 }
             }
         }catch (Throwable throwable){
+            MDC.put( "ip", ip );
             logger.error( throwable.toString() );
             map.put( "msg","程序出错,操作失败" );
             return map;

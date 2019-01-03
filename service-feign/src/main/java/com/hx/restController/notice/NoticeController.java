@@ -5,6 +5,7 @@ package com.hx.restController.notice;/*
  *@功能:公告管理
  */
 
+import com.hx.config.GetIpUtil;
 import com.hx.system.Notice;
 import com.hx.service.notice.NoticeService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -49,7 +50,8 @@ public class NoticeController {
     @RequestMapping(value = "/insertNotice",method = RequestMethod.POST)
     @ResponseBody
     public String insertNotice(Notice notice, @RequestParam("username") String username, HttpServletRequest request){
-        String insertMsg=noticeService.insertNotice(notice,username,request);
+        String ip=GetIpUtil.getIpAddr( request );
+        String insertMsg=noticeService.insertNotice(notice,username,ip);
         return insertMsg;
     }
     public String insertNoticeError(Notice notice) {
@@ -68,7 +70,8 @@ public class NoticeController {
     @RequestMapping(value = "/delNotice",method = RequestMethod.POST)
     @ResponseBody
     public String delNotice(Integer noticeId, @RequestParam("username") String username, HttpServletRequest request){
-        String delMsg=noticeService.delNotice(noticeId,username,request);
+        String ip=GetIpUtil.getIpAddr( request );
+        String delMsg=noticeService.delNotice(noticeId,username,ip);
         return delMsg;
     }
 

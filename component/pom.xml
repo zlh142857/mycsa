@@ -37,12 +37,15 @@
             <version>1.2.17</version>
         </dependency>
 
-
+        <!-- shiro spring.-->
         <dependency>
-            <groupId>com.hx</groupId>
-            <artifactId>shiro</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
         </dependency>
         <!--ftp-->
         <dependency>
@@ -54,12 +57,6 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>3.11</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>5.0.7.RELEASE</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 

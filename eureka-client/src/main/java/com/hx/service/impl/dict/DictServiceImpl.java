@@ -6,9 +6,9 @@ package com.hx.service.impl.dict;/*
  */
 
 import com.hx.dict.SysDictData;
-import com.hx.config.utils.DictCode;
 import com.hx.dao.code.CodeRepository;
 import com.hx.service.DictService;
+import com.hx.utils.DictCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

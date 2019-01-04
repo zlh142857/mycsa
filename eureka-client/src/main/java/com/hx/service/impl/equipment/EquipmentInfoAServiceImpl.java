@@ -5,11 +5,11 @@ package com.hx.service.impl.equipment;/*
  *@功能:
  */
 
-import com.hx.config.utils.DictCode;
 import com.hx.dao.code.CodeRepository;
 import com.hx.dao.equipment.EquipmentInfoRepository;
 import com.hx.facility.FacilityInformation;
 import com.hx.service.EquipmentInfoAService;
+import com.hx.utils.DictCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;

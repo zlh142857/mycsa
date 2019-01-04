@@ -24,11 +24,11 @@ public class SysDictData implements Serializable {
     @Id
     @Column(name = "dict_code",unique=true)
     @GeneratedValue(strategy=GenerationType.AUTO)//主键生成策略,默认情况下，JPA 自动选择一个最适合底层数据库的主键生成策略,MySQL 对应 auto increment
-    private Integer dictCode;//字典编码;
+    private Integer dictCode;//字典id;
     @Column(name="dict_sort")
-    private Integer dictSort; //字典排序
+    private Integer dictSort; //子字典编码
     @Column(name="dict_label")
-    private String dictLabel; //字典标签 男女
+    private String dictLabel; //字典键值 男女
     @Column(name="dict_id")
     private Integer dictId; //父字典类型编码
     @Temporal( TemporalType.TIMESTAMP )

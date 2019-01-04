@@ -7,11 +7,11 @@ package com.hx.service.impl.activiti;/*
 
 import com.hx.Activiti.ActMsgPersonnel;
 import com.hx.shiro.UserInfo;
-import com.hx.config.utils.ActType;
-import com.hx.config.utils.ProKey;
 import com.hx.dao.activi.ActivitiRepository;
 import com.hx.dao.system.UserInfoRepository;
 import com.hx.service.ActivitiApproveService;
+import com.hx.utils.ActType;
+import com.hx.utils.ProKey;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.runtime.ProcessInstance;

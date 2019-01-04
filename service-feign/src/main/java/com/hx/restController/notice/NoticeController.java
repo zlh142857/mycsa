@@ -5,7 +5,7 @@ package com.hx.restController.notice;/*
  *@功能:公告管理
  */
 
-import com.hx.config.GetIpUtil;
+import com.hx.component.GetIpUtil;
 import com.hx.system.Notice;
 import com.hx.service.notice.NoticeService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;

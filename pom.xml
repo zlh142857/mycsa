@@ -30,6 +30,7 @@
       <module>service-gateway</module>
       <module>shiro</module>
       <module>model</module>
+      <module>component</module>
   </modules>
 
 

@@ -6,7 +6,7 @@ package com.hx.restController.personnel;/*
  */
 
 import com.hx.Object.MuchObj;
-import com.hx.config.GetIpUtil;
+import com.hx.component.GetIpUtil;
 import com.hx.service.personnel.PersonnelInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

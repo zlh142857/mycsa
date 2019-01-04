@@ -1,4 +1,4 @@
-package com.hx.config.md5;/*
+package com.hx.md5;/*
  *//*
  *@作者:张立恒
  *@时间:2018/10/8 17:08

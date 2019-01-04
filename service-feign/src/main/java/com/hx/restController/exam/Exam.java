@@ -5,7 +5,7 @@ package com.hx.restController.exam;/*
  *@功能:考试考核
  */
 
-import com.hx.config.GetIpUtil;
+import com.hx.component.GetIpUtil;
 import com.hx.exam.ExamChoose;
 import com.hx.service.exam.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;

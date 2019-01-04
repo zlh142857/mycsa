@@ -92,14 +92,12 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-        <!--<dependency>
+        <dependency>
             <groupId>com.hx</groupId>
-            <artifactId>shiro</artifactId>
+            <artifactId>component</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
-        </dependency>-->
-
-
+        </dependency>
 
     </dependencies>
 

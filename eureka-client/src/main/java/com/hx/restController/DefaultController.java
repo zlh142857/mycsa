@@ -6,12 +6,7 @@ package com.hx.restController;/*
  */
 
 
-import com.alibaba.fastjson.JSONObject;
-import com.hx.config.md5.AESUtils;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 

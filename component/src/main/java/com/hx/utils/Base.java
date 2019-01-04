@@ -1,4 +1,4 @@
-package com.hx.config.utils;/*
+package com.hx.utils;/*
  *//*
  *@作者:张立恒
  *@时间:2018/9/18 15:48
@@ -7,7 +7,9 @@ package com.hx.config.utils;/*
 
 import sun.misc.BASE64Decoder;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class Base {
     public static InputStream base64(String filename) throws IOException {

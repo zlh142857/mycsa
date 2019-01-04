@@ -1,16 +1,15 @@
-package com.hx.config.utils;/*
+package com.hx.utils;/*
  *//*
  *@作者:张立恒
  *@时间:2018/12/24 11:27
  *@功能:
  */
 
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.UUID;
 
 public class FileUtil {

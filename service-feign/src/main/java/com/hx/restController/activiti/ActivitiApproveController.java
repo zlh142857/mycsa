@@ -6,7 +6,7 @@ package com.hx.restController.activiti;/*
  */
 
 import com.hx.Object.MuchObj;
-import com.hx.config.GetIpUtil;
+import com.hx.component.GetIpUtil;
 import com.hx.service.activiti.ActivitiApproveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

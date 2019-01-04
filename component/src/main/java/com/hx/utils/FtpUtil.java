@@ -1,15 +1,12 @@
-package com.hx.config.utils;
+package com.hx.utils;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.MalformedURLException;
-import java.net.SocketException;
 import java.util.UUID;
 
 import static org.apache.commons.net.ftp.FTP.BINARY_FILE_TYPE;

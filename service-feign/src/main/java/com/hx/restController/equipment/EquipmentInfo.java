@@ -5,7 +5,7 @@ package com.hx.restController.equipment;/*
  *@功能:设备信息库crud
  */
 
-import com.hx.config.GetIpUtil;
+import com.hx.component.GetIpUtil;
 import com.hx.facility.FacilityInformation;
 import com.hx.service.equipment.EquipmentInfoAService;
 import org.springframework.beans.factory.annotation.Autowired;

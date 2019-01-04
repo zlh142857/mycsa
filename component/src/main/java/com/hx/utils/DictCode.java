@@ -1,4 +1,4 @@
-package com.hx.config.utils;/*
+package com.hx.utils;/*
  *//*
  *@作者:张立恒
  *@时间:2018/12/5 16:15

@@ -5,11 +5,11 @@ package com.hx.service.impl.userinfo;/*
  *@功能:
  */
 
+import com.hx.md5.Md5;
+import com.hx.md5.Salt;
 import com.hx.shiro.SysPermission;
 import com.hx.shiro.SysRole;
 import com.hx.shiro.UserInfo;
-import com.hx.config.md5.Md5;
-import com.hx.config.md5.Salt;
 import com.hx.dao.system.UserInfoRepository;
 import com.hx.service.UserInfoService;
 

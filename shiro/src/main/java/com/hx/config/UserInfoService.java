@@ -5,8 +5,9 @@ package com.hx.config;/*
  *@功能:
  */
 
-import com.hx.shiro.UserInfo;
+
+import com.hx.pwcontrol.system.SysUser;
 
 public interface UserInfoService {
-    UserInfo findByUsername(String username);
+    SysUser findByUserKey(String UserKey);
 }

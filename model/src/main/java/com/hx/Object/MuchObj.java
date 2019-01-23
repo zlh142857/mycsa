@@ -6,10 +6,9 @@ package com.hx.Object;/*
  */
 
 import com.hx.Activiti.ActMsgPersonnel;
-import com.hx.personnel.ClanInfo;
-import com.hx.personnel.PersonnelInfo;
-import com.hx.personnel.PersonnelRecord;
-import com.hx.shiro.UserInfo;
+import com.hx.pwcontrol.system.SysUser;
+import com.hx.pwcontrol.system.SysUserFamily;
+import com.hx.pwcontrol.system.SysUserResume;
 
 import java.util.List;
 /**
@@ -22,10 +21,14 @@ import java.util.List;
  * @date: 2018/12/29 9:11
  */
 public class MuchObj{
-    public UserInfo userInfo;
+    public SysUser sysUser;
     public ActMsgPersonnel actMsgPersonnel;
-    public PersonnelInfo personnelInfo;
-    public List<PersonnelRecord> personnelRecords;
-    public List<ClanInfo> clanInfos;
+    public List<SysUserResume> sysUserResumeList;
+    public List<SysUserFamily> sysUserFamilyList;
     public String base64;
+    //日志需要的参数,从前端cookie中获取,然后放到muchObj对象中传到后台
+    public String UserId;
+    public String UnitId;
+    public String DeptId;
+    public String MenuId;
 }

@@ -7,9 +7,9 @@ package com.hx.config;/*
 
 
 
-import com.hx.shiro.SysPermission;
-import com.hx.shiro.SysRole;
-import com.hx.shiro.UserInfo;
+import com.hx.pwcontrol.system.SysMenu;
+import com.hx.pwcontrol.system.SysRole;
+import com.hx.pwcontrol.system.SysUser;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -18,7 +18,6 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -53,10 +52,10 @@ authorizationInfo.setStringPermissions(stringPermissions);*/
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-        UserInfo userInfo=(UserInfo)principalCollection.getPrimaryPrincipal();
+        SysUser userInfo=(SysUser)principalCollection.getPrimaryPrincipal();
         for(SysRole role:userInfo.getRoleList()){
-            authorizationInfo.addRole(role.getRole());
-            for(SysPermission p:role.getPermissions()){
+            authorizationInfo.addRole(role.getRoleName());
+            for(SysMenu p:role.getMenuList()){
                 authorizationInfo.addStringPermission(p.getPermission());
             }
         }
@@ -74,15 +73,22 @@ authorizationInfo.setStringPermissions(stringPermissions);*/
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         //获取用户的输入的账号.
-        String username = (String)authenticationToken.getPrincipal();
-        UserInfo userInfo = userInfoService.findByUsername(username);
+        String UserKey = (String)authenticationToken.getPrincipal();
+        SysUser userInfo = userInfoService.findByUserKey(UserKey);
         if(userInfo == null){
             return null;
         }
-        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
+        //加密验证
+        /*SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
                 userInfo, //用户名
                 userInfo.getPassword(), //密码
                 ByteSource.Util.bytes(userInfo.getCredentialsSalt()),//salt=username+salt
+                getName()  //realm name
+        );*/
+        //明文
+        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
+                userInfo, //用户名
+                userInfo.getPassword(), //密码
                 getName()  //realm name
         );
         return authenticationInfo;

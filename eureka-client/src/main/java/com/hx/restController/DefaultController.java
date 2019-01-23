@@ -6,32 +6,49 @@ package com.hx.restController;/*
  */
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import com.alibaba.fastjson.JSONObject;
+import com.hx.service.SysUserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 public class DefaultController {
-    /*@RequestMapping(value="/unauth")
+    @Autowired
+    private SysUserService sysUserService;
+    /**
+     *
+     * 功能描述: 查询是否存在该用户
+     *
+     * 业务逻辑:
+     *
+     * @param:
+     * @return:
+     * @auther: 张立恒
+     * @date: 2019/1/16 11:09
+     */
+    @GetMapping(value ="/default")
     @ResponseBody
-    public String login(String userinfo){
-        if(userinfo ==null){
-            return JSONObject.toJSONString( "获取用户信息失败" );
-        }else{
-            JSONObject json= (JSONObject) JSONObject.toJSON(AESUtils.dcodes( userinfo ));
-            UsernamePasswordToken token = new UsernamePasswordToken(
-                    json.get( "username" ).toString(),
-                    json.get( "password" ).toString()
-            );
-            SecurityUtils.getSubject().login( token );
-            //根据token从redis中获取用户的所有信息,然后返回给前端,用户已登录,进入index.html
-            return JSONObject.toJSONString( "已登录" );
-        }
-    }*/
-    @GetMapping(value="/unauth")
+    public boolean defaultMenu(@RequestParam("key")String key,@RequestParam("ip")String ip){
+        return sysUserService.findByKey(key,ip);
+    }
+    /**
+     *
+     * 功能描述: 登录
+     *
+     * 业务逻辑:
+     *
+     * @param:
+     * @return:
+     * @auther: 张立恒
+     * @date: 2019/1/16 11:40
+     */
+    @GetMapping(value ="/toLogin")
     @ResponseBody
-    public String login(){
-        return "ok";
+    public String toLogin(@RequestParam("key")String key,@RequestParam("ip")String ip){
+        Map<String,Object> msg=sysUserService.toLogin(key,ip);
+        return JSONObject.toJSONString( msg );
     }
 
 }

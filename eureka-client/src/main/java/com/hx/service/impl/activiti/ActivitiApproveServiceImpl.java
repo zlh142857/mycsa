@@ -6,9 +6,7 @@ package com.hx.service.impl.activiti;/*
  */
 
 import com.hx.Activiti.ActMsgPersonnel;
-import com.hx.shiro.UserInfo;
 import com.hx.dao.activi.ActivitiRepository;
-import com.hx.dao.system.UserInfoRepository;
 import com.hx.service.ActivitiApproveService;
 import com.hx.utils.ActType;
 import com.hx.utils.ProKey;
@@ -27,14 +25,14 @@ import java.util.*;
 @Service
 public class ActivitiApproveServiceImpl implements ActivitiApproveService {
     private Logger logger=LoggerFactory.getLogger( this.getClass() );
-    @Autowired
+    /*@Autowired
     private RuntimeService runtimeService;
     @Autowired
     private TaskService taskService;
     @Autowired
     private ActivitiRepository activitiRepository;
     @Autowired
-    private UserInfoRepository userInfoRepository;
+    private userinfo userinfo;
     @Override
     public String lCountryRefer(UserInfo userInfo, ActMsgPersonnel actMsgPersonnel, String ip) {
         String refMsg="申请失败";
@@ -61,7 +59,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 variables2.put("dept", actMsgPersonnel.getDept());
                 variables2.put("type",ActType.LC);
                 variables2.put("message", "提交申请");
-                Long uid=userInfoRepository.findUserByDeptCodeAndDeptLeader(userInfo.getDeptCode(),userInfo.getDeptLeader());
+                Long uid=userinfo.findUserByDeptCodeAndDeptLeader(userInfo.getDeptCode(),userInfo.getDeptLeader());
                 variables2.put("userID1", uid.toString());//查找该用户领导,将其领导做为下一个审批人
                 //用户确认申请请假,提交到下一个节点
                 List<Task> list = taskService.createTaskQuery().taskAssignee(userInfo.getUid().toString()).list();
@@ -120,7 +118,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 variables2.put("isMiCode", actMsgPersonnel.getIsMiCode());
                 variables2.put("type",ActType.TW);
                 variables2.put("message", "提交申请");
-                Long uid=userInfoRepository.findUserByDeptCodeAndDeptLeader(userInfo.getDeptCode(),userInfo.getDeptLeader());
+                Long uid=userinfo.findUserByDeptCodeAndDeptLeader(userInfo.getDeptCode(),userInfo.getDeptLeader());
                 variables2.put("userID1", uid.toString());//查找该用户领导,将其领导做为下一个审批人
                 //用户确认申请请假,提交到下一个节点
                 List<Task> list = taskService.createTaskQuery().taskAssignee(userInfo.getUid().toString()).list();
@@ -179,7 +177,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 variables2.put("isMiCode", actMsgPersonnel.getIsMiCode());
                 variables2.put("type", ActType.LP);
                 variables2.put("message", "提交申请");
-                Long uid=userInfoRepository.findUserByDeptCodeAndDeptLeader(userInfo.getDeptCode(),userInfo.getDeptLeader());
+                Long uid=userinfo.findUserByDeptCodeAndDeptLeader(userInfo.getDeptCode(),userInfo.getDeptLeader());
                 variables2.put("userID1", uid.toString());//查找该用户领导,将其领导做为下一个审批人
                 //用户确认申请请假,提交到下一个节点
                 List<Task> list = taskService.createTaskQuery().taskAssignee(userInfo.getUid().toString()).list();
@@ -365,10 +363,10 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                 variables.put("message", "批准");
                 //获取用户的角色信息,根据用户角色判断是什么职位,不同的职位审批通过需要的工作流程图键值userID不同
                 //根据用户的id查询角色id,再根据角色id查询角色
-                String role=userInfoRepository.findRoleByUid(uid);
+                String role=userinfo.findRoleByUid(uid);
                 if(role=="部门领导"){
                     //根据角色获取上级领导的uid
-                    Integer upuid=userInfoRepository.findUidByRoleDept();
+                    Integer upuid=userinfo.findUidByRoleDept();
                     variables.put("userID2", upuid.toString());//查找该用户领导,将其领导做为下一个审批人
                     synchronized (taskId){
                         taskService.complete(taskId,variables);
@@ -377,7 +375,7 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
                     return msg="审批通过";
                 }else if(role=="机要处领导"){
                     //根据角色获取上级领导的uid
-                    Integer upuid=userInfoRepository.findUidByRoleDept();
+                    Integer upuid=userinfo.findUidByRoleDept();
                     variables.put("userID3", upuid.toString());//查找该用户领导,将其领导做为下一个审批人
                     synchronized (taskId){
                         taskService.complete(taskId,variables);
@@ -530,5 +528,5 @@ public class ActivitiApproveServiceImpl implements ActivitiApproveService {
             map.put( "msg","程序出错,操作失败" );
             return map;
         }
-    }
+    }*/
 }

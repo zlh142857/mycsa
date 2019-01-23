@@ -1,7 +1,7 @@
 spring:
   #datasource
   datasource:
-    url : jdbc:mysql://172.16.107.205:3306/shiro?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    url : jdbc:mysql://172.16.107.205:3306/pwcontrol?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
     username : root
     password : root
     driverClassName : com.mysql.jdbc.Driver
@@ -9,6 +9,3 @@ spring:
     max-idle: 8
     min-idle: 8
     initial-size: 10
-logging.config:
-  classpath: log4j2.xml
-logging.level.org.springframework: info

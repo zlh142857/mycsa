@@ -6,7 +6,6 @@ package com.hx.config;/*
  */
 
 
-import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -101,7 +100,7 @@ public class ShiroConfiguration {
     public MyShiroRealm myShiroRealm(){
         MyShiroRealm myShiroRealm = new MyShiroRealm();
         //注入凭证匹配器
-        myShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());
+        //myShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());
         return myShiroRealm;
     }
 
@@ -112,13 +111,13 @@ public class ShiroConfiguration {
      * ）
      * @return
      */
-    @Bean
+    /*@Bean
     public HashedCredentialsMatcher hashedCredentialsMatcher(){
         HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
         hashedCredentialsMatcher.setHashAlgorithmName("md5");//散列算法:这里使用MD5算法;
         hashedCredentialsMatcher.setHashIterations(2);//散列的次数，比如散列两次，相当于 md5(md5(""));
         return hashedCredentialsMatcher;
-    }
+    }*/
 
     /**
      *
@@ -143,7 +142,7 @@ public class ShiroConfiguration {
     }
     @Bean
     public SessionManager sessionManager() {
-        MySessionManager mySessionManager = new MySessionManager();
+        MySessionManager mySessionManager=new MySessionManager();
         mySessionManager.setSessionDAO(redisSessionDAO());
         return mySessionManager;
     }

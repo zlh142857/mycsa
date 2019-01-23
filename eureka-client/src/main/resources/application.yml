@@ -1,7 +1,7 @@
 server:
   undertow:
     # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
-    io-threads: 4
+    io-threads: 5
     # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载
     worker-threads: 20
     # 以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理
@@ -16,7 +16,7 @@ spring:
     name: eureka-client
   #datasource
   datasource:
-    url : jdbc:mysql://172.16.107.205:3306/shiro?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    url : jdbc:mysql://172.16.107.205:3306/pwcontrol?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
     username : root
     password : root
     driverClassName : com.mysql.jdbc.Driver
@@ -28,12 +28,12 @@ spring:
     database : MYSQL
   # Show or not log for each sql query
     show-sql : true
-  # Hibernate ddl auto (create, create-drop, update)
+    open-in-view: false
     hibernate:
-      ddl-auto : update
-  # Naming strategy
-  #[org.hibernate.cfg.ImprovedNamingStrategy | org.hibernate.cfg.DefaultNamingStrategy]
-      naming-strategy : org.hibernate.cfg.DefaultNamingStrategy
+      # Naming strategy
+      #[org.hibernate.cfg.ImprovedNamingStrategy | org.hibernate.cfg.DefaultNamingStrategy]
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   # stripped before adding them to the entity manager)
   properties:
     hibernate:
@@ -45,10 +45,10 @@ spring:
       max-file-size: 1024Mb
       max-request-size: 10240Mb
   activiti:
-    database-schema-update: false
+    database-schema-update: true
     check-process-definitions: true
     process-definition-location-prefix: classpath:/processes/
-    history-level: full
+    history-level: none
     #full 保存历史记录最高级别,none不保存历史记录
   # 显示后台处理的SQL语句
   redis:

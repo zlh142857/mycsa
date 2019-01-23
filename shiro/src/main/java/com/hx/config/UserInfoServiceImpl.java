@@ -5,7 +5,7 @@ package com.hx.config;/*
  *@功能:
  */
 
-import com.hx.shiro.UserInfo;
+import com.hx.pwcontrol.system.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Autowired
     private UserInfoDao userInfoDao;
     @Override
-    public UserInfo findByUsername(String username) {
-        return userInfoDao.findByUsername( username );
+    public SysUser findByUserKey(String UserKey) {
+        return userInfoDao.findByUserkey(UserKey);
     }
 }

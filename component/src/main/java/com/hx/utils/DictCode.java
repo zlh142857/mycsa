@@ -2,7 +2,7 @@ package com.hx.utils;/*
  *//*
  *@作者:张立恒
  *@时间:2018/12/5 16:15
- *@功能:
+ *@功能:字典表父编码 常量工具类
  */
 
 public class DictCode {

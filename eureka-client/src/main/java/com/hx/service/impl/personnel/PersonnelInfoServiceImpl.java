@@ -4,18 +4,6 @@ package com.hx.service.impl.personnel;/*
  *@时间:2018/12/5 15:43
  *@功能:人员信息库
  */
-
-import com.hx.dao.personnel.ClanInfoRepository;
-import com.hx.dao.personnel.PersonnelRecordRepository;
-import com.hx.md5.Md5;
-import com.hx.md5.Salt;
-import com.hx.personnel.ClanInfo;
-import com.hx.personnel.PersonnelRecord;
-import com.hx.shiro.UserInfo;
-import com.hx.dao.code.CodeRepository;
-import com.hx.dao.personnel.PersonnelInfoRepository;
-import com.hx.dao.system.UserInfoRepository;
-import com.hx.personnel.PersonnelInfo;
 import com.hx.service.PersonnelInfoService;
 import com.hx.utils.Base;
 import com.hx.utils.DictCode;
@@ -38,12 +26,12 @@ import java.util.*;
 @Service(value = "/personnelInfoService")
 public class PersonnelInfoServiceImpl implements PersonnelInfoService {
     private Logger logger=LoggerFactory.getLogger( this.getClass() );
-    @Autowired
+    /*@Autowired
     private PersonnelInfoRepository personnelInfoRepository;
     @Autowired
     private CodeRepository codeRepository;
     @Autowired
-    private UserInfoRepository userInfoRepository;
+    private userinfo userinfo;
     @Autowired
     private PersonnelRecordRepository personnelRecordRepository;
     @Autowired
@@ -66,14 +54,23 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
                 Integer deptCode=personnelInfo.getDeptCode();
                 if(sexCode!=null){
                     String sex=codeRepository.findByDictIdAndDictSort(DictCode.SEX,sexCode);
+                    if(sex == null || sex == ""){
+                        personnelInfo.setDept( "未知" );
+                    }
                     personnelInfo.setSex( sex );
                 }
                 if(miJiCode!=null){
                     String miji=codeRepository.findByDictIdAndDictSort(DictCode.Mi_Ji_Code,miJiCode);
+                    if(miji == null || miji == ""){
+                        personnelInfo.setDept( "未知" );
+                    }
                     personnelInfo.setMiJi( miji );
                 }
                 if(deptCode!=null){
                     String dept=codeRepository.findByDictIdAndDictSort(DictCode.DEPT_CODE,deptCode);
+                    if(dept == null || dept == ""){
+                        personnelInfo.setDept( "未知" );
+                    }
                     personnelInfo.setDept( dept );
                 }
             }
@@ -127,7 +124,7 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
                     String npassword=Md5.getPassword( personnelInfo.getPerName(),"123456",salt );
                     userInfo.setPassword( npassword );
                     userInfo.setUsername( personnelInfo.getPerName() );
-                    UserInfo userInfo1=userInfoRepository.save( userInfo );
+                    UserInfo userInfo1=userinfo.save( userInfo );
                     if(userInfo1 != null){
                         insertMsg="录入成功";
                         logger.info( "录入成功" );
@@ -151,7 +148,7 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
         }
     }
 
-    /*@Override
+    *//*@Override
     public void showImage(String photoUrl, HttpServletResponse response) {
         InputStream inputStream = null;
         OutputStream writer = null;
@@ -178,7 +175,7 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
                 logger.error( "类名:"+this.getClass().getName()+";方法名:"+Thread.currentThread().getStackTrace()[1].getMethodName()+";异常"+e.toString() );
             }
         }
-    }*/
+    }*//*
     @Override
     public void showImage(String photoUrl, HttpServletResponse response, HttpServletRequest request){
         try {
@@ -195,8 +192,8 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
             MDC.put( "username",username );
             MDC.put( "ip",ip );
             Optional optional=personnelInfoRepository.findById(perId);
-            PersonnelRecord personnelRecord=personnelRecordRepository.findByPerId( perId );
-            ClanInfo clanInfo=clanInfoRepository.findByPerId(perId);
+            List<PersonnelRecord> pRList=personnelRecordRepository.findByPerId( perId );
+            List<ClanInfo> cIList=clanInfoRepository.findByPerId(perId);
             if(optional.isPresent()){
                 PersonnelInfo personnelInfo=(PersonnelInfo) optional.get();
                 Integer sexCode=personnelInfo.getSexCode();
@@ -204,19 +201,28 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
                 Integer deptCode=personnelInfo.getDeptCode();
                 if(sexCode!=null){
                     String sex=codeRepository.findByDictIdAndDictSort(DictCode.SEX,sexCode);
+                    if(sex == null || sex == ""){
+                        personnelInfo.setDept( "未知" );
+                    }
                     personnelInfo.setSex( sex );
                 }
                 if(miJiCode!=null){
                     String miji=codeRepository.findByDictIdAndDictSort(DictCode.Mi_Ji_Code,miJiCode);
+                    if(miji == null || miji == ""){
+                        personnelInfo.setDept( "未知" );
+                    }
                     personnelInfo.setMiJi( miji );
                 }
                 if(deptCode!=null){
                     String dept=codeRepository.findByDictIdAndDictSort(DictCode.DEPT_CODE,deptCode);
+                    if(dept == null || dept == ""){
+                        personnelInfo.setDept( "未知" );
+                    }
                     personnelInfo.setDept( dept );
                 }
                 map.put( "personnelInfo",personnelInfo );
-                map.put( "clanInfo",clanInfo );
-                map.put( "personnelRecord",personnelRecord );
+                map.put( "clanInfoList",cIList );
+                map.put( "personnelRecordList",pRList );
                 map.put( "msg","查询成功");
                 logger.info( "查询成功" );
                 return map;
@@ -231,5 +237,5 @@ public class PersonnelInfoServiceImpl implements PersonnelInfoService {
             map.put( "msg","查询失败");
             return map;
         }
-    }
+    }*/
 }

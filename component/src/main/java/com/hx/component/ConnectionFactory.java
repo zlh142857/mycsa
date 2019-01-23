@@ -35,7 +35,7 @@ public class ConnectionFactory extends JDBCAppender {
     @Override
     protected Connection getConnection() throws SQLException {
         String className = "com.mysql.jdbc.Driver";
-        String connUrl = "jdbc:mysql://172.16.107.205:3306/shiro?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true";
+        String connUrl = "jdbc:mysql://172.16.107.205:3306/pwcontrol?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true";
         String uname = "root";
         String psw = "root";
         Properties result = new Properties();

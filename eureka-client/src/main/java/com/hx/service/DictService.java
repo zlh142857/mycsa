@@ -1,28 +1,10 @@
 package com.hx.service;/*
  */
 
+import com.hx.Object.MuchObj;
+
 import java.util.Map;
 
 public interface DictService {
-    Map<String,Object> querySexNameAndSort();
-
-    Map<String,Object> queryMiNameAndSort();
-
-    Map<String,Object> queryIsMiNameAndSort();
-
-    Map<String,Object> queryFileLevelNameAndSort();
-
-    Map<String,Object> queryIsReadNameAndSort();
-
-    Map<String,Object> queryIsJiyaoNameAndSort();
-
-    Map<String,Object> queryImportantNameAndSort();
-
-    Map<String,Object> queryCourtTypeNameAndSort();
-
-    Map<String,Object> queryDeptNameAndSort();
-
-    Map<String,Object> queryWorkStatusAndSort();
-
-    Map<String,Object> queryFacStatusAndSort();
+    Map<String,Object> delDictById(String id, MuchObj muchObj, String ip);//根据id删除字典表的数据
 }

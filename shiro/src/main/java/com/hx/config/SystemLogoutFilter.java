@@ -24,7 +24,7 @@ public class SystemLogoutFilter extends LogoutFilter {
         try {
             subject.logout();
         } catch (SessionException ise) {
-            log.debug("Encountered session exception during logout.  This can generally safely be ignored.", ise);
+            log.error(ise.toString());
         }
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();

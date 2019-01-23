@@ -7,7 +7,6 @@ package com.hx.restController.personnel;/*
 
 import com.hx.Object.MuchObj;
 import com.hx.component.GetIpUtil;
-import com.hx.service.personnel.PersonnelInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,9 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 @RequestMapping("/personnelInfoController")
 public class PersonnelInfoController {
-    @Autowired
+   /* @Autowired
     private PersonnelInfoService personnelInfoService;
-    /**
+    *//**
      *
      * 功能描述: 查询人员信息库所有信息,查询列表和详情页共用一个接口
      *
@@ -27,7 +26,7 @@ public class PersonnelInfoController {
      * @return:
      * @auther: 张立恒
      * @date: 2018/12/6 13:37
-     */
+     *//*
     @RequestMapping(value = "/personnelList",method = RequestMethod.GET)
     @ResponseBody
     public String queryPersonnelList(Integer page,Integer size, HttpServletRequest request,String username){
@@ -35,7 +34,7 @@ public class PersonnelInfoController {
         String personnelList=personnelInfoService.queryPersonnelList(page,size,ip,username);
         return personnelList;
     }
-    /**
+    *//**
      *
      * 功能描述: 查询单个人员详情
      *
@@ -43,7 +42,7 @@ public class PersonnelInfoController {
      * @return:
      * @auther: 张立恒
      * @date: 2018/12/26 13:27
-     */
+     *//*
     @GetMapping(value = "/personnelDetail")
     @ResponseBody
     public String personnelDetail(Integer perId, HttpServletRequest request,String username){
@@ -68,5 +67,5 @@ public class PersonnelInfoController {
     public void showImage(String photoUrl, HttpServletResponse response){
         personnelInfoService.showImage(photoUrl,response);
     }
-
+*/
 }

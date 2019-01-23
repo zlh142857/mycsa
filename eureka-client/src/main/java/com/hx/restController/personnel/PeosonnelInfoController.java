@@ -6,10 +6,6 @@ package com.hx.restController.personnel;/*
  */
 
 import com.alibaba.fastjson.JSONObject;
-import com.hx.Object.MuchObj;
-import com.hx.personnel.ClanInfo;
-import com.hx.personnel.PersonnelInfo;
-import com.hx.personnel.PersonnelRecord;
 import com.hx.service.PersonnelInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
@@ -17,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -25,7 +20,7 @@ import java.util.Map;
 public class PeosonnelInfoController {
     @Autowired
     private PersonnelInfoService personnelInfoService;
-    @GetMapping(value = "/personnelList")
+    /*@GetMapping(value = "/personnelList")
     @ResponseBody
     public String queryPersonnelList(Integer page,Integer size,@RequestParam("ip")String ip,String username){
         Map<String,Object> personnelList=personnelInfoService.queryPersonnelList(page,size,ip,username);
@@ -37,9 +32,9 @@ public class PeosonnelInfoController {
     public String queryPersonnelDetail(Integer perId,@RequestParam("ip")String ip,String username){
         Map<String,Object> personnel=personnelInfoService.queryPersonnelDetail(perId,ip,username);
         return JSONObject.toJSONStringWithDateFormat( personnel,"yyyy-MM-dd HH:mm:ss" );
-    }
+    }*/
 
-    @PostMapping(value = "/insertPer")
+    /*@PostMapping(value = "/insertPer")
     @ResponseBody
     @Async
     public String insertPersonnel(@RequestBody MuchObj muchObj,@RequestParam("ip")String ip){
@@ -51,12 +46,12 @@ public class PeosonnelInfoController {
         base64.replaceAll(" ", "+");
         String insertMsg=personnelInfoService.insertPersonnel(personnelInfo,personnelRecords,clanInfos,base64,ip);
         return JSONObject.toJSONString( insertMsg );
-    }
+    }*/
     @GetMapping(value = "/showImage")
     @ResponseBody
     @Async //多线程异步调用
-    public void showImage(String photoUrl,HttpServletResponse response, HttpServletRequest request){
-        personnelInfoService.showImage(photoUrl,response,request);
+    public void showImage(String photoUrl, HttpServletResponse response, HttpServletRequest request){
+        //personnelInfoService.showImage(photoUrl,response,request);
     }
     /*@PostMapping(value = "/up")
     @ResponseBody

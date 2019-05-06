@@ -23,7 +23,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.SR1</spring-cloud.version>
-        <!--<docker.image.prefix>springboot</docker.image.prefix>-->
     </properties>
 
     <dependencies>
@@ -70,17 +69,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- spring-boot-starter-data-jpa -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>1.5.9.RELEASE</version>
-        </dependency>
-        <!-- mysql-connector-java -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
         <!-- json -->
         <dependency>
             <groupId>net.sf.json-lib</groupId>
@@ -108,12 +96,6 @@
             <artifactId>logstash-gelf</artifactId>
             <version>1.11.1</version>
         </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.14</version>
-        </dependency>
-
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
@@ -154,12 +136,7 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>com.hx</groupId>
-            <artifactId>model</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
+
         <dependency>
             <groupId>com.hx</groupId>
             <artifactId>shiro</artifactId>
@@ -181,34 +158,6 @@
         </dependencies>
     </dependencyManagement>
 
-    <!--<build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-
-            &lt;!&ndash;加入maven插件“docker-maven-plugin”&ndash;&gt;
-            <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                &lt;!&ndash;<version>0.2.3</version>&ndash;&gt;
-                <version>0.4.11</version>
-                <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-                    <dockerDirectory>src/main/docker</dockerDirectory>
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
-                </configuration>
-            </plugin>
-        </plugins>
-        <finalName>eureka-client</finalName>
-    </build>-->
     <build>
         <plugins>
             <plugin>

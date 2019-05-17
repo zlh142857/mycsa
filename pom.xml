@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.hx</groupId>
-  <artifactId>spring-confidential</artifactId>
+  <artifactId>mycsa</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>spring-confidential Maven Webapp</name>
+  <name>mycsa Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -22,6 +22,8 @@
 
 
   <modules>
+      <module>model</module>
+      <module>component</module>
       <module>eureka-client-schedule</module>
       <module>eureka-client-apiservice</module>
       <module>eureka-client</module>
@@ -29,8 +31,6 @@
       <module>service-feign</module>
       <module>service-gateway</module>
       <module>shiro</module>
-      <module>model</module>
-      <module>component</module>
   </modules>
 
 
@@ -63,15 +63,11 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>repackage</goal>
-            </goals>
-          </execution>
-        </executions>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <testFailureIgnore>true</testFailureIgnore>
+        </configuration>
       </plugin>
     </plugins>
   </build>

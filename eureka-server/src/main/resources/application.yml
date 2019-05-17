@@ -13,7 +13,8 @@ server:
     direct-buffers: true
 eureka:
   instance:
-    hostname: localhost
+    hostname: 192.168.74.129   //服务器ip
+    prefer-ip-address: true
   client:
     registerWithEureka: false
     fetchRegistry: false
